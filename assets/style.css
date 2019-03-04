@@ -2,7 +2,6 @@
 /* DEFINITION DES FONTS DE BASE*/
 body{
     font-family: 'Open Sans Condensed', sans-serif;
-    color:black;
 }
 
 h2, h3, h4 {
@@ -27,19 +26,24 @@ h4{
 p {
     font-size: 1.2rem;
 }
-
-.dr_section_color{    
-    background-color: #ccecff;
+#nawalNavbar{
+    background-color: #005D8E;
 }
-
-.dr_img_product{
-    width:250px;
-    height:250px
+.navbar-brand{
+    font-family: azonix;
 }
-
-.dr_card{
-    width: 18rem;
-    margin-left:auto;
-    margin-right:auto;
-    display:block;
+#nawalNavbar a{
+    color: white;
+    font-size: 1.3rem;
+}
+#nawalNavbar .nav-item > a:hover{
+    background-color: #006EA8;
+    border-radius: 5px;
+}
+.jumbotron{
+    background-color: #006EA8;
+    color: white;
+}
+.jumbotron h1{
+    font-family: azonix;
 }
