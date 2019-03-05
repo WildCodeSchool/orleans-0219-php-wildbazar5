@@ -2,7 +2,6 @@
 /* DEFINITION DES FONTS DE BASE*/
 body{
     font-family: 'Open Sans Condensed', sans-serif;
-    color:black;
 }
 
 h2, h3, h4 {
@@ -28,18 +27,30 @@ p {
     font-size: 1.2rem;
 }
 
-.dr_section_color{    
-    background-color: #ccecff;
+
+/* Footer */
+footer
+{
+    background-color: #005D8E;
+
 }
 
-.dr_img_product{
-    width:250px;
-    height:250px
+footer a
+{
+    color: white;
+}
+footer ul
+{
+    list-style-type: none;
 }
 
-.dr_card{
-    width: 18rem;
-    margin-left:auto;
-    margin-right:auto;
-    display:block;
+.logodpwild
+{
+    height: 60px;
+
+}
+
+footer li
+{
+    margin-top: -0.25rem
 }
