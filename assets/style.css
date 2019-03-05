@@ -96,3 +96,61 @@ footer li
 {
     margin-top: -0.25rem
 }
+
+
+
+/* Section Couleur */
+.dr_section_color{    
+    background-color: #F2F2F2;
+}
+
+/* Carte globale */
+.dr_card{
+    width: 18rem;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+
+.dr_card:hover{
+    cursor: pointer;
+}
+
+/* Gestion du placement du badge */
+.dr_badge_{
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Hover sur les éléments */
+/* Badge */
+.dr_card:hover .dr_badge {
+    font-size: 90%;
+    display: inline-block;
+    transition: .5s ease !important;
+}
+/* Image */
+.dr_card:hover img {
+    opacity: .5;
+    transition: .5s ease !important;
+ }
+
+ /* Containeir du placement de l'image Top */
+.dr_wrapper{
+    display: table-cell;
+    vertical-align: middle;
+    height:18rem;
+    width:18rem;
+}
+
+/* Gestion de l'affichage de l'image */
+.img_dr{
+    object-fit: cover;
+    overflow: hidden;
+}
+
