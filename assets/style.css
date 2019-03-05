@@ -3,7 +3,9 @@
 body{
     font-family: 'Open Sans Condensed', sans-serif;
 }
-
+h1{
+    font-family: azonix;
+}
 h2, h3, h4 {
     font-weight: bold;
 }
@@ -20,7 +22,7 @@ h3{
 h4{
     font-size: 1.8rem;
 }
-h4{
+h5{
     font-size: 1.5rem;
 }
 p {
@@ -43,7 +45,4 @@ p {
 .jumbotron{
     background-color: #006EA8;
     color: white;
-}
-.jumbotron h1{
-    font-family: azonix;
 }
