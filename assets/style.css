@@ -48,6 +48,23 @@ p {
     color: white;
 }
 
+/* css jv*/
+.aboutus {
+    background-color: rgba(0, 118, 181, 0.4);
+    }
+    h2 {
+    text-align: center ;
+    }
+    
+    .logodeer {
+    width : 150px;
+    height : auto;
+    }
+    .media-body {
+    text-align: justify ;   
+    margin-left: 45px;
+    }
+
 /* Footer */
 footer
 {
