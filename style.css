@@ -1,0 +1,44 @@
+
+/* DEFINITION DES FONTS DE BASE*/
+body{
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+h2, h3, h4 {
+    font-weight: bold;
+}
+h5, p {
+    font-weight: 300;
+    font-style: normal;
+}
+h2{
+    font-size: 2.5rem;
+}
+h3{
+    font-size: 2rem;
+}
+h4{
+    font-size: 1.8rem;
+}
+h4{
+    font-size: 1.5rem;
+}
+p {
+    font-size: 1.2rem;
+}
+/* css jv*/
+.aboutus {
+background-color: rgba(0, 118, 181, 0.4);
+}
+h2 {
+text-align: center ;
+}
+
+.logodeer {
+width : 150px;
+height : auto;
+}
+.media-body {
+text-align: justify ;   
+margin-left: 45px;
+}
