@@ -200,8 +200,12 @@ footer ul
 
 }
 
+.marginadresse
+{
+    margin-left: 40px;
+}
+
 footer li
 {
-    margin-top: -0.25rem
+    margin-top: -0.25rem;
 }
->>>>>>> 06df79b3aa27882c989dded1d2315ab05d21f2e4
