@@ -1,4 +1,51 @@
 /* DEFINITION DES FONTS DE BASE*/
+.xs {
+    width: 250px;
+}
+.catt {
+    font-family: "azonix";
+}
+.cf,
+.xs {
+    background-color: #f2f2f2;
+}
+body {
+    font-family: "Open Sans Condensed";
+    font-weight: bold;
+}
+
+.cat {
+    /*mix-blend-mode: luminosity;*/
+    filter: blur(3px);
+    height: 350px;
+    border-radius: 30px;
+}
+
+.cabody:hover h3
+{
+  
+visibility: hidden;
+}
+.xs:hover .cat
+{
+    filter : blur(0px);
+}
+.xs:hover .cabody
+{
+    border: 0px white solid;
+}
+
+.cabody {
+    display: flex;
+    align-items: center;
+    border: 2px #348fa13f solid;
+    border-radius: 10px;
+}
+
+.cti {
+    width: 100%;
+}
+
 body{
     font-family: 'Open Sans Condensed', sans-serif;
 }
