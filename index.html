@@ -17,7 +17,7 @@
     <div class="container-fluid p-0">
       <header id="nawalNavbar">
         <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand ml-5" href="#">
+          <a class="navbar-brand ml-5" href="index.html">
             <img src="assets/img/logo/logo-rouge-fond-transparent.png" class="d-inline-block align-top" alt="logo de la wild code school"/></a>
 
           <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,22 +27,22 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Clothes</a>
+                <a class="nav-link" href="pages/clothes.html">Clothes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Goodies</a>
+                <a class="nav-link" href="pages/goodies.html">Goodies</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Kitchen</a>
+                <a class="nav-link" href="pages/kitchen.html">Kitchen</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Slippers</a>
+                <a class="nav-link" href="pages/slippers.html">Slippers</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Figurines</a>
+                <a class="nav-link" href="pages/figurines.html">Figurines</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About us</a>
+                <a class="nav-link" href="pages/aboutus.html">About us</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -60,11 +60,12 @@
         </div>
       </header>
 <!-- catégories -->
-<section>
+<section id="categories">
 	<div class="container-fluid cf">
             <H2 class="text-center py-3 catt">Catégories</H2>
             <div class="row justify-content-center py-3">
                 <div class="col-sm-4 col-md-4 col-lg-2 col-xl-2 text-center ">
+                    <a href="pages/clothes.html">
                     <div class="card xs Clothes mx-auto bg-transparent border-0">
                         <img
                             src="https://i.imgur.com/xLttmqm.png"
@@ -75,9 +76,11 @@
                             <h3 class="cti card-title ">Clothes</h3>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-sm-4 col-md-4 col-lg-2 col-xl-2 text-center">
+                    <a href="pages/clothes.html">
                     <div class="card xs Goodies mx-auto bg-transparent border-0">
                         <div class="img-wrapper">
                             <img
@@ -90,9 +93,11 @@
                             <h3 class="cti card-title">Goodies</h3>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-sm-4 col-md-4 col-lg-2 col-xl-2 text-center">
+                    <a href="pages/clothes.html">
                     <div class="card xs Kitchen mx-auto bg-transparent border-0">
                         <img
                             src="https://i.imgur.com/y1FyF6F.png"
@@ -103,8 +108,10 @@
                             <h3 class="cti card-title ">Kitchen</h3>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-sm-4 col-md-4 col-lg-2 col-xl-2 text-center">
+                    <a href="pages/clothes.html">
                     <div class="card xs Slippers mx-auto bg-transparent border-0">
                         <img
                             src="https://i.imgur.com/WhrW3S5.png"
@@ -115,9 +122,11 @@
                             <h3 class="cti card-title">Slippers</h3>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-sm-4 col-md-4 col-lg-2 col-xl-2 text-center">
+                    <a href="pages/clothes.html">
                     <div class="card xs Figurines mx-auto bg-transparent border-0">
                         <img
                             src="https://i.imgur.com/SdFqVA1.jpg"
@@ -128,15 +137,16 @@
                             <h3 class="cti card-title">Figurines</h3>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
         </div>
-        </section>
+    </section>
 
       <!-- About us -->
       <section>
         <div class="container-fluid p-0">
-          <div class="aboutus">
+          <div class="aboutus" id="aboutus">
             <h2>About us</h2>
             <div class="row justify-content-center">
               <div class="col-md-4 col-lg-2 text-center">
@@ -161,7 +171,7 @@
       </section>
 
       <!-- Section Top Selling -->
-      <section class="dr_section_color">
+      <section class="dr_section_color" id="topselling">
         <!-- Titre -->
         <h2 class="text-center">Top selling</h2>
         <div class="row p-2">
@@ -245,18 +255,18 @@
             <div class="col">
               <div class="row">
                 <ul>
-                  <li><a href="Home">Home</a></li>
-                  <li><a href="Aboutus">About us</a></li>
-                  <li><a href="TopSelling">Top Selling</a></li>
-                  <li><a href="Contact">Contact</a></li>
-                  <li><a href="Legalmentions">Legal mentions</a></li>
+                  <li><a href="#nawalNavbar">Home</a></li>
+                  <li><a href="#categories">Categories</a></li>
+                  <li><a href="#topselling">Top Selling</a></li>
+                  <li><a href="#aboutus">About us</a></li>
+                  <li><a href="#">Legal mentions</a></li>
                 </ul>
                 <ul class="ml-5">
-                  <li><a href="Category1">Clothes</a></li>
-                  <li><a href="Category2">Goodies</a></li>
-                  <li><a href="Category3">Kitchen</a></li>
-                  <li><a href="Category4">Sleepers</a></li>
-                  <li><a href="Category5">Figurines</a></li>
+                  <li><a href="pages/clothes.html">Clothes</a></li>
+                  <li><a href="pages/goodies.html">Goodies</a></li>
+                  <li><a href="pages/kitchen.html">Kitchen</a></li>
+                  <li><a href="pages/slippers.html">Slippers</a></li>
+                  <li><a href="pages/figurines.html">Figurines</a></li>
                 </ul>
               </div>
 

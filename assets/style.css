@@ -1,51 +1,4 @@
 /* DEFINITION DES FONTS DE BASE*/
-.xs {
-    width: 250px;
-}
-.catt {
-    font-family: "azonix";
-}
-.cf,
-.xs {
-    background-color: #f2f2f2;
-}
-body {
-    font-family: "Open Sans Condensed";
-    font-weight: bold;
-}
-
-.cat {
-    /*mix-blend-mode: luminosity;*/
-    filter: blur(3px);
-    height: 350px;
-    border-radius: 30px;
-}
-
-.cabody:hover h3
-{
-  
-visibility: hidden;
-}
-.xs:hover .cat
-{
-    filter : blur(0px);
-}
-.xs:hover .cabody
-{
-    border: 0px white solid;
-}
-
-.cabody {
-    display: flex;
-    align-items: center;
-    border: 2px #348fa13f solid;
-    border-radius: 10px;
-}
-
-.cti {
-    width: 100%;
-}
-
 body{
     font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -75,11 +28,15 @@ p {
     font-size: 1.2rem;
 }
 
-/*Nav*/
+
+
+
+/*------NAV-----*/
+
 #nawalNavbar{
     background-color: #005D8E;
 }
-.navbar-brand{
+#nawalNavbar .navbar-brand{
     font-family: azonix;
 }
 #nawalNavbar a{
@@ -95,9 +52,55 @@ p {
     color: white;
 }
 
+/*---CSS de Categorie---*/
+#categories a{
+    color: black;
+}
+.xs {
+    width: 250px;
+}
+.catt {
+    font-family: "azonix";
+}
+.cf,
+.xs {
+    background-color: #f2f2f2;
+}
+.cat {
+    /*mix-blend-mode: luminosity;*/
+    filter: blur(3px);
+    height: 350px;
+    border-radius: 30px;
+}
+
+.cabody:hover h3
+{
+
+    visibility: hidden;
+}
+.xs:hover .cat
+{
+    filter : blur(0px);
+}
+.xs:hover .cabody
+{
+    border: 0px white solid;
+}
+
+.cabody {
+    display: flex;
+    align-items: center;
+    border: 2px #348fa13f solid;
+    border-radius: 10px;
+}
+
+.cti {
+    width: 100%;
+}
+/*----TOP SELLING----*/
 
 /* Section Couleur */
-.dr_section_color{    
+.dr_section_color{
     background-color: #F2F2F2;
 }
 
@@ -152,24 +155,24 @@ p {
 }
 
 
-/* css jv*/
+/*--ABOUT US--*/
 .aboutus {
     background-color: rgba(0, 118, 181, 0.4);
     }
     h2 {
     text-align: center ;
     }
-    
+
     .logodeer {
     width : 150px;
     height : auto;
     }
     .media-body {
-    text-align: justify ;   
+    text-align: justify ;
     margin-left: 45px;
     }
 
-/* Footer */
+/*---FOOTER---*/
 footer
 {
     background-color: #005D8E;
