@@ -21,17 +21,13 @@ body {
     border-radius: 30px;
 }
 
-.cabody:hover h3
-{
-  
-visibility: hidden;
+.cabody:hover h3 {
+    visibility: hidden;
 }
-.xs:hover .cat
-{
-    filter : blur(0px);
+.xs:hover .cat {
+    filter: blur(0px);
 }
-.xs:hover .cabody
-{
+.xs:hover .cabody {
     border: 0px white solid;
 }
 
@@ -46,29 +42,32 @@ visibility: hidden;
     width: 100%;
 }
 
-body{
-    font-family: 'Open Sans Condensed', sans-serif;
+body {
+    font-family: "Open Sans Condensed", sans-serif;
 }
-h1{
+h1 {
     font-family: azonix;
 }
-h2, h3, h4 {
+h2,
+h3,
+h4 {
     font-weight: bold;
 }
-h5, p {
+h5,
+p {
     font-weight: 300;
     font-style: normal;
 }
-h2{
+h2 {
     font-size: 2.5rem;
 }
-h3{
+h3 {
     font-size: 2rem;
 }
-h4{
+h4 {
     font-size: 1.8rem;
 }
-h5{
+h5 {
     font-size: 1.5rem;
 }
 p {
@@ -76,45 +75,44 @@ p {
 }
 
 /*Nav*/
-#nawalNavbar{
-    background-color: #005D8E;
+#nawalNavbar {
+    background-color: #005d8e;
 }
-.navbar-brand{
+.navbar-brand {
     font-family: azonix;
 }
-#nawalNavbar a{
+#nawalNavbar a {
     color: white;
     font-size: 1.3rem;
 }
-#nawalNavbar .nav-item > a:hover{
-    background-color: #006EA8;
+#nawalNavbar .nav-item > a:hover {
+    background-color: #006ea8;
     border-radius: 5px;
 }
-.jumbotron{
-    background-color: #006EA8;
+.jumbotron {
+    background-color: #006ea8;
     color: white;
 }
 
-
 /* Section Couleur */
-.dr_section_color{    
-    background-color: #F2F2F2;
+.dr_section_color {
+    background-color: #f2f2f2;
 }
 
 /* Carte globale */
-.dr_card{
+.dr_card {
     width: 18rem;
-    margin-left:auto;
-    margin-right:auto;
-    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
-.dr_card:hover{
+.dr_card:hover {
     cursor: pointer;
 }
 
 /* Gestion du placement du badge */
-.dr_badge_{
+.dr_badge_ {
     opacity: 1;
     position: absolute;
     top: 50%;
@@ -129,79 +127,75 @@ p {
 .dr_card:hover .dr_badge {
     font-size: 90%;
     display: inline-block;
-    transition: .5s ease !important;
+    transition: 0.5s ease !important;
 }
 /* Image */
 .dr_card:hover img {
-    opacity: .5;
-    transition: .5s ease !important;
- }
+    opacity: 0.5;
+    transition: 0.5s ease !important;
+}
 
- /* Containeir du placement de l'image Top */
-.dr_wrapper{
+/* Containeir du placement de l'image Top */
+.dr_wrapper {
     display: table-cell;
     vertical-align: middle;
-    height:18rem;
-    width:18rem;
+    height: 18rem;
+    width: 18rem;
 }
 
 /* Gestion de l'affichage de l'image */
-.img_dr{
+.img_dr {
     object-fit: cover;
     overflow: hidden;
 }
 
-
 /* css jv*/
 .aboutus {
     background-color: rgba(0, 118, 181, 0.4);
-    }
-    h2 {
-    text-align: center ;
-    }
-    
-    .logodeer {
-    width : 150px;
-    height : auto;
-    }
-    .media-body {
-    text-align: justify ;   
+}
+h2 {
+    text-align: center;
+}
+
+.logodeer {
+    width: 150px;
+    height: auto;
+}
+.media-body {
+    text-align: justify;
     margin-left: 45px;
-    }
+}
 
 /* Footer */
-footer
-{
-    background-color: #005D8E;
+footer {
+    background-color: #005d8e;
 }
 
-footer a:hover
-{
+footer a:hover {
     color: white;
 }
 
-footer a
-{
+footer a {
     color: white;
 }
 
-footer ul
-{
+footer ul {
     list-style-type: none;
 }
 
-.logodpwild
-{
+.logodpwild {
     height: 60px;
-
 }
 
-.marginadresse
-{
+.marginadresse {
     margin-left: 40px;
 }
 
-footer li
-{
+footer li {
     margin-top: -0.25rem;
+}
+
+.art-img-content {
+    display: flex;
+    align-items: center;
 }
