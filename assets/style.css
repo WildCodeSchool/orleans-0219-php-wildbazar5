@@ -154,7 +154,17 @@ footer ul
     margin-left: 40px;
 }
 
+<<<<<<< HEAD
 footer li
 {
     margin-top: -0.25rem;
 }
+=======
+
+.art-img-content{
+        display: flex;
+        align-items: center;
+        
+}
+
+>>>>>>> a8def418fbbb19ab4e3669498784155f2269680a
