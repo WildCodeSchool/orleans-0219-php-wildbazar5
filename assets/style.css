@@ -46,7 +46,6 @@ p {
 .jumbotron{
     background-color: #006EA8;
     color: white;
-<<<<<<< HEAD
 }
 
 /* css jv*/
@@ -204,4 +203,11 @@ footer li
 {
     margin-top: -0.25rem
 }
->>>>>>> 06df79b3aa27882c989dded1d2315ab05d21f2e4
+
+
+.art-img-content{
+        display: flex;
+        align-items: center;
+        
+}
+
