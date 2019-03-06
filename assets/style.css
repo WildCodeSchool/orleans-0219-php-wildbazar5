@@ -46,58 +46,7 @@ p {
 .jumbotron{
     background-color: #006EA8;
     color: white;
-<<<<<<< HEAD
 }
-
-/* css jv*/
-.aboutus {
-    background-color: rgba(0, 118, 181, 0.4);
-    }
-    h2 {
-    text-align: center ;
-    }
-    
-    .logodeer {
-    width : 150px;
-    height : auto;
-    }
-    .media-body {
-    text-align: justify ;   
-    margin-left: 45px;
-    }
-
-/* Footer */
-footer
-{
-    background-color: #005D8E;
-}
-
-footer a:hover
-{
-    color: white;
-}
-
-footer a
-{
-    color: white;
-}
-
-footer ul
-{
-    list-style-type: none;
-}
-
-.logodpwild
-{
-    height: 60px;
-
-}
-
-footer li
-{
-    margin-top: -0.25rem
-}
-
 
 
 /* Section Couleur */
@@ -140,6 +89,11 @@ footer li
     opacity: .5;
     transition: .5s ease !important;
  }
+
+.hauteur
+{
+    height: 300px;
+}
 
  /* Containeir du placement de l'image Top */
 .dr_wrapper{
