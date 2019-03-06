@@ -90,6 +90,12 @@ p {
     transition: .5s ease !important;
  }
 
+.art-img-content{
+        display: flex;
+        align-items: center;
+
+}
+
 .hauteur
 {
     height: 300px;
@@ -163,3 +169,4 @@ footer li
 {
     margin-top: -0.25rem;
 }
+
