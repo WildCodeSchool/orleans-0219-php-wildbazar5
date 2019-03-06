@@ -33,7 +33,7 @@ $('#modalDescrProduct').on('show.bs.modal', function (event) {
     }
     // modal.find('.art-img').text(article.dataset.img);
 
-/* 
+/*
     var image = document.getElementsByClassName("art-img");
 alert(document.getElementsByClassName("art-img").src)
 document.getElementsByClassName("art-img").src="toto.png"
