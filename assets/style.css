@@ -48,6 +48,10 @@ p {
     color: white;
 }
 
+.fondbg{
+    background-color: #ffffff;
+background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+}
 /* css jv*/
 .aboutus {
     background-color: rgba(0, 118, 181, 0.4);
@@ -100,10 +104,7 @@ footer li
 
 
 /* Section Couleur */
-.dr_section_color{
-    background-color: #ffffff;
-background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-}
+
 
 /* Carte globale */
 .dr_card{
@@ -155,7 +156,20 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
     overflow: hidden;
 }
 
+/*----MODAL----*/
 
+.btn-bg{
+    background-color: #335161;
+    color: white;
+}
+.modal-header, .modal-footer{
+background-color: #f5f5f5;
+background-image: url("https://www.transparenttextures.com/patterns/green-gobbler.png");
+    color: black;
+}
+.art-carac6{
+    font-style: italic;
+}
 /* css jv*/
 .aboutus {
     background-color: rgba(0, 118, 181, 0.4);
