@@ -97,8 +97,6 @@ footer li
     margin-top: -0.25rem
 }
 
-
-
 /* Section Couleur */
 .dr_section_color{    
     background-color: #F2F2F2;
@@ -106,14 +104,22 @@ footer li
 
 /* Carte globale */
 .dr_card{
-    width: 18rem;
+    width: 16rem;
+    height:25rem;
     margin-left:auto;
     margin-right:auto;
     display:block;
+    transition: .5s ease !important;
+   
 }
 
+.dr_badge {
+        transition: .5s ease !important;
+}
 .dr_card:hover{
-    cursor: pointer;
+    cursor: pointer;    
+    transition: .5s ease !important;
+     box-shadow: 0 1rem 3rem rgba(83, 83, 83, 0.7) !important;
 }
 
 /* Gestion du placement du badge */
@@ -127,17 +133,24 @@ footer li
     text-align: center;
 }
 
+.dr_card img{
+    opacity: 1;
+    transition: .5s ease !important;
+}
+
 /* Hover sur les éléments */
 /* Badge */
 .dr_card:hover .dr_badge {
     font-size: 90%;
     display: inline-block;
     transition: .5s ease !important;
+    text-shadow: 2px 2px 4px #000000;
 }
 /* Image */
 .dr_card:hover img {
     opacity: .5;
     transition: .5s ease !important;
+    -webkit-transition: padding .5s;
  }
 
  /* Containeir du placement de l'image Top */
