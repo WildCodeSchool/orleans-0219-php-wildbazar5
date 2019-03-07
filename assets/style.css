@@ -210,9 +210,7 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
 
 
 /*--ABOUT US--*/
-/* .aboutus {
-    background-color: rgba(0, 118, 181, 0.4);
-    } */
+
 h2 {
     text-align: center ;
     }
@@ -279,7 +277,6 @@ footer li
 }
 
 
-
 /* ------------------  SECTION SEPARATORS -------------------------- */
 /* Common style for pseudo-elements */
 section::before,
@@ -290,7 +287,6 @@ section::after {
 }
 
 /* Triangles */
-
 .ss-style-triangles::before {
 	left: 50%;
 	width: 100px;
