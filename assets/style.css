@@ -1,9 +1,10 @@
-
 /* DEFINITION DES FONTS DE BASE*/
 body{
     font-family: 'Open Sans Condensed', sans-serif;
 }
-
+h1{
+    font-family: azonix;
+}
 h2, h3, h4 {
     font-weight: bold;
 }
@@ -20,9 +21,51 @@ h3{
 h4{
     font-size: 1.8rem;
 }
-h4{
+h5{
     font-size: 1.5rem;
 }
 p {
     font-size: 1.2rem;
+}
+
+.fondbg {
+background-color: #ffffff;
+background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+}
+
+/*---FOOTER---*/
+footer
+{
+    background-color: #005D8E;
+}
+
+footer a:hover
+{
+    color: white;
+}
+
+footer a
+{
+    color: white;
+}
+
+footer ul
+{
+    list-style-type: none;
+}
+
+.logodpwild
+{
+    height: 60px;
+
+}
+
+.marginadresse
+{
+    margin-left: 40px;
+}
+
+footer li
+{
+    margin-top: -0.25rem;
 }
