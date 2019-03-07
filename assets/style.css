@@ -28,79 +28,120 @@ p {
     font-size: 1.2rem;
 }
 
-/*Nav*/
-#nawalNavbar{
-    background-color: #005D8E;
+.fondbg {
+background-color: #ffffff;
+background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
 }
-.navbar-brand{
+
+/* SECTION DEF */
+.section_color{
+    background-color: #335161;
+    color: #ffffff;
+}
+/* Section Couleur */
+.section_color2{
+    color:#335161;
+    background-color: #ffffff;
+    /* background-image: url("https://www.transparenttextures.com/patterns/stardust.png"); */
+}
+
+/*------NAV-----*/
+
+#nawalNavbar{
+    background-color: #335161;
+}
+#nawalNavbar .navbar{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.82);
+}
+#nawalNavbar .navbar-brand{
     font-family: azonix;
 }
 #nawalNavbar a{
     color: white;
     font-size: 1.3rem;
 }
-#nawalNavbar .nav-item > a:hover{
-    background-color: #006EA8;
-    border-radius: 5px;
-}
+
+#nawalNavbar .link-1 {
+    transition: 0.3s ease;
+    /* background: #3fa46a; */
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    border-top: 2px solid #335161;
+    border-bottom: 2px solid #335161;
+    padding: 6px 0;
+    margin: 0 20px;
+    line-height: 3.2rem;
+  }
+  #nawalNavbar .link-1:hover {
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding: 1px 0; 
+  }
+
 .jumbotron{
-    background-color: #006EA8;
-    color: white;
-}
-
-/* css jv*/
-.aboutus {
-    background-color: rgba(0, 118, 181, 0.4);
-    }
-    h2 {
-    text-align: center ;
-    }
-    
-    .logodeer {
-    width : 150px;
-    height : auto;
-    }
-    .media-body {
-    text-align: justify ;   
-    margin-left: 45px;
-    }
-
-/* Footer */
-footer
-{
     background-color: #005D8E;
-}
-
-footer a:hover
-{
     color: white;
+    display: flex;
+    align-items: center;
 }
 
-footer a
+
+/* Header Parallax Element Style*/
+.paral {
+    min-height: 600px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+    }
+/* Image for Parallax Section */
+.paralsec {
+    background-image: url("img/logo/planets.jpg");
+    }
+/*---CSS de Categorie---*/
+#categories a{
+    color: black;
+}
+.xs {
+    width: 250px;
+}
+.catt {
+    font-family: "azonix";
+}
+.cat {
+    /*mix-blend-mode: luminosity;*/
+    filter: blur(3px);
+    height: 350px;
+    border-radius: 30px;
+}
+
+.cabody:hover h3
 {
-    color: white;
-}
 
-footer ul
+    visibility: hidden;
+}
+.xs:hover .cat
 {
-    list-style-type: none;
+    filter : blur(0px);
 }
-
-.logodpwild
+.xs:hover .cabody
 {
-    height: 60px;
-
+    border: 0px white solid;
 }
 
-footer li
-{
-    margin-top: -0.25rem
+.cabody {
+    display: flex;
+    align-items: center;
+    border: 2px #348fa13f solid;
+    border-radius: 10px;
 }
 
-/* Section Couleur */
-.dr_section_color{    
-    background-color: #F2F2F2;
+.cti {
+    width: 100%;
 }
+/*----TOP SELLING----*/
+
+
 
 /* Carte globale */
 .dr_card{
@@ -110,20 +151,20 @@ footer li
     margin-right:auto;
     display:block;
     transition: .5s ease !important;
-   
-}
-
-.dr_badge {
+    
+    }
+    
+    .dr_badge {
         transition: .5s ease !important;
-}
-.dr_card:hover{
+    }
+    .dr_card:hover{
     cursor: pointer;    
     transition: .5s ease !important;
      box-shadow: 0 1rem 3rem rgba(83, 83, 83, 0.7) !important;
-}
-
-/* Gestion du placement du badge */
-.dr_badge_{
+    }
+    
+    /* Gestion du placement du badge */
+    .dr_badge_{
     opacity: 1;
     position: absolute;
     top: 50%;
@@ -131,64 +172,79 @@ footer li
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
-}
-
-.dr_card img{
+    }
+    
+    .dr_card img{
     opacity: 1;
     transition: .5s ease !important;
-}
-
-/* Hover sur les éléments */
-/* Badge */
-.dr_card:hover .dr_badge {
+    }
+    
+    /* Hover sur les éléments */
+    /* Badge */
+    .dr_card:hover .dr_badge {
     font-size: 90%;
     display: inline-block;
     transition: .5s ease !important;
     text-shadow: 2px 2px 4px #000000;
-}
-/* Image */
-.dr_card:hover img {
+    }
+    /* Image */
+    .dr_card:hover img {
     opacity: .5;
     transition: .5s ease !important;
     -webkit-transition: padding .5s;
- }
-
- /* Containeir du placement de l'image Top */
-.dr_wrapper{
+    }
+    
+    /* Containeir du placement de l'image Top */
+    .dr_wrapper{
     display: table-cell;
     vertical-align: middle;
     height:18rem;
     width:18rem;
-}
-
-/* Gestion de l'affichage de l'image */
-.img_dr{
-    object-fit: cover;
-    overflow: hidden;
-}
-
-
-/* css jv*/
-.aboutus {
-    background-color: rgba(0, 118, 181, 0.4);
-    }
-    h2 {
-    text-align: center ;
     }
     
-    .logodeer {
+    /* Gestion de l'affichage de l'image */
+    .img_dr{
+    object-fit: cover;
+    overflow: hidden;
+    }
+
+
+/*--ABOUT US--*/
+/* .aboutus {
+    background-color: rgba(0, 118, 181, 0.4);
+    } */
+h2 {
+    text-align: center ;
+    }
+
+.logodeer {
     width : 150px;
     height : auto;
     }
-    .media-body {
-    text-align: justify ;   
+.media-body {
+    text-align: justify ;
     margin-left: 45px;
     }
 
-/* Footer */
+/*----MODAL----*/
+
+.btn-bg{
+    background-color: #335161;
+    color: white;
+}
+.modal-header, .modal-footer{
+    background-color: #f5f5f5;
+    background-image: url("https://www.transparenttextures.com/patterns/green-gobbler.png");
+    color: black;
+}
+.art-carac6{
+    font-style: italic;
+}
+
+/*---FOOTER---*/
 footer
 {
-    background-color: #005D8E;
+    background-color: #335161;
 }
 
 footer a:hover
@@ -212,15 +268,175 @@ footer ul
 
 }
 
+.marginadresse
+{
+    margin-left: 40px;
+}
+
 footer li
 {
-    margin-top: -0.25rem
+    margin-top: -0.25rem;
 }
 
 
-.art-img-content{
-        display: flex;
-        align-items: center;
-        
+
+/* ------------------  SECTION SEPARATORS -------------------------- */
+/* Common style for pseudo-elements */
+section::before,
+section::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
 }
+
+/* Triangles */
+
+.ss-style-triangles::before {
+	left: 50%;
+	width: 100px;
+	height: 100px;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+}
+.ss-style-triangles::before {
+	top: -50px;
+	background:  #335161;
+}
+
+.ss-style-triangles::after {
+	top: 50px;
+	z-index: 10;
+	background: inherit;
+}
+
+
+.ss-style-triangles_white::before {
+	left: 50%;
+	width: 100px;
+	height: 100px;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.ss-style-triangles_white::before {
+	top: -50px;
+	background:  white;
+}
+
+.ss-style-triangles_white::after {
+	top: 50px;
+	z-index: 10;
+	background: inherit;
+}
+/* ------------------  CATEGORIES PART-------------------------- */
+.cat-card{
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    text-align: center;
+    transition: .5s ease !important;
+ }
+.categories{
+      opacity: .8;
+    }   
+.cat-hr{
+    opacity: 0;
+}
+.cat-title{
+    font-family: azonix;
+    font-size: 1.2rem;
+    color: rgb(51, 81, 97);
+    margin-bottom: 0;
+    opacity: .5 !important;
+}  
+.cat-intro{
+    color:white;
+    background-color: rgba(0, 93, 142, 0.8);    
+}  
+.cat-card:hover > .card-img-overlay > .cat-intro{
+    color:white;
+    opacity: 0;
+    background-color: rgbcategoriesa(51, 81, 97, 0);
+    transition: .5s ease !important;
+}
+  .cat-card:hover > .card-img-overlay > .cat-hr{
+    border-top: 3px solid  rgba(51, 81, 97, 0.8);
+    opacity: .8;
+    transition: .5s ease !important;
+}
+.cat-card:hover >  .card-info{    
+      opacity: 1;
+      bottom: 120px;
+}
+.cat-card:hover > .title-content{
+      text-align: center;
+      margin: 50px 0 0 0;
+      z-index: 20;
+      width: 100%;
+      transition: .5s ease !important;
+}
+.cat-card:hover > .card-img-overlay >  .cat-title{
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: .1rem; 
+      color: rgb(51, 81, 97);
+      margin-bottom: 0;
+      opacity: 1 !important;
+      transition: .5s ease !important;
+    }  
+.cat-card:hover >   .categories{
+        -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+        filter: blur(5px);
+        opacity: .8 ;
+        transition: .5s ease !important;
+      }  
+/* ---------------------------------------------------------------- */
+
+
+
+/* --------------- LINE BEHIND TITLE --------------------- */
+/* //BLUE */
+h2.background-color {
+    position: relative;
+    z-index: 1;
+}
+h2.background-color:before {
+        border-top: 3px solid #335161;   
+        content:"";
+        margin: 0 auto; /* this centers the line to the full width specified */
+        position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+        top: 50%; left: 0; right: 0; bottom: 0;
+        width: 95%;
+        z-index: -1;
+    }
+.background-color span { 
+        /* to hide the lines from behind the text, you have to set the background color the same as the container */ 
+        color:#335161; 
+        background: #fff; 
+        padding: 0 15px; 
+    }
+
+/* //WHITE */
+h2.background-white {
+    position: relative;
+    z-index: 1;
+}
+h2.background-white:before {
+        border-top: 3px solid white;    
+        content:"";
+        margin: 0 auto; /* this centers the line to the full width specified */
+        position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+        top: 50%; left: 0; right: 0; bottom: 0;
+        width: 95%;
+        z-index: -1;
+    }
+.background-white span { 
+        color:white;
+        /* to hide the lines from behind the text, you have to set the background color the same as the container */ 
+        background: #335161;
+        padding: 0 15px; 
+    }
 
