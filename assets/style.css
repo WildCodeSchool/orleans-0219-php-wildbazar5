@@ -55,13 +55,13 @@ p {
     h2 {
     text-align: center ;
     }
-    
+
     .logodeer {
     width : 150px;
     height : auto;
     }
     .media-body {
-    text-align: justify ;   
+    text-align: justify ;
     margin-left: 45px;
     }
 
@@ -100,8 +100,9 @@ footer li
 
 
 /* Section Couleur */
-.dr_section_color{    
-    background-color: #F2F2F2;
+.dr_section_color{
+    background-color: #ffffff;
+background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
 }
 
 /* Carte globale */
@@ -162,13 +163,13 @@ footer li
     h2 {
     text-align: center ;
     }
-    
+
     .logodeer {
     width : 150px;
     height : auto;
     }
     .media-body {
-    text-align: justify ;   
+    text-align: justify ;
     margin-left: 45px;
     }
 
@@ -208,6 +209,5 @@ footer li
 .art-img-content{
         display: flex;
         align-items: center;
-        
-}
 
+}
