@@ -14,6 +14,7 @@ h5, p {
 }
 h2{
     font-size: 2.5rem;
+    text-align: center ;
 }
 h3{
     font-size: 2rem;
@@ -28,16 +29,12 @@ p {
     font-size: 1.2rem;
 }
 
-.fondbg {
-background-color: #ffffff;
-background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-}
-
 /* SECTION DEF */
 .section_color{
     background-color: #335161;
     color: #ffffff;
 }
+
 /* Section Couleur */
 .section_color2{
     color:#335161;
@@ -47,21 +44,20 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
 
 /*------NAV-----*/
 
-#nawalNavbar{
+#navbar{
     background-color: #335161;
 }
-#nawalNavbar .navbar{
+#navbar .navbar{
     border-bottom: 1px solid rgba(255, 255, 255, 0.82);
 }
-#nawalNavbar .navbar-brand{
+#navbar .navbar-brand{
     font-family: azonix;
 }
-#nawalNavbar a{
+#navbar a{
     color: white;
     font-size: 1.3rem;
-}
-
-#nawalNavbar .link-1 {
+  }
+#navbar .link-1 {
     transition: 0.3s ease;
     /* background: #3fa46a; */
     color: #ffffff;
@@ -73,18 +69,17 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
     margin: 0 20px;
     line-height: 3.2rem;
   }
-  #nawalNavbar .link-1:hover {
+#navbar .link-1:hover {
     border-top: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
     padding: 1px 0;
   }
-
-.jumbotron{
+#navbar .jumbotron{
     background-color: #005D8E;
     color: white;
     display: flex;
     align-items: center;
-}
+  }
 
 
 /* Header Parallax Element Style*/
@@ -94,11 +89,63 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
     background-size: cover;
     background-position: 50% 50%;
     }
+
 /* Image for Parallax Section */
 .paralsec {
     background-image: url("img/logo/planets.jpg");
     }
-/*---CSS de Categorie---*/
+
+/* ------------------  SECTION SEPARATORS -------------------------- */
+/* Common style for pseudo-elements */
+section::before,
+section::after {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+}
+
+/* Triangles */
+.ss-style-triangles::before {
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+}
+.ss-style-triangles::before {
+    top: -50px;
+    background:  #335161;
+}
+
+.ss-style-triangles::after {
+    top: 50px;
+    z-index: 10;
+    background: inherit;
+}
+
+
+.ss-style-triangles_white::before {
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.ss-style-triangles_white::before {
+    top: -50px;
+    background:  white;
+}
+
+.ss-style-triangles_white::after {
+    top: 50px;
+    z-index: 10;
+    background: inherit;
+}
+
+
+/*-----CATEGORIES----*/
+
 #categories a{
     color: black;
 }
@@ -138,17 +185,93 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
     border: 2px #348fa13f solid;
     border-radius: 10px;
 }
+
+/*--ABOUT US--*/
+
+
+.logodeer {
+    width : 150px;
+    height : auto;
+}
+.media-body {
+    text-align: justify ;
+    margin-left: 45px;
+}
+
+.cat-card{
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    text-align: center;
+    transition: .5s ease !important;
+}
+.categories{
+    opacity: .8;
+}
+.cat-hr{
+    opacity: 0;
+}
+.cat-title{
+    font-family: azonix;
+    font-size: 1.2rem;
+    color: rgb(51, 81, 97);
+    margin-bottom: 0;
+    opacity: .5 !important;
+}
+.cat-intro{
+    color:white;
+    background-color: rgba(0, 93, 142, 0.8);
+}
+.cat-card:hover > .card-img-overlay > .cat-intro{
+    color:white;
+    opacity: 0;
+    background-color: rgba(51, 81, 97, 0);
+    transition: .5s ease !important;
+}
+.cat-card:hover > .card-img-overlay > .cat-hr{
+    border-top: 3px solid  rgba(51, 81, 97, 0.8);
+    opacity: .8;
+    transition: .5s ease !important;
+}
+.cat-card:hover >  .card-info{
+    opacity: 1;
+    bottom: 120px;
+}
+.cat-card:hover > .title-content{
+    text-align: center;
+    margin: 50px 0 0 0;
+    z-index: 20;
+    width: 100%;
+    transition: .5s ease !important;
+}
+.cat-card:hover > .card-img-overlay >  .cat-title{
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    color: rgb(51, 81, 97);
+    margin-bottom: 0;
+    opacity: 1 !important;
+    transition: .5s ease !important;
+}
+.cat-card:hover >   .categories{
+    -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+    filter: blur(5px);
+    opacity: .8 ;
+    transition: .5s ease !important;
+}
+
 /*----TOP SELLING----*/
 
 .cti {
     width: 100%;
 }
-/*----TOP SELLING----*/
-
-
-
 
 /* Carte globale */
+
 .dr_card{
     width: 16rem;
     height:25rem;
@@ -215,20 +338,7 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
     }
 
 
-/*--ABOUT US--*/
 
-h2 {
-    text-align: center ;
-    }
-
-.logodeer {
-    width : 150px;
-    height : auto;
-    }
-.media-body {
-    text-align: justify ;
-    margin-left: 45px;
-    }
 
 /*----MODAL----*/
 
@@ -245,159 +355,6 @@ h2 {
     font-style: italic;
 }
 
-/*---FOOTER---*/
-footer
-{
-    background-color: #335161;
-}
-
-footer a:hover
-{
-    color: white;
-}
-
-footer a
-{
-    color: white;
-}
-
-footer ul
-{
-    list-style-type: none;
-}
-
-.logodpwild
-{
-    height: 60px;
-
-}
-
-.marginadresse
-{
-    margin-left: 40px;
-}
-
-footer li
-{
-    margin-top: -0.25rem;
-}
-
-
-
-/* ------------------  SECTION SEPARATORS -------------------------- */
-/* Common style for pseudo-elements */
-section::before,
-section::after {
-	position: absolute;
-	content: '';
-	pointer-events: none;
-}
-
-/* Triangles */
-.ss-style-triangles::before {
-	left: 50%;
-	width: 100px;
-	height: 100px;
-	-webkit-transform: translateX(-50%) rotate(45deg);
-	transform: translateX(-50%) rotate(45deg);
-}
-.ss-style-triangles::before {
-	top: -50px;
-	background:  #335161;
-}
-
-.ss-style-triangles::after {
-	top: 50px;
-	z-index: 10;
-	background: inherit;
-}
-
-
-.ss-style-triangles_white::before {
-	left: 50%;
-	width: 100px;
-	height: 100px;
-	-webkit-transform: translateX(-50%) rotate(45deg);
-	transform: translateX(-50%) rotate(45deg);
-}
-
-.ss-style-triangles_white::before {
-	top: -50px;
-	background:  white;
-}
-
-.ss-style-triangles_white::after {
-	top: 50px;
-	z-index: 10;
-	background: inherit;
-}
-/* ------------------  CATEGORIES PART-------------------------- */
-.cat-card{
-    width: 100%;
-    max-width: 300px;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
-    cursor: pointer;
-    text-align: center;
-    transition: .5s ease !important;
- }
-.categories{
-      opacity: .8;
-    }
-.cat-hr{
-    opacity: 0;
-}
-.cat-title{
-    font-family: azonix;
-    font-size: 1.2rem;
-    color: rgb(51, 81, 97);
-    margin-bottom: 0;
-    opacity: .5 !important;
-}
-.cat-intro{
-    color:white;
-    background-color: rgba(0, 93, 142, 0.8);
-}
-.cat-card:hover > .card-img-overlay > .cat-intro{
-    color:white;
-    opacity: 0;
-    background-color: rgba(51, 81, 97, 0);
-    transition: .5s ease !important;
-}
-  .cat-card:hover > .card-img-overlay > .cat-hr{
-    border-top: 3px solid  rgba(51, 81, 97, 0.8);
-    opacity: .8;
-    transition: .5s ease !important;
-}
-.cat-card:hover >  .card-info{
-      opacity: 1;
-      bottom: 120px;
-}
-.cat-card:hover > .title-content{
-      text-align: center;
-      margin: 50px 0 0 0;
-      z-index: 20;
-      width: 100%;
-      transition: .5s ease !important;
-}
-.cat-card:hover > .card-img-overlay >  .cat-title{
-      font-size: 1.6rem;
-      font-weight: 500;
-      letter-spacing: .1rem;
-      color: rgb(51, 81, 97);
-      margin-bottom: 0;
-      opacity: 1 !important;
-      transition: .5s ease !important;
-    }
-.cat-card:hover >   .categories{
-        -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
-        filter: blur(5px);
-        opacity: .8 ;
-        transition: .5s ease !important;
-      }
-/* ---------------------------------------------------------------- */
 
 
 
@@ -443,3 +400,41 @@ h2.background-white:before {
         background: #335161;
         padding: 0 15px;
     }
+
+
+/*---FOOTER---*/
+footer
+{
+    background-color: #335161;
+}
+
+footer a:hover
+{
+    color: white;
+}
+
+footer a
+{
+    color: white;
+}
+
+footer ul
+{
+    list-style-type: none;
+}
+
+.logodpwild
+{
+    height: 60px;
+
+}
+
+.marginadresse
+{
+    margin-left: 40px;
+}
+
+footer li
+{
+    margin-top: -0.25rem;
+}
