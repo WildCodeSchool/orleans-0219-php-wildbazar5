@@ -76,7 +76,7 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
   #nawalNavbar .link-1:hover {
     border-top: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
-    padding: 1px 0; 
+    padding: 1px 0;
   }
 
 .jumbotron{
@@ -135,6 +135,7 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
     border: 2px #348fa13f solid;
     border-radius: 10px;
 }
+/*----TOP SELLING----*/
 
 .cti {
     width: 100%;
@@ -151,18 +152,18 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
     margin-right:auto;
     display:block;
     transition: .5s ease !important;
-    
+
     }
-    
+
     .dr_badge {
         transition: .5s ease !important;
     }
     .dr_card:hover{
-    cursor: pointer;    
+    cursor: pointer;
     transition: .5s ease !important;
      box-shadow: 0 1rem 3rem rgba(83, 83, 83, 0.7) !important;
     }
-    
+
     /* Gestion du placement du badge */
     .dr_badge_{
     opacity: 1;
@@ -173,12 +174,12 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
     -ms-transform: translate(-50%, -50%);
     text-align: center;
     }
-    
+
     .dr_card img{
     opacity: 1;
     transition: .5s ease !important;
     }
-    
+
     /* Hover sur les éléments */
     /* Badge */
     .dr_card:hover .dr_badge {
@@ -193,7 +194,7 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
     transition: .5s ease !important;
     -webkit-transition: padding .5s;
     }
-    
+
     /* Containeir du placement de l'image Top */
     .dr_wrapper{
     display: table-cell;
@@ -201,7 +202,7 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
     height:18rem;
     width:18rem;
     }
-    
+
     /* Gestion de l'affichage de l'image */
     .img_dr{
     object-fit: cover;
@@ -337,7 +338,7 @@ section::after {
  }
 .categories{
       opacity: .8;
-    }   
+    }
 .cat-hr{
     opacity: 0;
 }
@@ -347,11 +348,11 @@ section::after {
     color: rgb(51, 81, 97);
     margin-bottom: 0;
     opacity: .5 !important;
-}  
+}
 .cat-intro{
     color:white;
-    background-color: rgba(0, 93, 142, 0.8);    
-}  
+    background-color: rgba(0, 93, 142, 0.8);
+}
 .cat-card:hover > .card-img-overlay > .cat-intro{
     color:white;
     opacity: 0;
@@ -363,7 +364,7 @@ section::after {
     opacity: .8;
     transition: .5s ease !important;
 }
-.cat-card:hover >  .card-info{    
+.cat-card:hover >  .card-info{
       opacity: 1;
       bottom: 120px;
 }
@@ -377,18 +378,18 @@ section::after {
 .cat-card:hover > .card-img-overlay >  .cat-title{
       font-size: 1.6rem;
       font-weight: 500;
-      letter-spacing: .1rem; 
+      letter-spacing: .1rem;
       color: rgb(51, 81, 97);
       margin-bottom: 0;
       opacity: 1 !important;
       transition: .5s ease !important;
-    }  
+    }
 .cat-card:hover >   .categories{
         -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
         filter: blur(5px);
         opacity: .8 ;
         transition: .5s ease !important;
-      }  
+      }
 /* ---------------------------------------------------------------- */
 
 
@@ -400,7 +401,7 @@ h2.background-color {
     z-index: 1;
 }
 h2.background-color:before {
-        border-top: 3px solid #335161;   
+        border-top: 3px solid #335161;
         content:"";
         margin: 0 auto; /* this centers the line to the full width specified */
         position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
@@ -408,11 +409,11 @@ h2.background-color:before {
         width: 95%;
         z-index: -1;
     }
-.background-color span { 
-        /* to hide the lines from behind the text, you have to set the background color the same as the container */ 
-        color:#335161; 
-        background: #fff; 
-        padding: 0 15px; 
+.background-color span {
+        /* to hide the lines from behind the text, you have to set the background color the same as the container */
+        color:#335161;
+        background: #fff;
+        padding: 0 15px;
     }
 
 /* //WHITE */
@@ -421,7 +422,7 @@ h2.background-white {
     z-index: 1;
 }
 h2.background-white:before {
-        border-top: 3px solid white;    
+        border-top: 3px solid white;
         content:"";
         margin: 0 auto; /* this centers the line to the full width specified */
         position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
@@ -429,10 +430,9 @@ h2.background-white:before {
         width: 95%;
         z-index: -1;
     }
-.background-white span { 
+.background-white span {
         color:white;
-        /* to hide the lines from behind the text, you have to set the background color the same as the container */ 
+        /* to hide the lines from behind the text, you have to set the background color the same as the container */
         background: #335161;
-        padding: 0 15px; 
+        padding: 0 15px;
     }
-
