@@ -37,7 +37,7 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
 /*------NAV-----*/
 
 #nawalNavbar{
-    background-color: #005D8E;
+    background-color: #335161;
 }
 #nawalNavbar .navbar{
     border-bottom: 1px solid rgba(255, 255, 255, 0.82);
@@ -54,7 +54,7 @@ background-image: url("https://www.transparenttextures.com/patterns/stardust.png
     border-radius: 5px;
 }
 .jumbotron{
-    background-color: #006EA8;
+    background-color: #005D8E;
     color: white;
     display: flex;
     align-items: center;
@@ -187,10 +187,25 @@ h2 {
     margin-left: 45px;
     }
 
+/*----MODAL----*/
+
+.btn-bg{
+    background-color: #335161;
+    color: white;
+}
+.modal-header, .modal-footer{
+    background-color: #f5f5f5;
+    background-image: url("https://www.transparenttextures.com/patterns/green-gobbler.png");
+    color: black;
+}
+.art-carac6{
+    font-style: italic;
+}
+
 /*---FOOTER---*/
 footer
 {
-    background-color: #005D8E;
+    background-color: #335161;
 }
 
 footer a:hover
