@@ -176,6 +176,7 @@ section::after {
 /*-----CATEGORIES----*/
 #categories a {
     color: black;
+    text-decoration: none;
 }
 
 #categories .row {
@@ -487,7 +488,7 @@ footer li
 
 }
 h2.background-color:before {
-        border-top: 3px solid #335161;   
+        border-top: 3px solid #335161;
         content:"";
         margin: 0 auto; /* this centers the line to the full width specified */
         position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
@@ -495,11 +496,11 @@ h2.background-color:before {
         width: 95%;
         z-index: -1;
     }
-.background-color span { 
-        /* to hide the lines from behind the text, you have to set the background color the same as the container */ 
-        color:#335161; 
-        background: #fff; 
-        padding: 0 15px; 
+.background-color span {
+        /* to hide the lines from behind the text, you have to set the background color the same as the container */
+        color:#335161;
+        background: #fff;
+        padding: 0 15px;
     }
 
 /* //WHITE */
@@ -508,7 +509,7 @@ h2.background-white {
     z-index: 1;
 }
 h2.background-white:before {
-        border-top: 3px solid white;    
+        border-top: 3px solid white;
         content:"";
         margin: 0 auto; /* this centers the line to the full width specified */
         position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
@@ -516,11 +517,11 @@ h2.background-white:before {
         width: 95%;
         z-index: -1;
     }
-.background-white span { 
+.background-white span {
         color:white;
-        /* to hide the lines from behind the text, you have to set the background color the same as the container */ 
+        /* to hide the lines from behind the text, you have to set the background color the same as the container */
         background: #335161;
-        padding: 0 15px; 
+        padding: 0 15px;
     }
 /* Header Parallax Element Style*/
 .paral {
@@ -528,7 +529,7 @@ h2.background-white:before {
     background-size: cover;
     background-position: 50% 50%;
     }
-    
+
 .wildbazar-titlemodal h2{
     font-family: azonix;
     color: #335161;
@@ -544,7 +545,7 @@ h2.background-white:before {
     align-items: center;
     }
 
-    .mb-n2{ 
+    .mb-n2{
         font-size: 1.8rem;
         font-family:azonix;
     }
