@@ -51,24 +51,24 @@ p {
 }
 
 /*------NAV-----*/
-#navbar {
+#nawalNavbar {
     background-color: #335161;
 }
 
-#navbar .navbar {
+#nawalNavbar .navbar {
     border-bottom: 1px solid rgba(255, 255, 255, 0.82);
 }
 
-#navbar .navbar-brand {
+#nawalNavbar .navbar-brand {
     font-family: azonix;
 }
 
-#navbar a {
+#nawalNavbar a {
     color: white;
     font-size: 1.3rem;
 }
 
-#navbar .link-1 {
+#nawalNavbar .link-1 {
     transition: 0.3s ease;
     /* background: #3fa46a; */
     color: #ffffff;
@@ -81,13 +81,13 @@ p {
     line-height: 3.2rem;
 }
 
-#navbar .link-1:hover {
+#nawalNavbar .link-1:hover {
     border-top: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
     padding: 1px 0;
 }
 
-#navbar .jumbotron {
+#nawalNavbar .jumbotron {
     background-color: #005D8E;
     color: white;
     display: flex;
@@ -455,11 +455,9 @@ footer ul {
     margin-left: 40px;
 }
 
-<<<<<<< HEAD
 footer li {
     margin-top: -0.25rem;
 }
-=======
 footer li
 {
     margin-top: -0.25rem;
@@ -468,7 +466,5 @@ footer li
 .art-img-content{
         display: flex;
         align-items: center;
-        
-}
 
->>>>>>> kitchen
+}
