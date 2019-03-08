@@ -43,7 +43,7 @@
                             <a class="link-1" href="figurines.html">Figurines</a>
                         </li>
                         <li class="nav-item">
-                            <a class="link-1" href="aboutus.html">About Us</a>
+                            <a class="link-1" href="#aboutus">About Us</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
@@ -248,6 +248,41 @@
                 </div>
             </div>
         </section>
+            <!-- DEFINITION DE FENETRE MODALE LEGAL MENTIONS-->
+    <div class="modal fade" id="modalLegalMention" tabindex="-1" role="dialog" aria-labelledby="modalDescrProduct"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel">Legal Mentions</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row no-gutters">
+            <div class="col-xs-6 col-md-4 art-img-content">
+              <img class="card-img art-img" src="assets/img/logo/planets.jpg" alt="Card image" />
+            </div>
+            <div class=" col-xs-6 col-md-8">
+              <div class="card-body wildbazar-titlemodal">
+                <h2>WILD BAZAR</h2>
+                <p class="card-text art-descr">Images and data on this site are subject to copyright.</p>
+                <p class="card-text art-descr">Some images used come from proprietary website and must be used after
+                  acceptance of the owner.</p>
+                <h3>© Yoshi Corporate - Wild Code Scool 2019</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer row  justify-content-end p-2 m-1 text-center">
+          <div class="col-sm-6 col-md-4 col-lg-3 p-2">
+            <button type="button" class="btn btn-danger  w-100" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
     </div>
 
@@ -266,7 +301,7 @@
                                 <li><a href="#categories">Categories</a></li>
                                 <li><a href="#aboutus">About us</a></li>
                                 <li><a href="#topselling">Top Selling</a></li>
-                                <li><a href="#Legalmentions">Legal mentions</a></li>
+                                <li><a href="Legalmentions" data-toggle="modal" data-target="#modalLegalMention">Legal mentions</a></li>
                             </ul>
                             <ul class="ml-5 pl-5">
                                 <li class="ml-3"><a href="clothes.html">Clothes</a></li>
@@ -279,7 +314,7 @@
 
                         <div class="col-md-12 col-lg-12 ">
                             <img src="https://avatars3.githubusercontent.com/u/8874047?s=200&v=4" alt="logo wild" class="logodpwild float-left mr-3 mt-n2" />
-                            <h1 class="mb-n2">Wild Bazar</h1>
+                            <p class="mb-n2">Wild Bazar</p>
                             <ul class="marginadresse">
                                 <li>1, rue de la paix</li>
                                 <li>75000 Paris</li>
@@ -320,6 +355,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <!-- Script d'effet de texte de titre majeur -->
+      <script src="assets/js/scroll.js"></script>
 </body>
 
 </html>

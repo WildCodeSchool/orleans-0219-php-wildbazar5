@@ -12,7 +12,7 @@ $('#modalDescrProduct').on('show.bs.modal', function (event) {
     if (article.dataset.prodtitle =="") {article.dataset.prodtitle="Produit"}
     modal.find('.modal-title').text(article.dataset.prodtitle)
     if (article.dataset.price =="") {article.dataset.price="NC"}
-    modal.find('.art-price').text(article.dataset.price + " €");
+    modal.find('.art-price').text(article.dataset.price + " $");
     if (article.dataset.price =="") {article.dataset.descr="Pas de description"}
     modal.find('.art-descr').text(article.dataset.descr);
     if (article.dataset.carac1 =="") {article.dataset.carac1="NC"}
@@ -33,7 +33,7 @@ $('#modalDescrProduct').on('show.bs.modal', function (event) {
     }
     // modal.find('.art-img').text(article.dataset.img);
 
-/* 
+/*
     var image = document.getElementsByClassName("art-img");
 alert(document.getElementsByClassName("art-img").src)
 document.getElementsByClassName("art-img").src="toto.png"
