@@ -18,6 +18,7 @@ h5, p {
 }
 
 h2 {
+    font-family: azonix;
     font-size: 2.5rem;
     text-align: center;
 }
@@ -66,14 +67,13 @@ p {
 
 #nawalNavbar a {
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 #nawalNavbar .link-1 {
     transition: 0.3s ease;
     /* background: #3fa46a; */
     color: #ffffff;
-    font-size: 20px;
     text-decoration: none;
     border-top: 2px solid #335161;
     border-bottom: 2px solid #335161;
@@ -230,8 +230,8 @@ section::after {
 
 .cat-card {
     width: 100%;
-    max-width: 300px;
-    height: 200px;
+    max-width: 400px;
+    height:250px;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
@@ -239,7 +239,6 @@ section::after {
     text-align: center;
 
 }
-
 .categories {
     opacity: .8;
 }
@@ -452,6 +451,7 @@ h2.background-white:before {
 /*---FOOTER---*/
 footer {
     background-color: #335161;
+    font-size: 1.4rem;
 }
 
 footer a:hover {
