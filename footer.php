@@ -16,11 +16,11 @@
                                 <li><a href="Legalmentions" data-toggle="modal" data-target="#modalLegalMention">Legal mentions</a></li>
                             </ul>
                             <ul class="ml-5 pl-5">
-                                <li class="ml-3"><a href="clothes.html">Clothes</a></li>
-                                <li class="ml-3"><a href="goodies.html">Goodies</a></li>
-                                <li class="ml-3"><a href="kitchen.html">Kitchen</a></li>
-                                <li class="ml-3"><a href="slippers.html">Slippers</a></li>
-                                <li class="ml-3"><a href="figurines.html">Figurines</a></li>
+                                <li class="ml-3"><a href="clothes.php">Clothes</a></li>
+                                <li class="ml-3"><a href="goodies.php">Goodies</a></li>
+                                <li class="ml-3"><a href="kitchen.php">Kitchen</a></li>
+                                <li class="ml-3"><a href="slippers.php">Slippers</a></li>
+                                <li class="ml-3"><a href="figurines.php">Figurines</a></li>
                             </ul>
                         </div>
 
