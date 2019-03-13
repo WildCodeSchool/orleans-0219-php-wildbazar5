@@ -19,7 +19,7 @@
 
     <div class="container-fluid p-0">
         <?php
-        include 'header.php';
+            include 'header.php';
         ?>
     </div>
 
@@ -509,7 +509,7 @@
 
     <!-- Footer -->
     <?php
-    include 'footer.php';
+        include 'footer.php';
     ?>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
