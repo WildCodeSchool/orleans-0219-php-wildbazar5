@@ -11,19 +11,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="link-1" href="clothes.html">Clothes</a>
+                            <a class="link-1" href="clothes.php">Clothes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="link-1" href="goodies.html">Goodies</a>
+                            <a class="link-1" href="goodies.php">Goodies</a>
                         </li>
                         <li class="nav-item">
-                            <a class="link-1" href="kitchen.html">Kitchen</a>
+                            <a class="link-1" href="kitchen.php">Kitchen</a>
                         </li>
                         <li class="nav-item">
-                            <a class="link-1" href="slippers.html">Slippers</a>
+                            <a class="link-1" href="slippers.php">Slippers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="link-1" href="figurines.html">Figurines</a>
+                            <a class="link-1" href="figurines.php">Figurines</a>
                         </li>
                         <li class="nav-item">
                             <a class="link-1" href="#aboutus">About Us</a>
