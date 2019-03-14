@@ -6,7 +6,7 @@
  * Time: 10:21
  */
 
-$goodiesCharactAliasName =[
+$prodCharacteristicsAlias =[
     'prodCharacFeature' => 'Feature',
     'prodCharacCategory' => 'Category',
     'prodCharacSubCategory' => 'SubCategory',
@@ -15,7 +15,7 @@ $goodiesCharactAliasName =[
     'prodCharacReference' => 'Reference'
 ];
 
-$goodiesProducts = [
+$categoryProducts = [
     'prod0001' =>
             [   'prodShortTitle' => 'Badge WCS - Deer',
                 'prodTitle' => 'Badge Wild Code School - Deer',
