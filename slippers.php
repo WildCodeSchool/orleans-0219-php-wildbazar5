@@ -34,23 +34,23 @@
     <?php
         include 'assets/dataSlippers.php';
 
-        foreach ($slippersProducts as $idProduct => $productFeature) { ?>
+        foreach ($slippersProducts as $idProduct => $productFeature) : ?>
 
 
         <div class="col-md-6 col-lg-4 col-xl-3">
             <article>
-                <div class="card border-dark my-4 dr_card" data-toggle="modal" data-target="<?php echo '#' . $idProduct ?>">
+                <div class="card border-dark my-4 dr_card" data-toggle="modal" data-target="<?= '#' . $idProduct ?>">
                     <div class="dr_wrapper text-center ">
-                        <img src= "<?php echo $productFeature['productImg'];?>"
-                             class="card-img-top img-fluid art-image" alt="<?php echo $productFeature['productShortTitle']?>">
+                        <img src= "<?= $productFeature['productImg'];?>"
+                             class="card-img-top img-fluid art-image" alt="<?= $productFeature['productShortTitle']?>">
                     </div>
                     <div class="card-img-overlay">
                         <div class="card-body text-right p-1">
-                            <h3><span class="card-text badge badge-info dr_badge"><?php echo $productFeature['productPrice'] . '$'; ?></span></h3>
+                            <h3><span class="card-text badge badge-info dr_badge"><?= $productFeature['productPrice'] . '$'; ?></span></h3>
                         </div>
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title text-center"><?php echo $productFeature['productShortTitle']; ?></h4>
+                        <h4 class="card-title text-center"><?= $productFeature['productShortTitle']; ?></h4>
                     </div>
                 </div>
             </article>
@@ -59,12 +59,12 @@
 
          <!-- MODAL PRODUCT PHP-->
 
-            <div class="modal fade" id="<?php echo $idProduct; ?>" tabindex="-1" role="dialog" aria-labelledby="modalDescrProduct"
+            <div class="modal fade" id="<?= $idProduct; ?>" tabindex="-1" role="dialog" aria-labelledby="modalDescrProduct"
             aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel"><?php echo $productFeature['productTitle']; ?></h4>
+                        <h4 class="modal-title" id="exampleModalLabel"><?= $productFeature['productTitle']; ?></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -73,27 +73,27 @@
                     <div class="modal-body">
                         <div class="row no-gutters">
                             <div class="col-xs-6 col-md-4 art-img-content">
-                                <img class="card-img art-img" src="<?php echo $productFeature['productImg']?>" alt="Card image" />
+                                <img class="card-img art-img" src="<?= $productFeature['productImg']?>" alt="Card image" />
                             </div>
 
                             <div class=" col-xs-6 col-md-8">
                                 <div class="card-body">
-                                    <h4><span class="art-price"><?php echo $productFeature['productPrice'] . '$'?></span></h4>
-                                    <p><?php echo $productFeature['productDescr']?></p>
+                                    <h4><span class="art-price"><?= $productFeature['productPrice'] . '$'?></span></h4>
+                                    <p><?= $productFeature['productDescr']?></p>
 
                                     <table class="table table-striped table-sm">
                                         <tbody>
 
                                             <?php $featureArray = $productFeature['productCarac']; ?>
 
-                                            <?php foreach ($featureArray as $productCarac => $feature) {?>
+                                            <?php foreach ($featureArray as $productCarac => $feature) :?>
 
                                                 <tr>
-                                                  <th scope="row"><?php echo $featureNames[$productCarac]; ?></th>
-                                                  <td><span><?php echo $feature; ?></span></td>
+                                                  <th scope="row"><?= $featureNames[$productCarac]; ?></th>
+                                                  <td><span><?= $feature; ?></span></td>
                                                 </tr>
 
-                                            <?php }; ?>
+                                            <?php endforeach ?>
                                       </tbody>
                                     </table>
 
@@ -114,7 +114,7 @@
 
             </div>
         </div>
-    <?php }; ?>
+    <?php endforeach ?>
 
     </div>
 </section>
