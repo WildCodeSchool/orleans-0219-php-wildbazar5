@@ -143,7 +143,7 @@ $categoryProducts = ['prod0001'=>
                         'prodShortTitle' => 'Madagascar Slippers',
                         'prodPrice' => 19.99,
                         'prodDescr' => 'Be ready to move whit these BEST slippers ever !',
-                        'prodPicture' => 'assets/img/slippers/slippers.jpg',
+                        'prodPicture' => 'assets/img/slippers/kingJulian.jpg',
                         'prodCharacteristics' => ['prodSize'=> '7-10',
                                            'prodMaterial' => 'cotton',
                                            'prodColor' => 'grey/green',
