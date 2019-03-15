@@ -99,11 +99,11 @@ p {
     font-weight:bold;
 }
 .jumbotron .btn-outline-light{
-    background-color:rgb(51, 81, 97,.4);
+    background-color:rgb(51, 81, 97, .4);
 }
 
 .jumbotron .btn-outline-light:hover{
-    background-color:rgb(255, 255, 255,.6);
+    background-color:rgb(255, 255, 255, 0.6);
 }
 
 
@@ -243,7 +243,7 @@ section::after {
 
 .cat-card:hover{
     box-shadow: 0 1rem 3rem rgba(83, 83, 83, 0.7);
-    transition: .5s ease
+    transition: .5s ease;
     -webkit-transition: padding .5s;
 }
 

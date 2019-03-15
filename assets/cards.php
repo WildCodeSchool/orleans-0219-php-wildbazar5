@@ -6,34 +6,33 @@
  * Time: 17:46
  */
 
-foreach ($categoryProducts as $idProduct => $prodDatas) {?>
+foreach ($categoryProducts as $idProduct => $prodDatas) :?>
     <!-- PRODUIT -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-        <article id="#<?php echo $idProduct ?>">
-            <div class="card border-dark my-4 dr_card" data-toggle="modal" data-target=<?php echo "#" . $idProduct ?>
-            data-whatever=<?php echo $idProduct ?>
+        <article id="<?=  $idProduct ?>">
+            <div class="card border-dark my-4 dr_card" data-toggle="modal" data-target=<?= "#" . $idProduct . 'modal'?>>
             <div class="dr_wrapper text-center ">
-                <img src="<?php echo $prodDatas['prodPicture'] ?>"
-                     class="card-img-top img-fluid art-image" alt="<?php echo $prodDatas['prodShortTitle'] ?>"
+                <img src="<?= $prodDatas['prodPicture'] ?>"
+                     class="card-img-top img-fluid art-image"  alt="<?= $prodDatas['prodShortTitle'] ?>"
             </div>
             <div class="card-img-overlay">
                 <div class="card-body text-right p-1">
-                    <h3><span class="card-text badge badge-info dr_badge"><?php echo $prodDatas['prodPrice'] ?> $</span></h3>
+                    <h3><span class="card-text badge badge-info dr_badge"><?= $prodDatas['prodPrice'] ?> $</span></h3>
                 </div>
             </div>
             <div class="card-body">
-                <h4 class="card-title text-center"><?php echo $prodDatas['prodShortTitle'] ?></h4>
+                <h4 class="card-title text-center"><?= $prodDatas['prodShortTitle'] ?></h4>
             </div>
     </article>
     </div>
 
     <!-- DEFINITION DE FENETRE MODALE -->
-    <div class="modal fade" id=<?php echo $idProduct ?> tabindex="-1" role="dialog" aria-labelledby="modalDescrProduct"
+    <div class="modal fade" id=<?= $idProduct . 'modal' ?> tabindex="-1" role="dialog" aria-labelledby="modalDescrProduct"
          aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLabel"><?php echo $prodDatas['prodTitle'] ?></h4>
+                    <h4 class="modal-title" id="exampleModalLabel"><?= $prodDatas['prodTitle'] ?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -41,22 +40,22 @@ foreach ($categoryProducts as $idProduct => $prodDatas) {?>
                 <div class="modal-body">
                     <div class="row no-gutters">
                         <div class="col-xs-6 col-md-4 art-img-content">
-                            <img class="card-img art-img" src="<?php echo $prodDatas['prodPicture'] ?>"
-                            alt="<?php echo $prodDatas['prodTitle'] ?>" />
+                            <img class="card-img art-img" src="<?= $prodDatas['prodPicture'] ?>"
+                            alt="<?= $prodDatas['prodTitle'] ?>" />
                         </div>
                         <div class=" col-xs-6 col-md-8">
                             <div class="card-body">
-                                <h4><span class="art-price"></span><?php echo $prodDatas['prodPrice'] ?> $</h4>
-                                <p class="card-text art-descr"><?php echo $prodDatas['prodDescr'] ?></p>
+                                <h4><span class="art-price"></span><?= $prodDatas['prodPrice'] ?> $</h4>
+                                <p class="card-text art-descr"><?= $prodDatas['prodDescr'] ?></p>
                                 <?php $productCharacteristics = $prodDatas['prodCharacteristics'] ?>
                                 <table class="table table-striped table-sm">
                                     <tbody>
-                                    <?php foreach ($productCharacteristics as $characKey => $characValue) {?>
+                                    <?php foreach ($productCharacteristics as $characKey => $characValue) :?>
                                         <tr>
-                                            <th scope="row"><?php echo $prodCharacteristicsAlias[$characKey] ?></th>
-                                            <td><span><?php echo $characValue ?></span></td>
+                                            <th scope="row"><?= $prodCharacteristicsAlias[$characKey] ?></th>
+                                            <td><span><?= $characValue ?></span></td>
                                         </tr>
-                                    <?php }; ?>
+                                    <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -74,4 +73,4 @@ foreach ($categoryProducts as $idProduct => $prodDatas) {?>
             </div>
         </div>
     </div>
-<?php }; ?>
+<?php endforeach; ?>

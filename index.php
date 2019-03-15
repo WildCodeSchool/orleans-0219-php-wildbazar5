@@ -156,7 +156,7 @@
                             <img src="assets/img/clothes/b-wild.png" class="card-img-top img-fluid" alt="Wild bag" />
                         </div>
                         <!-- Mise en place du badge pour le prix  -->
-                        <a class="card-img-overlay" href="clothes.php">
+                        <a class="card-img-overlay" href="clothes.php#prod0001">
                             <div class="card-body text-right p-1">
                                 <h3>
                                     <span class="card-text badge badge-info dr_badge">39.99$</span>
@@ -175,7 +175,7 @@
                         <div class="dr_wrapper text-center ">
                             <img src="assets/img/kitchen/mugprog.jpg" class="card-img-top img-fluid" alt="Mug prog" />
                         </div>
-                        <a class="card-img-overlay" href="kitchen.php">
+                        <a class="card-img-overlay" href="kitchen.php#prod0010">
                             <div class="card-body text-right p-1">
                                 <h3>
                                     <span class="card-text badge badge-info dr_badge">19.99$</span>
@@ -191,9 +191,9 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card border-dark my-2 dr_card ">
                         <div class="dr_wrapper text-center ">
-                            <img src="assets/img/slippers/deer.jpg" class="card-img-top img-fluid" alt="Deer Slippers" />
+                            <img src="assets/img/slippers/kingJulian.jpg" class="card-img-top img-fluid" alt="Deer Slippers" />
                         </div>
-                        <a class="card-img-overlay" href="slippers.php">
+                        <a class="card-img-overlay" href="slippers.php#prod0010">
                             <div class="card-body text-right p-1">
                                 <h3>
                                     <span class="card-text badge badge-info dr_badge">29.99$</span>
