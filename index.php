@@ -36,11 +36,11 @@
                         <a class="card-img-overlay cat-overlay title-content text-center " href="clothes.php">
                             <!-- <div class="title-content  spring-fever"> -->
                             <div class="cat-title">
-                                <h3>CLOTHES</h3>
+                                <h3>clothes</h3>
                             </div>
                             <hr class="cat-hr" />
                             <div class="cat-intro p-2 rounded">
-                                T-Shirts, Sweetshirts, Pulls ...
+                                T-Shirts, Sweatshirts, Pulls ...
                             </div>
                         </a>
                         <!-- /.blog-card -->
@@ -54,7 +54,7 @@
                         <a class="card-img-overlay cat-overlay title-content text-center" href="goodies.php">
                             <!-- <div class="title-content  spring-fever"> -->
                             <div class="cat-title">
-                                <h3>GOODIES</h3>
+                                <h3>goodies</h3>
                             </div>
                             <hr class="cat-hr" />
                             <div class="cat-intro p-2 rounded">Pins, Stickers, Posters ...</div>
@@ -70,7 +70,7 @@
                         <a class="card-img-overlay cat-overlay title-content text-center" href="kitchen.php">
                             <!-- <div class="title-content  spring-fever"> -->
                             <div class="cat-title">
-                                <h3>kITCHEN</h3>
+                                <h3>kitchen</h3>
                             </div>
                             <hr class="cat-hr" />
                             <div class="cat-intro p-2 rounded">Mugs, Glass ...</div>
@@ -81,12 +81,12 @@
                 <div class="col-md-6 col-lg-4 justify-content-center p-3">
                     <div class="card cat-card mx-auto">
                         <div class="categories">
-                            <img src="assets/img/home/slippers.jpg" class="img-fluid" alt="slippers" />
+                            <img src="assets/img/home/slippers.jpeg" class="img-fluid" alt="slippers" />
                         </div>
                         <a class="card-img-overlay cat-overlay title-content text-center " href="slippers.php">
                             <!-- <div class="title-content  spring-fever"> -->
                             <div class="cat-title">
-                                <h3>SLIPPERS</h3>
+                                <h3>slippers</h3>
                             </div>
                             <hr class="cat-hr" />
                             <div class="cat-intro p-2 rounded">
@@ -105,7 +105,7 @@
                         <a class="card-img-overlay cat-overlay title-content text-center " href="figurines.php">
                             <!-- <div class="title-content  spring-fever"> -->
                             <div class="cat-title">
-                                <h3>FIGURINES</h3>
+                                <h3>figurines</h3>
                             </div>
                             <hr class="cat-hr" />
                             <div class="cat-intro p-2 rounded">
