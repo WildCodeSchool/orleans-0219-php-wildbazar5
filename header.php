@@ -1,7 +1,7 @@
 
 <header id="nawalNavbar">
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand ml-5" href="index.html">
+                <a class="navbar-brand ml-5" href="index.php">
                     <img src="assets/img/logo/logo-rouge-fond-transparent.png" class="d-inline-block align-top" alt="logo de la wild code school" /></a>
 
                 <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
