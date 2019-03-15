@@ -230,47 +230,49 @@ section::after {
 
 .cat-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     height:250px;
     overflow: hidden;
+    border-color:black ;
     border-radius: 10px;
-    box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+  /*  box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);*/
     cursor: pointer;
     text-align: center;
-
+    transition: .5s ease
 }
+
+.cat-card:hover{
+    box-shadow: 0 1rem 3rem rgba(83, 83, 83, 0.7);
+    transition: .5s ease
+    -webkit-transition: padding .5s;
+}
+
 .categories {
     opacity: .8;
 }
 
+
 .cat-hr {
-    opacity: 0;
+    opacity: 1;
 }
+
 
 .cat-title {
     font-family: azonix;
-    font-size: 1.2rem;
     color: rgb(51, 81, 97);
     margin-bottom: 0;
-
 }
 
 .cat-intro {
     color: white;
+    opacity: 0;
     background-color: rgba(0, 93, 142, 0.8);
 }
 
 .cat-card:hover>.card-img-overlay>.cat-intro {
     color: white;
-    opacity: 0;
-    background-color: rgba(51, 81, 97, 0);
-    transition: .5s ease !important;
-}
-
-.cat-card:hover>.card-img-overlay>.cat-hr {
-    border-top: 3px solid rgba(51, 81, 97, 0.8);
-    opacity: .8;
-    transition: .5s ease !important;
+    opacity: 1;
+    transition: .5s ease
 }
 
 .cat-card:hover>.card-info {
@@ -278,30 +280,48 @@ section::after {
     bottom: 120px;
 }
 
-.cat-card:hover>.title-content {
+.cat-card>.title-content {
     text-align: center;
     margin: 50px 0 0 0;
     z-index: 20;
     width: 100%;
-    transition: .5s ease !important;
+    transition: .5s ease
+}
+.cat-card>.card-img-overlay>.cat-hr {
+    border-top: 3px solid rgba(51, 81, 97, 0.8);
+    opacity: .8;
+    transition: .5s ease
+}
+.cat-card> .categories img{
+    opacity: .6;
 }
 
-.cat-card:hover>.card-img-overlay>.cat-title {
+
+.cat-card >.card-img-overlay>.cat-title {
     font-size: 1.6rem;
     font-weight: 500;
     letter-spacing: .1rem;
     color: rgb(51, 81, 97);
     margin-bottom: 0;
-    opacity: 1 !important;
-    transition: .5s ease !important;
+    opacity: 1;
+    transition: .5s ease
+}
+.cat-card:hover >.card-img-overlay>.cat-title {
+    margin: 50px 0 0 0;
+    z-index: 20;
+    width: 100%;
+}
+.cat-card:hover >.card-img-overlay>.cat-title h3 {
+    font-size: 1.6rem;
+    transition: .5s ease;
 }
 
 .cat-card:hover>.categories {
-    -webkit-filter: blur(5px);
+    -webkit-filter: blur(2px);
     /* Safari 6.0 - 9.0 */
-    filter: blur(5px);
+    filter: blur(2px);
     opacity: .8;
-    transition: .5s ease !important;
+    transition: .5s ease;
 }
 
 /*----TOP SELLING----*/
@@ -316,17 +336,17 @@ section::after {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    transition: .5s ease !important;
+    transition: .5s ease;
 }
 
 .dr_badge {
-    transition: .5s ease !important;
+    transition: .5s ease;
 }
 
 .dr_card:hover {
     cursor: pointer;
-    transition: .5s ease !important;
-    box-shadow: 0 1rem 3rem rgba(83, 83, 83, 0.7) !important;
+    transition: .5s ease;
+    box-shadow: 0 1rem 3rem rgba(83, 83, 83, 0.7);
 }
 
 /* Gestion du placement du badge */
@@ -342,7 +362,7 @@ section::after {
 
 .dr_card img {
     opacity: 1;
-    transition: .5s ease !important;
+    transition: .5s ease;
 }
 
 /* Hover sur les éléments */
@@ -350,14 +370,14 @@ section::after {
 .dr_card:hover .dr_badge {
     font-size: 90%;
     display: inline-block;
-    transition: .5s ease !important;
+    transition: .5s ease;
     text-shadow: 2px 2px 4px #000000;
 }
 
 /* Image */
 .dr_card:hover img {
     opacity: .5;
-    transition: .5s ease !important;
+    transition: .5s ease;
     -webkit-transition: padding .5s;
 }
 
