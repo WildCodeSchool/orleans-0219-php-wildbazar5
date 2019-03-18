@@ -156,7 +156,7 @@
                             <img src="assets/img/clothes/b-wild.png" class="card-img-top img-fluid" alt="Wild bag" />
                         </div>
                         <!-- Mise en place du badge pour le prix  -->
-                        <a class="card-img-overlay" href="clothes.php#prod0001">
+                        <a class="card-img-overlay" href="clothes.php#prod01">
                             <div class="card-body text-right p-1">
                                 <h3>
                                     <span class="card-text badge badge-info dr_badge">39.99$</span>
