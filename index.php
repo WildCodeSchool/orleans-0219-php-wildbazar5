@@ -17,8 +17,12 @@
 <body>
     <div class="container-fluid p-0">
         <?php
+            $titleJumbo = "wild bazar";
+            $subTitleJumbo = "Find everything and espescially anything !";
+            $addNewProductButton = false;
+            $namePageNewProductForm = "";
             include 'header.php';
-            ?>
+        ?>
     </div>
 
     <div class="container-fluid px-0 py-5">
