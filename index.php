@@ -17,8 +17,12 @@
 <body>
     <div class="container-fluid p-0">
         <?php
+            $titleJumbo = "wild bazar";
+            $subTitleJumbo = "Find everything and espescially anything !";
+            $addNewProductButton = false;
+            $namePageNewProductForm = "";
             include 'header.php';
-            ?>
+        ?>
     </div>
 
     <div class="container-fluid px-0 py-5">
@@ -156,7 +160,7 @@
                             <img src="assets/img/clothes/b-wild.png" class="card-img-top img-fluid" alt="Wild bag" />
                         </div>
                         <!-- Mise en place du badge pour le prix  -->
-                        <a class="card-img-overlay" href="clothes.php#prod0001">
+                        <a class="card-img-overlay" href="clothes.php#prod01">
                             <div class="card-body text-right p-1">
                                 <h3>
                                     <span class="card-text badge badge-info dr_badge">39.99$</span>

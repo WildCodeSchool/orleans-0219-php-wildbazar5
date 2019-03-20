@@ -99,7 +99,7 @@ p {
     font-weight:bold;
 }
 .jumbotron .btn-outline-light{
-    background-color:rgb(51, 81, 97, .4);
+    background-color:rgb(51, 81, 97,.4);
 }
 
 .jumbotron .btn-outline-light:hover{
@@ -265,6 +265,8 @@ section::after {
 
 .cat-intro {
     color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
     opacity: 0;
     background-color: rgba(0, 93, 142, 0.8);
 }
