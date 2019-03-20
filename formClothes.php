@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet" />
     <link rel="stylesheet" href="assets/stylefonts.css" />
     <link rel="stylesheet" href="assets/style.css" />
@@ -22,33 +22,75 @@
 <div class="container-fluid p-0">
     <?php
     //Titre pour le jumbo
-    $titleJumbo = "clothes";
+    $titleJumbo = "Add your product";
     //Sous-Titre pour le jumbo
-    $subTitleJumbo = "T-shirt, Sweat and more.";
+    $subTitleJumbo = "";
     //Besoin d'un bouton Add neww ? mettre true
-    $addNewProductButton = true;
+    $addNewProductButton = false;
     // Si bouton add new indiquer la page php contenant le formulaire d'ajout
-    $namePageNewProductForm = "formClothes.php";
+    $namePageNewProductForm = "../assets/formClothes.php";
     include 'header.php';
     ?>
 </div>
 
-<!-- CARD PRODUCT PHP-->
+<div class="container mt-5">
+    <form action="" method="post" class="pb-2">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="prodTitle">Title :</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" id="prodTitle" name="prodTitle" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="prodPrice" class="col-sm-2 col-form-label">Price :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="prodPrice" name="prodPrice" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="prodDescription" class="col-sm-2 col-form-label">Description :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="prodDescription" name="prodDescription" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="prodSize" class="col-sm-2 col-form-label">Size :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="prodSize" name="prodSize" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="prodColor" class="col-sm-2 col-form-label">Color :</label>
+            <div class="col-sm-10">
+                <select id="prodColor" name="prodColor">
+                    <?php $color = ['White', 'Black', 'Grey', 'Blue', 'Red', 'Green', 'Orange', 'Yellow', 'Purple', 'Pink', 'Brown']; ?>
+                    <option selected>Choose a color</option>
+                    <?php foreach ($color as $colors) { ?>
+                        <option value="<?= strtolower($colors); ?>">
+                            <?= $colors; ?>
+                        </option>
+                    <?php } ?>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="prodReference" class="col-sm-2 col-form-label">Reference :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="prodReference" name="prodReference" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="prodPicture" class="col-sm-2 col-form-label">Picture (url) :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="prodPicture" name="prodPicture" required>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center pb-3">
+            <button type="submit" class="btn btn-secondary px-5">Add product</button>
+        </div>
+    </form>
+</div>
 
-<section class="dr_section_color container">
-
-    <div class="row p-2">
-
-        <?php
-        include 'assets/dataClothes.php';
-        ?>
-
-
-        <?php
-        include 'assets/cards.php';
-        ?>
-
-    </div>
 
 
     <!-- DEFINITION DE FENETRE MODALE LEGAL MENTIONS-->
