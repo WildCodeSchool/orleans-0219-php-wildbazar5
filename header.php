@@ -38,8 +38,12 @@
 
             <div class="jumbotron paral paralsec m-0">
                 <div class="container text-center">
-                    <h1 class="display-4">WILD BAZAR</h1>
-                    <p class="lead">Find everything and espescially anything !</p>
+                    <h1 class="display-4"><?=  $titleJumbo; ?></h1>
+                    <p class="lead"><?= $subTitleJumbo; ?></p>
+                    <?php if ( $addNewProductButton && !empty($namePageNewProductForm)) : ?>
+                        <form  action="<?= $namePageNewProductForm ?>">
+                            <button type="submit" class="btn btn-outline-light btn-lg">+ ADD NEW</button>
+                        </form><?php endif ?>
                 </div>
             </div>
         </header>

@@ -18,6 +18,14 @@
 <body>
     <div class="container-fluid p-0">
         <?php
+        //Titre pour le jumbo
+        $titleJumbo = "goodies";
+        //Sous-Titre pour le jumbo
+        $subTitleJumbo = "Stickers, Pins and other stuff ....";
+        //Besoin d'un bouton Add neww ? mettre true
+        $addNewProductButton = true;
+        // Si bouton add new indiquer la page php contenant le formulaire d'ajout
+        $namePageNewProductForm = "slippers.php";
         include 'header.php';
         ?>
     </div>
