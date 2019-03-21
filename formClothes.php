@@ -75,7 +75,7 @@ if (isset($_POST) && !empty($_POST)) {
         <div class="form-group row">
             <label for="prodPrice" class="col-sm-2 col-form-label">Price :</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="prodPrice" placeholder="99.99" name="prodPrice" value="<?= $_POST['prodPrice'] ?? "" ?>" required>
+                <input type="text" class="form-control" id="prodPrice" placeholder="99.99" name="prodPrice" maxlength="7" value="<?= $_POST['prodPrice'] ?? "" ?>" required>
                 <small class="text-danger font-weight-bold"><?= $errors['prodPrice'] ?? "" ?></small>
             </div>
         </div>
@@ -89,7 +89,7 @@ if (isset($_POST) && !empty($_POST)) {
         <div class="form-group row">
             <label for="prodSize" class="col-sm-2 col-form-label">Size :</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="prodSize" placeholder="XS-S-M-L-XL" name="prodSize" value="<?= $_POST['prodSize'] ?? "" ?>" required>
+                <input type="text" class="form-control" id="prodSize" placeholder="XS-S-M-L-XL" name="prodSize" maxlength="11" value="<?= $_POST['prodSize'] ?? "" ?>" required>
                 <small class="text-danger font-weight-bold"><?= $errors['prodSize'] ?? "" ?></small>
             </div>
         </div>
@@ -110,7 +110,7 @@ if (isset($_POST) && !empty($_POST)) {
         <div class="form-group row">
             <label for="prodReference" class="col-sm-2 col-form-label">Reference :</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="prodReference" placeholder="A123456" name="prodReference" value="<?= $_POST['prodReference'] ?? "" ?>" required>
+                <input type="text" class="form-control" id="prodReference" placeholder="A123456" name="prodReference" maxlength="7" value="<?= $_POST['prodReference'] ?? "" ?>" required>
                 <small class="text-danger font-weight-bold"><?= $errors['prodReference'] ?? "" ?></small>
             </div>
 
