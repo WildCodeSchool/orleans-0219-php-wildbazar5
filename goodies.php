@@ -25,7 +25,7 @@
         //Besoin d'un bouton Add neww ? mettre true
         $addNewProductButton = true;
         // Si bouton add new indiquer la page php contenant le formulaire d'ajout
-        $namePageNewProductForm = "slippers.php";
+        $namePageNewProductForm = "adddatagoodies.php";
         include 'header.php';
         ?>
     </div>
