@@ -21,6 +21,14 @@
 
 <div class="container-fluid p-0">
     <?php
+    //Titre pour le jumbo
+    $titleJumbo = "clothes";
+    //Sous-Titre pour le jumbo
+    $subTitleJumbo = "T-shirt, Sweat and more.";
+    //Besoin d'un bouton Add neww ? mettre true
+    $addNewProductButton = true;
+    // Si bouton add new indiquer la page php contenant le formulaire d'ajout
+    $namePageNewProductForm = "formClothes.php";
     include 'header.php';
     ?>
 </div>
@@ -84,7 +92,7 @@
     <!-- Footer -->
 
     <?php
-    include 'footer.php';
+    include "footer.php";
     ?>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
