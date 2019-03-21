@@ -571,3 +571,15 @@ h2.background-white:before {
         font-size: 1.8rem;
         font-family:azonix;
     }
+
+#formGoodies .requiredinput::before{
+    font-size: 1.4rem;
+    color: red;
+    content: '*';
+    pointer-events: none;
+}
+
+#formGoodies .error {
+    font-size: 1rem;
+    color: red;
+}
