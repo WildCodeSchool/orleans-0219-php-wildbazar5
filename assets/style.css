@@ -571,3 +571,16 @@ h2.background-white:before {
         font-size: 1.8rem;
         font-family:azonix;
     }
+
+    /*----------------FORM------------------*/
+
+#nawalForm p{
+    color: red;
+}
+#nawalForm label{
+    font-weight: bold;
+}
+#nawalForm .form-group > label::after{
+    content: '*';
+    color: red;
+}
