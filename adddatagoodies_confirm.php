@@ -20,9 +20,9 @@
 
     <?php
     //Titre pour le jumbo
-    $titleJumbo = "add new goodie";
+    $titleJumbo = "goodies";
     //Sous-Titre pour le jumbo
-    $subTitleJumbo = "Just from geek space ...";
+    $subTitleJumbo = "Add successfully !";
     //Besoin d'un bouton Add neww ? mettre true
     $addNewProductButton = false;
     // Si bouton add new indiquer la page php contenant le formulaire d'ajout
@@ -35,11 +35,15 @@
     <!-- Section Products-->
     <section class="dr_section m-5" id="formGoodies">
 
-        <div class="form-row justify-content-center">
-            <div class="form-group text-center">
-                <h2>Goodie is added successfully.</h2>
+        <div class="row justify-content-center my-5">
+            <div class="text-center">
+                <h2>new goodie is added successfully.</h2>
             </div>
         </div>
+        <div class="row justify-content-center my-5">
+            <a class="btn btn-lg btn-outline-primary" href="goodies.php" role="button">Back to Goodies Features</a>
+        </div>
+
 
     </section>
 </div>

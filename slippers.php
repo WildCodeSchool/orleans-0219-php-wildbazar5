@@ -21,6 +21,12 @@
 
 <div class="container-fluid p-0">
     <?php
+
+    $titleJumbo = 'Slippers';
+    $subTitleJumbo = 'Find some awesome slippers here';
+    $namePageNewProductForm = 'form_slippers.php';
+    $addNewProductButton = true;
+
     include 'header.php';
     ?>
 </div>
