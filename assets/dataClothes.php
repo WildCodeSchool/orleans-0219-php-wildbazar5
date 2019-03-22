@@ -81,7 +81,7 @@ $categoryProducts = [
             'prodPicture' =>  'assets/img/clothes/t-m-wildcerf.jpg',
             'prodCharacteristics' => [
                 'prodCharacSize' => 'S-M-L-XL',
-                'prodCharacColor' => 'white',
+                'prodCharacColor' => 'White',
                 'prodCharacReference' => 'T023785',
             ]],
 
