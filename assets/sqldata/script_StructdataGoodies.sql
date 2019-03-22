@@ -19,6 +19,3 @@ CREATE TABLE `wildbazar`.`goodies_product` (
         PRIMARY KEY (`id`)
                                       );
 
-
-
-
