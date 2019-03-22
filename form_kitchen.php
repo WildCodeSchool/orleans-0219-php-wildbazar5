@@ -30,8 +30,10 @@ if($_POST)
     if(empty($_POST['prodReference'])) {
     $errors['prodReference1'] = "The reference can't be empty.";
     }
-    if(strlen($_POST['prodReference']) < 2 ) {
-        $errors['prodReference2'] = "The reference must be at least 2 characters long.";
+    if(strlen($_POST['prodReference']) == 6 ) {
+        $errors['prodReference2'] = "The reference must be 6 characters long.";
+
+
     }
     if(empty($_POST['prodMaterial'])) {
         $errors['prodMaterial1'] = "Composition can't be empty.";
@@ -40,9 +42,12 @@ if($_POST)
         $errors['prodMaterial2'] = "Material can't at least 2 characters long" ;
     }
     if(empty($_POST['prodPicture'])) {
-        $errors['prodPicture1'] = "Composition can't be empty.";
+        $errors['prodPicture1'] = "URL can't be empty.";
     }
-
+    if(count($errors) == 0) {
+        header("form_kitchen.php") ;
+        exit();
+    }
 }
 
 ?>
@@ -84,7 +89,7 @@ if($_POST)
 <!--formulaire-->
 
 <div class="container-fluid p-0">
-    <form action="" method="POST">
+    <form action="form_kitchen.php" method="POST">
 
         <select name="kitchen_product">
             <option value="mug">Mugs</option>
@@ -102,7 +107,7 @@ if($_POST)
 
         <div class="form-group">
             <label for="prodPrice">Price in $</label>
-            <input type="text" class="form-control" id="prodPrice" name="prodPrice"  aria-describedby="textHelp" placeholder="Product price">
+            <input type="number" class="form-control" id="prodPrice" name="prodPrice"  aria-describedby="textHelp" placeholder="Product price">
             <p><?php if(isset($errors['prodPrice1'])) echo $errors['prodPrice1']; ?></p>
             <p><?php if(isset($errors['prodPrice2'])) echo $errors['prodPrice2']; ?></p>
         </div>
@@ -117,12 +122,12 @@ if($_POST)
         <div class="row">
             <div class="col">
                 <label for="prodSize">Product size</label>
-                <input type="text" class="form-control" id="prodSize" name="prodSize" placeholder="size in inches">
+                <input type="number" class="form-control" id="prodSize" name="prodSize" placeholder="size in inches">
                 <p><?php if(isset($errors['prodSize1'])) echo $errors['prodSize1']; ?></p>
             </div>
             <div class="col">
                 <label for="prodWeight">Product weight</label>
-                <input type="text" class="form-control" id="prodWeight" name="ProdWeight" placeholder="weight in lbs">
+                <input type="number" class="form-control" id="prodWeight" name="ProdWeight" placeholder="weight in lbs">
                 <p><?php if(isset($errors['prodWeight1'])) echo $errors['prodWeight1']; ?></p>
             </div>
         </div>
@@ -130,8 +135,8 @@ if($_POST)
         <div class="form-group">
             <label for="prodReference">Reference</label>
             <input type="text" class="form-control" id="prodReference" name="prodReference" aria-describedby="textHelp" placeholder="Product reference">
-            <p><?php if(isset($errors['prodRerence1'])) echo $errors['prodReference1']; ?></p>
-            <p><?php if(isset($errors['prodRerence2'])) echo $errors['prodReference2']; ?></p>
+            <p><?php if(isset($errors['prodReference1'])) echo $errors['prodReference1']; ?></p>
+            <p><?php if(isset($errors['prodReference2'])) echo $errors['prodReference2']; ?></p>
         </div>
 
         <div class="form-group">
