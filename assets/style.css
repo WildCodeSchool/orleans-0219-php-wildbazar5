@@ -620,23 +620,25 @@ h2.background-white:before {
     /*----------------FORM------------------*/
 
 #nawalForm p{
-    color: red;
+    color: #ec6d6a;
+    font-weight: bold;
 }
 #nawalForm label{
     font-weight: bold;
 }
 #nawalForm .form-group > label::after{
     content: '*';
-    color: red;
+    color: #ec6d6a;
 }
 #nawalForm .card-header::after{
     content: '*';
-    color: red;
+    color: #ec6d6a;
     font-weight: bold;
 }
 #nawalForm .card{
     border: 0.5px solid lightgrey;
 }
-
-
-#335161
+#nawalForm .formadd {
+    background-color: #335161;
+    font-weight:bold;
+}

@@ -89,7 +89,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <div class="container p-5" id="nawalForm">
-
+    <div class="card rounded formadd">
+        <div class="card-body text-white">
     <form method="post" action="form_slippers.php#NawalForm" novalidate>
 
         <div class="row justify-content-center">
@@ -152,8 +153,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <div class="row justify-content-center">
             <div class="col-12">
-                <div class="card mb-3">
-                    <div class="card-header bg-transparent font-weight-bold">Materials</div>
+                <div class="card mb-3 text-dark">
+                    <div class="card-header font-weight-bold">Materials</div>
                     <div class="card-body text-center">
 
                         <?php foreach ($materials as $key=> $material) : ?>
@@ -192,10 +193,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <p><?= $errors['reference'] ?? '' ?></p>
             </div>
 
-            <button class="btn btn-primary btn-lg col-4">Submit</button>
+            <button class="btn btn-outline-light btn-lg col-4">Submit</button>
         </div>
 
         </form>
+        </div>
+    </div>
 </div>
 
 
