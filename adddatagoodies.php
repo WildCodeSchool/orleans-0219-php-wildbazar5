@@ -32,97 +32,100 @@
         include 'assets/validformdatagoodies.php';
         ?>
     </div>
-
-
         <div class="container p-2">
         <!-- Section Products-->
         <section class="dr_section m-5" id="formGoodies">
 
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post" >
+            <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post" novalidate>
 
                 <div class="form-group">
                     <label for="idproducttitle" class="requiredinput">Product name : </label>
                     <input type="text" class="form-control" id="idproducttitle" name="productitle" placeholder="Product name" title="Fill a product name" required
-                           value=<?php if (isset($_POST["productitle"])) echo $_POST["productitle"]; ?> >
-                    <span class="error"><?php if (isset($errors['productitle'])) echo $errors['productitle']; ?></span>
+                           value=<?= $formData["productitle"] ?? ''; ?> >
+                    <span class="text-danger"><?= $errors['productitle'] ?? ''; ?></span>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="idproductshorttitle">Card product name :</label>
                         <input type="text" class="form-control" id="idproductshorttitle" name="productshorttitle" placeholder="Product Card title" title="Fill a card display product name"
-                               value=<?php if (isset($_POST["productshorttitle"])) echo $_POST["productshorttitle"]; ?> >
-                        <span class="error"><?php if (isset($errors['productshorttitle'])) echo $errors['productshorttitle']; ?></span>
+                               value=<?= $formData["productshorttitle"] ?? ''; ?> >
+                        <span class="text-danger"><?= $errors['productshorttitle'] ?? ''; ?></span>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="idproductprice"  class="requiredinput">Price ($) :</label>
                         <input type="text" class="form-control" id="idproductprice" name="productprice" pattern="[0-9]*[.]?[0-9]+" placeholder="0.00 $" title="Enter a product price in $" required
-                               value=<?php if (isset($_POST["productprice"])) echo $_POST["productprice"]; ?> >
-                        <span class="error"><?php if (isset($errors['productprice'])) echo $errors['productprice']; ?></span>
+                               value=<?= $formData["productprice"] ?? ''  ?> >
+                        <span class="text-danger"><?= $errors['productprice']?? ''; ?></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="idproductpictureurl"  class="requiredinput">Product picture URL :</label>
                     <input type="text" class="form-control" id="idproductpictureurl" name="productpictureurl" placeholder="Product picture" title="Specify an url to product picture" required
-                           value=<?php if (isset($_POST["productpictureurl"])) echo $_POST["productpictureurl"]; ?> >
-                    <span class="error"><?php if (isset($errors['productpictureurl'])) echo $errors['productpictureurl']; ?></span>
+                           value=<?= $formData["productpictureurl"] ?? ''; ?> >
+                    <span class="text-danger"><?= $errors['productpictureurl'] ?? ''; ?></span>
                 </div>
                 <div class="form-group">
                     <label  for="idproductdescr">Product description :</label>
-                    <textarea  id="idproductdescr"  class="form-control" name="productdescr"  placeholder="Fill a product description ..." title="Fill a product description" ><?php if (isset($_POST["productdescr"])) echo $_POST["productdescr"]; ?></textarea>
-                    <span class="error"><?php if (isset($errors['productdescr'])) echo $errors['productdescr']; ?></span>
+                    <textarea  id="idproductdescr"  class="form-control" name="productdescr"  placeholder="Fill a product description ..." title="Fill a product description" >
+                        <?= $formData["productdescr"] ?? ''; ?>
+                    </textarea>
+                    <span class="text-danger"><?= $errors['productdescr']?? ''; ?></span>
                 </div>
 
                 <div class="form-group">
                     <label  for="idprodfeature"  class="requiredinput">Feature type :</label>
-                    <span class="error"><?php if (isset($errors['prodfeature'])) echo $errors['prodfeature']; ?></span>
-                    <select id="idprodfeature" name="prodfeature" class="form-control"    placeholder="Select one feature type ..." required>
+                    <select id="idprodfeature" name="prodfeature" class="form-control"    placeholder="Select one feature type ..." title="Select a feature type" required>
+                        <option value="">Select one ...</option>
                         <?php foreach ($goodiesfeaturetypes as $goodiesfeaturetype ) : ?>
                         <option value="<?= $goodiesfeaturetype; ?>"><?= $goodiesfeaturetype; ?></option>
                         <?php endforeach ?>
                     </select>
+                    <span class="text-danger"><?= $errors['prodfeature']?? ''; ?></span>
                 </div>
                 <div class="form-row">
                 <div class="form-group col-md-4">
                     <label  for="idprodcategory"  class="requiredinput">Category :</label>
-                    <span class="error"><?php if (isset($errors['prodcategory'])) echo $errors['prodcategory']; ?></span>
-                    <select id="idprodcategory" name="prodcategory" class="form-control"  placeholder="Select one category ..." required>
+                    <select id="idprodcategory" name="prodcategory" class="form-control"  placeholder="Select one category ..."  title="Select a category" required>
+                        <option value="">Select one ...</option>
                         <?php foreach ($goodiescategories as $goodiescategorie ) : ?>
                             <option value="<?= $goodiescategorie; ?>"><?= $goodiescategorie; ?></option>
                         <?php endforeach ?>
                     </select>
+                    <span class="text-danger"><?= $errors['prodcategory']?? ''; ?></span>
                 </div>
                 <div class="form-group col-md-8">
                     <label for="idprodsubcategory"  class="requiredinput">Subcategory :</label>
                     <input type="text" class="form-control" id="idprodsubcategory" name="prodsubcategory" placeholder="Product subcategory" title="Fill a subcategory" required
-                           value=<?php if (isset($_POST["prodsubcategory"])) echo $_POST["prodsubcategory"]; ?> >
-                    <span class="error"><?php if (isset($errors['prodsubcategory'])) echo $errors['prodsubcategory']; ?></span>
+                           value=<?= $formData["prodsubcategory"] ?? ''; ?> >
+                    <span class="text-danger"><?= $errors['prodsubcategory']?? ''; ?></span>
                 </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="idproductsize"  class="requiredinput">Size (inches) :</label>
                         <input type="text" class="form-control" id="idproductsize" name="productsize" pattern="[0-9]*[.]?[0-9]+" placeholder="0.00 inches" title="Enter a product size in inches" required
-                               value=<?php if (isset($_POST["productsize"])) echo $_POST["productsize"]; ?> >
-                        <span class="error"><?php if (isset($errors['productsize'])) echo $errors['productsize']; ?></span>
+                               value=<?= $formData["productsize"] ?? ''; ?> >
+                        <span class="text-danger"><?= $errors['productsize'] ?? ''; ?></span>
                     </div>
                 <div class="form-group col-md-2">
                     <label  for="idproductcolor"  class="requiredinput">Color :</label>
-                    <span class="error"><?php if (isset($errors['productcolor'])) echo $errors['productcolor']; ?></span>
-                    <select id="idproductcolor" name="productcolor" class="form-control"   placeholder="Select one product color ..." required>
+                    <select id="idproductcolor" name="productcolor" class="form-control"  placeholder="Select one product color ..." title="Select a product color" required>
+                        <option value="">Select one ...</option>
                         <?php foreach ($goodiescolors as $goodiescolor ) : ?>
                             <option value="<?= $goodiescolor; ?>"><?= $goodiescolor; ?></option>
                         <?php endforeach ?>
                     </select>
+                    <span class="text-danger"><?= $errors['productcolor'] ?? '' ?></span>
                 </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="idprodreference"  class="requiredinput">Reference :</label>
                         <input type="text" class="form-control" id="idprodreference" name="prodreference" pattern="^[A-Z]\d{5}$" placeholder="A00000" title="Enter a product reference formatted A00000" required
-                               value=<?php if (isset($_POST["prodreference"])) echo $_POST["prodreference"]; ?> >
-                        <span class="error"><?php if (isset($errors['prodreference'])) echo $errors['prodreference']; ?></span>
+                               value=<?= $formData["prodreference"]?? ''; ?> >
+                        <span class="text-danger"><?= $errors['prodreference']?? ''; ?></span>
                     </div>
                 </div>
 
