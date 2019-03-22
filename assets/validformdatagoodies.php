@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // check if name only contains letters and whitespace
         if (!preg_match("/^[A-Z]\d{5}$/",$formData["prodreference"])) {
-            $errors['prodreference'] = "For product reference, only numeric with dot is allowed.";
+            $errors['prodreference'] = "For product reference, only format A00000 is allowed.";
         }
     }
 
