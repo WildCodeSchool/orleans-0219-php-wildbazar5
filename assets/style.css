@@ -604,3 +604,29 @@ h2.background-white:before {
     width: 200px;
     height: 200px;
 }
+
+    .mb-n2{
+        font-size: 1.8rem;
+        font-family:azonix;
+    }
+
+    /*----------------FORM------------------*/
+
+#nawalForm p{
+    color: red;
+}
+#nawalForm label{
+    font-weight: bold;
+}
+#nawalForm .form-group > label::after{
+    content: '*';
+    color: red;
+}
+#nawalForm .card-header::after{
+    content: '*';
+    color: red;
+    font-weight: bold;
+}
+#nawalForm .card{
+    border: 0.5px solid lightgrey;
+}
