@@ -42,9 +42,21 @@ if (isset($_POST) && !empty($_POST)) {
     <title>Document</title>
 </head>
 <body>
+ <?php
+    //Titre pour le jumbo
+    $titleJumbo = "Figurines";
+    //Sous-Titre pour le jumbo
+    $subTitleJumbo = "Figurines and plushtoys";
+
+    $addNewProductButton = true;
+    // Si bouton add new indiquer la page php contenant le formulaire d'ajout
+    $namePageNewProductForm = "validateFormFigurine.php";
+    include 'header.php';
+    ?>
 
 
 <div class="container">
+
 
     <form method="POST" action="validateformFigurine.php" >
         <div class="form-group">
