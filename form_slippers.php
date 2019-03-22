@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (empty($errors)) {
-        header('Location: form_slippers.php');
+        header('Location: slippers_confirm.php');
         exit();
     }
 
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="container p-5" id="nawalForm">
 
-    <form method="post" action="form_slippers.php#nawalForm" novalidate>
+    <form method="post" action="form_slippers.php#NawalForm" novalidate>
 
         <div class="row justify-content-center">
 
@@ -164,6 +164,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </div>
 
                         <?php endforeach; ?>
+                        <p><?= $errors['material'] ?? '' ?></p>
 
                     </div>
                 </div>
