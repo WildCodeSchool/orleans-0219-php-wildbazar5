@@ -584,3 +584,11 @@ h2.background-white:before {
     content: '*';
     color: red;
 }
+#nawalForm .card-header::after{
+    content: '*';
+    color: red;
+    font-weight: bold;
+}
+#nawalForm .card{
+    border: 0.5px solid lightgrey;
+}
