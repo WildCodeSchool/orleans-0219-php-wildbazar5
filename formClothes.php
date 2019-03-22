@@ -28,7 +28,7 @@
     //Besoin d'un bouton Add neww ? mettre true
     $addNewProductButton = false;
     // Si bouton add new indiquer la page php contenant le formulaire d'ajout
-    $namePageNewProductForm = "../assets/formClothes.php";
+    $namePageNewProductForm = "formClothes.php";
     include 'header.php';
     ?>
 </div>
@@ -37,7 +37,7 @@
 
 if (isset($_POST) && !empty($_POST)) {
     $errors = [];
-    if (empty($_POST['prodTitle']) OR strlen($_POST['prodTitle']) < 2) {
+    if (empty($_POST['prodTitle'])) {
         $errors['prodTitle'] = "The product title must be greater than 1 character !";
     }
     if (empty($_POST['prodPrice']) OR strlen($_POST['prodPrice']) > 6) {
@@ -46,15 +46,13 @@ if (isset($_POST) && !empty($_POST)) {
     if (empty($_POST['prodDescription']) OR strlen($_POST['prodDescription']) > 249) {
         $errors['prodDescription'] = "The price must be between 1 and 6 character !";
     }
-    if (empty($_POST['prodSize']) OR strlen($_POST['prodSize']) > 12) {
-        $errors['prodSize'] = "The price must be between 1 and 14 character !";
-    }
     if (strlen($_POST['prodReference']) < 7 OR strlen($_POST['prodReference']) > 7) {
         $errors['prodReference'] = "The reference need 7 character !";
     }
-    if (strlen($_POST['prodPicture']) < 10 OR strlen($_POST['prodPicture']) > 249) {
+    if (empty($_POST['prodPicture']) OR strlen($_POST['prodPicture']) > 255) {
         $errors['prodPicture'] = "Your url is not correct !";
     }
+
     if (!$errors) {
         header("location: clothes.php");
         exit();
@@ -65,37 +63,56 @@ if (isset($_POST) && !empty($_POST)) {
     <!-- Formulaire -->
 <div class="container mt-5">
     <form action="" method="post" class="pb-2">
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="prodTitle">Title :</label>
-            <div class="col-sm-10">
+        <div class="form-group">
+            <label class="col-sm col-form-label" for="prodTitle">Title :</label>
+            <div class="col-sm">
                 <input class="form-control" type="text" id="prodTitle" placeholder="My product" name="prodTitle" value="<?= $_POST['prodTitle'] ?? "" ?>" required>
                 <small class="text-danger font-weight-bold"><?= $errors['prodTitle'] ?? "" ?></small>
             </div>
         </div>
-        <div class="form-group row">
-            <label for="prodPrice" class="col-sm-2 col-form-label">Price :</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="prodPrice" placeholder="99.99" name="prodPrice" maxlength="7" value="<?= $_POST['prodPrice'] ?? "" ?>" required>
+        <div class="form-group">
+            <label for="prodPrice" class="col-sm col-form-label">Price :</label>
+            <div class="col-sm">
+                <input type="number" step="0.01" class="form-control" id="prodPrice" placeholder="99.99" name="prodPrice" maxlength="7" value="<?= $_POST['prodPrice'] ?? "" ?>" required>
                 <small class="text-danger font-weight-bold"><?= $errors['prodPrice'] ?? "" ?></small>
             </div>
         </div>
-        <div class="form-group row">
-            <label for="prodDescription" class="col-sm-2 col-form-label">Description :</label>
-            <div class="col-sm-10">
+        <div class="form-group">
+            <label for="prodDescription" class="col-sm col-form-label">Description :</label>
+            <div class="col-sm">
                 <input type="text" class="form-control" id="prodDescription" placeholder="My product description" name="prodDescription" value="<?= $_POST['prodDescription'] ?? "" ?>" required>
                 <small class="text-danger font-weight-bold"><?= $errors['prodDescription'] ?? "" ?></small>
             </div>
         </div>
-        <div class="form-group row">
-            <label for="prodSize" class="col-sm-2 col-form-label">Size :</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="prodSize" placeholder="XS-S-M-L-XL" name="prodSize" maxlength="11" value="<?= $_POST['prodSize'] ?? "" ?>" required>
-                <small class="text-danger font-weight-bold"><?= $errors['prodSize'] ?? "" ?></small>
+        <div class="form-group">
+            <label for="prodSize" class="col-sm col-form-label">Size :</label>
+            <div class="col-sm">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="prodSize" value="<?= $_POST['prodSize'] ?? "" ?>">
+                    <label class="form-check-label" for="inlineCheckbox1" >XS</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="prodSize" value="<?= $_POST['prodSize'] ?? "" ?>">
+                    <label class="form-check-label" for="inlineCheckbox2">S</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="prodSize" value="<?= $_POST['prodSize'] ?? "" ?>">
+                    <label class="form-check-label" for="inlineCheckbox1">M</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="prodSize" value="<?= $_POST['prodSize'] ?? "" ?>">
+                    <label class="form-check-label" for="inlineCheckbox2">L</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="prodSize" value="<?= $_POST['prodSize'] ?? "" ?>">
+                    <label class="form-check-label" for="inlineCheckbox2">XL</label>
+                </div>
             </div>
+
         </div>
-        <div class="form-group row">
-            <label for="prodColor" class="col-sm-2 col-form-label">Color :</label>
-            <div class="col-sm-10">
+        <div class="form-group">
+            <label for="prodColor" class="col-sm col-form-label">Color :</label>
+            <div class="col-sm">
                 <select id="prodColor" name="prodColor">
                     <?php $color = ['White', 'Black', 'Grey', 'Blue', 'Red', 'Green', 'Orange', 'Yellow', 'Purple', 'Pink', 'Brown']; ?>
                     <option selected>Choose a color</option>
@@ -107,17 +124,17 @@ if (isset($_POST) && !empty($_POST)) {
                 </select>
             </div>
         </div>
-        <div class="form-group row">
-            <label for="prodReference" class="col-sm-2 col-form-label">Reference :</label>
-            <div class="col-sm-10">
+        <div class="form-group">
+            <label for="prodReference" class="col-sm col-form-label">Reference :</label>
+            <div class="col-sm">
                 <input type="text" class="form-control" id="prodReference" placeholder="A123456" name="prodReference" maxlength="7" value="<?= $_POST['prodReference'] ?? "" ?>" required>
                 <small class="text-danger font-weight-bold"><?= $errors['prodReference'] ?? "" ?></small>
             </div>
 
         </div>
-        <div class="form-group row">
+        <div class="form-group">
             <label for="prodPicture" class="col-sm-2 col-form-label">Picture (url) :</label>
-            <div class="col-sm-10">
+            <div class="col-sm">
                 <input type="text" class="form-control" id="prodPicture" placeholder="https://image.com/picture.png" name="prodPicture" value="<?= $_POST['prodPicture'] ?? "" ?>" required>
                 <small class="text-danger font-weight-bold"><?= $errors['prodPicture'] ?? "" ?></small>
             </div>
