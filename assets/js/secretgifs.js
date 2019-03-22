@@ -17,7 +17,8 @@ $('body').keydown(function (e) {
     if (entered === code) {
         //$("#coucou").delay(200).show();
 
-        $('#secretgift').fadeIn(3000);
-        $('#secretgift').fadeOut(3000);
+       // $('#secretgift').fadeIn(3000);
+      //  $('#secretgift').fadeOut(3000);
+        $( "#secretgift" ).fadeIn( "slow");
     }
 });

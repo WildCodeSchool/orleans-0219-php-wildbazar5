@@ -17,7 +17,7 @@ foreach ($categoryProducts as $idProduct => $prodDatas) :?>
             </div>
             <div class="card-img-overlay">
                 <div class="card-body text-right p-1">
-                    <h3><span class="card-text badge badge-info dr_badge"><?= $prodDatas['prodPrice'] ?> $</span></h3>
+                    <h3><span class="card-text badge badge-info dr_badge"><?= number_format($prodDatas['prodPrice'],2, '.', '') ?> $</span></h3>
                 </div>
             </div>
             <div class="card-body">
@@ -45,7 +45,7 @@ foreach ($categoryProducts as $idProduct => $prodDatas) :?>
                         </div>
                         <div class=" col-xs-6 col-md-8">
                             <div class="card-body">
-                                <h4><span class="art-price"></span><?= $prodDatas['prodPrice'] ?> $</h4>
+                                <h4><span class="art-price"></span><?= number_format($prodDatas['prodPrice'],2, '.', '') ?> $</h4>
                                 <p class="card-text art-descr"><?= $prodDatas['prodDescr'] ?></p>
                                 <?php $productCharacteristics = $prodDatas['prodCharacteristics'] ?>
                                 <table class="table table-striped table-sm">
