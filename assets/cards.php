@@ -53,7 +53,7 @@ foreach ($categoryProducts as $idProduct => $prodDatas) :?>
                                     <?php foreach ($productCharacteristics as $characKey => $characValue) :?>
                                         <tr>
                                             <th scope="row"><?= $prodCharacteristicsAlias[$characKey] ?></th>
-                                            <td><span><?= $characValue ?></span></td>
+
                                         </tr>
                                     <?php endforeach; ?>
                                     </tbody>
