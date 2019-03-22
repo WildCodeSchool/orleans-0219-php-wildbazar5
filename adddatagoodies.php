@@ -110,7 +110,7 @@
                 <div class="form-group col-md-2">
                     <label  for="idproductcolor"  class="requiredinput">Color :</label>
                     <span class="error"><?php if (isset($errors['productcolor'])) echo $errors['productcolor']; ?></span>
-                    <select id="idproductcolor" name="productcolor" class="form-control"    placeholder="Select one product color ..." required>
+                    <select id="idproductcolor" name="productcolor" class="form-control"   placeholder="Select one product color ..." required>
                         <?php foreach ($goodiescolors as $goodiescolor ) : ?>
                             <option value="<?= $goodiescolor; ?>"><?= $goodiescolor; ?></option>
                         <?php endforeach ?>
