@@ -15,6 +15,14 @@ $prodCharacteristicsAlias =[
     'prodCharacReference' => 'Reference'
 ];
 
+$goodiesfeaturetypes =['Badges','Keyring','Sticker','Lighter',];
+sort($goodiesfeaturetypes);
+$goodiescategories =['Others','Movies','Mangas','Cartoons','Comics','Music','Games','Games',];
+sort($goodiescategories);
+$goodiescolors =['White','Yellow','Fuchsia','Red','Silver','Gray','Olive','Purple','Maroon','Aqua','Lime','Teal','Green','Blue','Navy','Black'];
+sort($goodiescolors);
+
+
 $categoryProducts = [
     'prod0001' =>
             [   'prodShortTitle' => 'Badge WCS - Deer',
