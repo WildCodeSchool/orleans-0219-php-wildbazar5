@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="container p-5" id="nawalForm">
     <div class="card rounded formadd">
         <div class="card-body text-white">
-    <form method="post" action="form_slippers.php#NawalForm" novalidate>
+    <form method="post" action="form_slippers.php#NawalForm">
 
         <div class="row justify-content-center">
 
@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="col-5 col-md-4">
                 <div class="form-group ">
                     <label for="price">Price </label>
-                    <input type="number" class="form-control" id="price" placeholder="0.00$" name="price"
+                    <input type="number" step="0.01" class="form-control" id="price" placeholder="0.00$" name="price"
                            value="<?= $data['price'] ?? '' ?>" required>
                     <p><?= $errors['price'] ?? '' ?></p>
                 </div>
