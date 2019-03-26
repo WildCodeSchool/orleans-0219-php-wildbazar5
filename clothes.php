@@ -1,3 +1,16 @@
+<?php
+require 'connec.php';
+
+$pdo = new PDO(DSN, USER, PASS);
+
+$query = "SELECT * FROM clothes";
+$statement = $pdo->query( $query);
+
+$articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+var_dump($articles);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
