@@ -34,7 +34,6 @@
 <div class="container p-5">
     <!-- Section Products-->
     <section class="dr_section m-5" id="formGoodies">
-
         <div class="row justify-content-center my-5">
             <div class="text-center">
                 <h2>new goodie is added successfully.</h2>
@@ -43,8 +42,6 @@
         <div class="row justify-content-center my-5">
             <a class="btn btn-lg btn-outline-primary" href="goodies.php" role="button">Back to Goodies Features</a>
         </div>
-
-
     </section>
 </div>
 

@@ -6,7 +6,7 @@
  * Time: 17:46
  */
 
-require 'connec.php';
+require '../src/connec.php';
 
 
 function getPicLocalOrURL($pathPicture)

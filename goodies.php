@@ -27,7 +27,8 @@
     // Si bouton add new indiquer la page php contenant le formulaire d'ajout
     $namePageNewProductForm = "adddatagoodies.php";
     include 'header.php';
-    ?>
+   ?>
+
 </div>
 
 
@@ -40,7 +41,7 @@
         <div class="row p-2">
 
             <?php
-            include 'assets/cards.php';
+            include 'assets/cards_goodies.php';
             ?>
 
         </div>

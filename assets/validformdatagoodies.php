@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (count($errors) == 0) {
 
-        require 'connec.php';
+        require '../src/connec.php';
         $pdo = new PDO(DSN, USER, PASS);
 
 
