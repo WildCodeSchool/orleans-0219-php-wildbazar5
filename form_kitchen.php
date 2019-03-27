@@ -2,6 +2,7 @@
 
 if($_POST)
 {
+
     $errors = array() ;
     if(empty($_POST['prodTitle'])) {
         $errors['prodTitle1'] = "The prodTtile can't be empty.";
