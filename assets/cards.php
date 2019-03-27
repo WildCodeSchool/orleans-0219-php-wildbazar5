@@ -47,15 +47,13 @@ foreach ($categoryProducts as $idProduct => $prodDatas) :?>
                             <div class="card-body">
                                 <h4><span class="art-price"></span><?= number_format($prodDatas['prodPrice'],2, '.', '') ?> $</h4>
                                 <p class="card-text art-descr"><?= $prodDatas['prodDescr'] ?></p>
-                                <?php $productCharacteristics = $prodDatas['prodCharacteristics'] ?>
                                 <table class="table table-striped table-sm">
                                     <tbody>
-                                    <?php foreach ($productCharacteristics as $characKey => $characValue) :?>
                                         <tr>
                                             <th scope="row"><?= $prodCharacteristicsAlias[$characKey] ?></th>
 
+
                                         </tr>
-                                    <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
