@@ -1,5 +1,16 @@
 <?php
 
+require '../connec.php';
+$pdo = new PDO(DSN,USER, PASS);
+
+
+$query = "SELECT * FROM article";
+$statement = $pdo->query($query);
+$articles = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+//var_dump($articles);
+
+
 if($_POST)
 {
 
