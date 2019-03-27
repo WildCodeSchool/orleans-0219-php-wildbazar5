@@ -1,4 +1,29 @@
+<?php
 
+require 'connec.php';
+
+$pdo = new PDO(DSN, USER, PASS);
+
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $errors = [];
+// "nettoyage du $_POST" (trim)
+// verification des erreurs (not empty, longueurs, type...)
+    if (empty($errors)) {
+        $query = "INSERT INTO clothes (prodTitle, prodPrice, prodDescr, prodSize, prodColor, prodCharacReference, prodPicture) VALUES (:prodTitle, :prodPrice, :prodDescr, :prodSize, :prodColor, :prodCharacReference, :prodPicture)";
+        $statement = $pdo->prepare($query);
+        $statement->bindValue(':prodTitle', $_POST['prodTitle'], PDO::PARAM_STR);
+        $statement->bindValue(':prodPrice', $_POST['prodPrice'], PDO::PARAM_STR);
+        $statement->bindValue(':prodDescr', $_POST['prodDescr'], PDO::PARAM_STR);
+        $statement->bindValue(':prodSize', $_POST['prodSize'], PDO::PARAM_STR);
+        $statement->bindValue(':prodColor', $_POST['prodColor'], PDO::PARAM_STR);
+        $statement->bindValue(':prodCharacReference', $_POST['prodCharacReference'], PDO::PARAM_STR);
+        $statement->bindValue(':prodPicture', $_POST['prodPicture'], PDO::PARAM_STR);
+        $statement->execute();
+        header('Location: clothes.php');
+    }
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,32 +60,7 @@
     ?>
 </div>
 
-<?php
 
-if (isset($_POST) && !empty($_POST)) {
-    $errors = [];
-    if (empty($_POST['prodTitle'])) {
-        $errors['prodTitle'] = "The product title must be greater than 1 character !";
-    }
-    if (empty($_POST['prodPrice']) OR strlen($_POST['prodPrice']) > 6) {
-        $errors['prodPrice'] = "The price must be between 1 and 6 character !";
-    }
-    if (empty($_POST['prodDescription']) OR strlen($_POST['prodDescription']) > 249) {
-        $errors['prodDescription'] = "The price must be between 1 and 6 character !";
-    }
-    if (strlen($_POST['prodReference']) < 7 OR strlen($_POST['prodReference']) > 7) {
-        $errors['prodReference'] = "The reference need 7 character !";
-    }
-    if (empty($_POST['prodPicture']) OR strlen($_POST['prodPicture']) > 255) {
-        $errors['prodPicture'] = "Your url is not correct !";
-    }
-
-    if (!$errors) {
-        header("location: clothes.php");
-        exit();
-    }
-}
-?>
 
     <!-- Formulaire -->
 <div class="container mt-5">
@@ -80,10 +80,10 @@ if (isset($_POST) && !empty($_POST)) {
             </div>
         </div>
         <div class="form-group">
-            <label for="prodDescription" class="col-sm col-form-label">Description :</label>
+            <label for="prodDescr" class="col-sm col-form-label">Description :</label>
             <div class="col-sm">
-                <input type="text" class="form-control" id="prodDescription" placeholder="My product description" name="prodDescription" value="<?= $_POST['prodDescription'] ?? "" ?>" required>
-                <small class="text-danger font-weight-bold"><?= $errors['prodDescription'] ?? "" ?></small>
+                <input type="text" class="form-control" id="prodDescription" placeholder="My product description" name="prodDescr" value="<?= $_POST['prodDescr'] ?? "" ?>" required>
+                <small class="text-danger font-weight-bold"><?= $errors['prodDescr'] ?? "" ?></small>
             </div>
         </div>
         <div class="form-group">
@@ -127,10 +127,10 @@ if (isset($_POST) && !empty($_POST)) {
             </div>
         </div>
         <div class="form-group">
-            <label for="prodReference" class="col-sm col-form-label">Reference :</label>
+            <label for="prodCharacReference" class="col-sm col-form-label">Reference :</label>
             <div class="col-sm">
-                <input type="text" class="form-control" id="prodReference" placeholder="A123456" name="prodReference" maxlength="7" value="<?= $_POST['prodReference'] ?? "" ?>" required>
-                <small class="text-danger font-weight-bold"><?= $errors['prodReference'] ?? "" ?></small>
+                <input type="text" class="form-control" id="prodCharacReference" placeholder="A123456" name="prodCharacReference" maxlength="7" value="<?= $_POST['prodCharacReference'] ?? "" ?>" required>
+                <small class="text-danger font-weight-bold"><?= $errors['prodCharacReference'] ?? "" ?></small>
             </div>
 
         </div>

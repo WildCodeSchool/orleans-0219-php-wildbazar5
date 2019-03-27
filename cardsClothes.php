@@ -18,7 +18,7 @@ $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
             <div class="card border-dark my-4 dr_card" data-toggle="modal" data-target=<?= "#" . 'a' . $clothes['id'] . 'modal'?>>
                 <div class="dr_wrapper text-center ">
                     <img src="<?= $clothes['prodPicture'] ?>"
-                         class="card-img-top img-fluid art-image"  alt="<?= $clothes['prodShortTitle'] ?>"
+                         class="card-img-top img-fluid art-image"  alt="<?= $clothes['prodTitle'] ?>"
                 </div>
                 <div class="card-img-overlay">
                     <div class="card-body text-right p-1">
@@ -26,7 +26,7 @@ $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title text-center"><?= $clothes['prodShortTitle'] ?></h4>
+                    <h4 class="card-title text-center"><?= $clothes['prodTitle'] ?></h4>
                 </div>
         </article>
     </div>
