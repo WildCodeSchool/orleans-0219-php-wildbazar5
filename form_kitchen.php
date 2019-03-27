@@ -1,4 +1,5 @@
 <?php
+
 if($_POST)
 {
     $errors = array() ;
@@ -30,9 +31,8 @@ if($_POST)
     if(empty($_POST['prodReference'])) {
     $errors['prodReference1'] = "The reference can't be empty.";
     }
-    if(strlen($_POST['prodReference']) == 6 ) {
+    if(strlen($_POST['prodReference']) < 6 ) {
         $errors['prodReference2'] = "The reference must be 6 characters long.";
-
 
     }
     if(empty($_POST['prodMaterial'])) {
@@ -100,21 +100,21 @@ if($_POST)
 
         <div class="form-group">
             <label for="prodTitle">Product name</label>
-            <input type="text" class="form-control" id="prodTitle" name="prodTitle" aria-describedby="textHelp" placeholder="Product name">
+            <input type="text" class="form-control" id="prodTitle" name="prodTitle" aria-describedby="textHelp" placeholder="Product name" required>
             <p><?php if(isset($errors['prodTitle1'])) echo $errors['prodTitle1']; ?></p>
             <p><?php if(isset($errors['prodTitle2'])) echo $errors['prodTitle2']; ?></p>
         </div>
 
         <div class="form-group">
             <label for="prodPrice">Price in $</label>
-            <input type="number" class="form-control" id="prodPrice" name="prodPrice"  aria-describedby="textHelp" placeholder="Product price">
+            <input type="number" class="form-control" id="prodPrice" name="prodPrice"  aria-describedby="textHelp" placeholder="Product price" required>
             <p><?php if(isset($errors['prodPrice1'])) echo $errors['prodPrice1']; ?></p>
             <p><?php if(isset($errors['prodPrice2'])) echo $errors['prodPrice2']; ?></p>
         </div>
 
         <div class="form-group">
             <label for="prodDescr">Product description</label>
-            <input type="text" class="form-control" id="prodDescr" name="prodDescr" aria-describedby="textHelp" placeholder="Product description">
+            <input type="text" class="form-control" id="prodDescr" name="prodDescr" aria-describedby="textHelp" placeholder="Product description" required>
             <p><?php if(isset($errors['prodDescr1'])) echo $errors['prodDescr1']; ?></p>
             <p><?php if(isset($errors['prodDescr2'])) echo $errors['prodDescr2']; ?></p>
         </div>
@@ -122,33 +122,33 @@ if($_POST)
         <div class="row">
             <div class="col">
                 <label for="prodSize">Product size</label>
-                <input type="number" class="form-control" id="prodSize" name="prodSize" placeholder="size in inches">
+                <input type="number" class="form-control" id="prodSize" name="prodSize" placeholder="size in inches" required>
                 <p><?php if(isset($errors['prodSize1'])) echo $errors['prodSize1']; ?></p>
             </div>
             <div class="col">
                 <label for="prodWeight">Product weight</label>
-                <input type="number" class="form-control" id="prodWeight" name="ProdWeight" placeholder="weight in lbs">
+                <input type="number" class="form-control" id="prodWeight" name="ProdWeight" placeholder="weight in lbs" required>
                 <p><?php if(isset($errors['prodWeight1'])) echo $errors['prodWeight1']; ?></p>
             </div>
         </div>
 
         <div class="form-group">
             <label for="prodReference">Reference</label>
-            <input type="text" class="form-control" id="prodReference" name="prodReference" aria-describedby="textHelp" placeholder="Product reference">
+            <input type="text" class="form-control" id="prodReference" name="prodReference" aria-describedby="textHelp" placeholder="Product reference" required>
             <p><?php if(isset($errors['prodReference1'])) echo $errors['prodReference1']; ?></p>
             <p><?php if(isset($errors['prodReference2'])) echo $errors['prodReference2']; ?></p>
         </div>
 
         <div class="form-group">
             <label for="prodMaterial">Product composition</label>
-            <input type="text" class="form-control" id="prodMaterial" name="prodMaterial" aria-describedby="textHelp" placeholder="Product composition">
+            <input type="text" class="form-control" id="prodMaterial" name="prodMaterial" aria-describedby="textHelp" placeholder="Product composition" required>
             <p><?php if(isset($errors['prodMaterial1'])) echo $errors['prodMaterial1']; ?></p>
             <p><?php if(isset($errors['prodMaterial2'])) echo $errors['prodMaterial2']; ?></p>
         </div>
 
         <div class="form-group">
             <label for="prodpicture">Product image</label>
-            <input type="text" class="form-control" id="prodpicture" name="prodPicture" aria-describedby="textHelp" placeholder="Product image">
+            <input type="text" class="form-control" id="prodpicture" name="prodPicture" aria-describedby="textHelp" placeholder="Product image" required>
             <p><?php if(isset($errors['prodPicture1'])) echo $errors['prodPicture1']; ?></p>
         </div>
 
