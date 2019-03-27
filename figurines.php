@@ -16,6 +16,19 @@
 </head>
 
 <body>
+<div class="container-fluid p-0">
+    <?php
+    //Titre pour le jumbo
+    $titleJumbo = "Figurines";
+    //Sous-Titre pour le jumbo
+    $subTitleJumbo = "Figurines and plushtoys";
+
+    $addNewProductButton = true;
+    // Si bouton add new indiquer la page php contenant le formulaire d'ajout
+    $namePageNewProductForm = "validateFormFigurine.php";
+    include 'header.php';
+    ?>
+</div>
 
     <div class="container-fluid p-0">
         <?php

@@ -1,5 +1,5 @@
 <header id="nawalNavbar">
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg ">
         <a class="navbar-brand ml-3" href="index.php">
             <img src="assets/img/logo/logo-rouge-fond-transparent.png" class="d-inline-block align-top"
                  alt="logo de la wild code school"/></a>
@@ -28,7 +28,7 @@
                     <a class="link-1" href="figurines.php">Figurines</a>
                 </li>
                 <li class="nav-item">
-                    <a class="link-1" href="#aboutus">About Us</a>
+                    <a class="link-1" href="index.php#aboutus">About Us</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">

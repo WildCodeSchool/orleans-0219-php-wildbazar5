@@ -600,7 +600,45 @@ h2.background-white:before {
     color: red;
 }
 
+#formGoodies .formadd {
+    background-color: #335161;
+    font-weight:bold;
+}
+
+
+
 #secretgift {
     width: 200px;
     height: 200px;
+}
+
+    .mb-n2{
+        font-size: 1.8rem;
+        font-family:azonix;
+    }
+
+    /*----------------FORM------------------*/
+
+#nawalForm p{
+    color: #ec6d6a;
+    font-weight: bold;
+}
+#nawalForm label{
+    font-weight: bold;
+}
+#nawalForm .form-group > label::after{
+    content: '*';
+    color: #ec6d6a;
+}
+#nawalForm .card-header::after{
+    content: '*';
+    color: #ec6d6a;
+    font-weight: bold;
+}
+#nawalForm .card{
+    border: 0.5px solid lightgrey;
+}
+#nawalForm .formadd {
+    background-color: #335161;
+    font-weight:bold;
 }

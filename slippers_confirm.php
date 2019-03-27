@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +21,7 @@
 
     <?php
     //Titre pour le jumbo
-    $titleJumbo = "goodies";
+    $titleJumbo = "Slippers";
     //Sous-Titre pour le jumbo
     $subTitleJumbo = "Add successfully !";
     //Besoin d'un bouton Add neww ? mettre true
@@ -37,11 +38,11 @@
 
         <div class="row justify-content-center my-5">
             <div class="text-center">
-                <h2>new goodie is added successfully.</h2>
+                <h2>New slippers are added successfully.</h2>
             </div>
         </div>
         <div class="row justify-content-center my-5">
-            <a class="btn btn-lg btn-outline-primary" href="goodies.php" role="button">Back to Goodies Features</a>
+            <a class="btn btn-lg btn-outline-primary" href="slippers.php" role="button">Back to Slippers !</a>
         </div>
 
 
