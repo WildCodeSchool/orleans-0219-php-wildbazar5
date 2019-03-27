@@ -38,7 +38,7 @@
                     <!-- PRODUIT -->
                     
                     <?php include 'dataFigurines.php'; ?>
-            <?php include 'assets/cards.php' ; ?>
+            <?php include 'assets/cards_figurines.php' ; ?>
             </div>
         </section>
     </div>

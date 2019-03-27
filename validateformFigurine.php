@@ -1,19 +1,15 @@
 <?php
 
-require 'connec.php';
 
-$pdo = new PDO(DSN, USER, PASS);
-$query = "SELECT * FROM figurines_product";
-$statement = $pdo->query($query);
-$articles = $statement ->fetchAll(PDO::FETCH_ASSOC);
+
 
 if (isset($_POST) && !empty($_POST)) {
     $errors = [];
     if (empty($_POST['prodTitle']) OR strlen($_POST['prodTitle']) < 2) {
-        $errors['prodTitle'] = "The name must be greater than 1 character!";
+        $errors['prodTitle'] = "The title must be greater than 1 character!";
     }
     if (empty($_POST['prodShortTitle']) OR strlen($_POST['prodShortTitle']) < 2) {
-        $errors['prodShortTitle'] = "The name must be greater than 1 character!";
+        $errors['prodShortTitle'] = "The Short Title must be greater than 1 character!";
     }
     if (empty($_POST['prodDescr']) OR strlen($_POST['prodDescr']) < 10) {
         $errors['prodDescr'] = "The description must be greater than 9 character!";
@@ -38,18 +34,23 @@ if (isset($_POST) && !empty($_POST)) {
     }
 
     if (!$errors) {
-        $query = "INSERT INTO figurines_product(prodTitle, shortTitle, Ref, prodPrice, Weight, prodPicture, Height, prodDescr) VALUES (:prodTitle, :shortTitle, :Ref, :prodPrice, :Weight, :prodPicture, :Height, :prodDescr)";
+        require 'connec.php';
+
+        $pdo = new PDO(DSN, USER, PASS);
+
+        $query = "INSERT INTO figurines_product (title, short_title, char_reference, price, weight, picture, char_size, char_color, summary) VALUES (:title, :short_title, :char_reference, :price, :weight, :picture, :char_size, :char_color, :summary)";
         $statement = $pdo -> prepare($query);
         $statement -> bindValue(':title', $_POST['prodTitle'], PDO::PARAM_STR);
-        $statement -> bindValue(':prodShortTitle', $_POST['prodShortTitle'], PDO::PARAM_STR);
-        $statement -> bindValue(':Ref', $_POST['Ref'], PDO::PARAM_STR);
-        $statement -> bindValue(':prodPrice', $_POST['prodPrice'], PDO::PARAM_INT);
-        $statement -> bindValue(':Weight', $_POST['Weight'], PDO::PARAM_INT);
-        $statement -> bindValue(':prodPicture', $_POST['prodPicture'], PDO::PARAM_STR);
-        $statement -> bindValue(':Height', $_POST['Height'], PDO::PARAM_INT);
-        $statement -> bindValue(':Color', $_POST['Color'], PDO::PARAM_STR);
-        $statement -> bindValue(':prodDescr', $_POST['prodDescr'], PDO::PARAM_STR);
+        $statement -> bindValue(':short_title', $_POST['prodShortTitle'], PDO::PARAM_STR);
+        $statement -> bindValue(':char_reference', $_POST['Ref'], PDO::PARAM_STR);
+        $statement -> bindValue(':price', $_POST['prodPrice'], PDO::PARAM_STR);
+        $statement -> bindValue(':weight', $_POST['Weight'], PDO::PARAM_INT);
+        $statement -> bindValue(':picture', $_POST['prodPicture'], PDO::PARAM_STR);
+        $statement -> bindValue(':char_size', $_POST['Height'], PDO::PARAM_INT);
+        $statement -> bindValue(':char_color', $_POST['Color'], PDO::PARAM_STR);
+        $statement -> bindValue(':summary', $_POST['prodDescr'], PDO::PARAM_STR);
         $statement->execute();
+
         header("location: figurines.php");
         exit();
     }
@@ -94,7 +95,7 @@ if (isset($_POST) && !empty($_POST)) {
         </div>
         <div class="form-group">
             <label for="ShortTitle">Short Title Product</label>
-            <input type="text" class="form-control" id="shortitle" name="shortTitle"
+            <input type="text" class="form-control" id="shortitle" name="prodShortTitle"
                    value="<?= $_POST['prodShortTitle'] ?? "" ?>">
             <small class="text-danger font-weight-bold"><?= $errors['prodShortTitle'] ?? "" ?></small>
         </div>
