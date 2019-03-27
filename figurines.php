@@ -25,16 +25,10 @@
 
     $addNewProductButton = true;
     // Si bouton add new indiquer la page php contenant le formulaire d'ajout
-    $namePageNewProductForm = "validateFormFigurine.php";
+    $namePageNewProductForm = "validateformFigurine.php";
     include 'header.php';
     ?>
 </div>
-
-    <div class="container-fluid p-0">
-        <?php
-        include 'header.php'
-        ?>
-    </div>
 
     <div class="container p-0">
         <!-- Section Top Selling -->
