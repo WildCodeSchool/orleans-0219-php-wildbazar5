@@ -19,8 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($formData["productshorttitle"])) {
-        if (!empty($formData["productitle"])) {
+        if (!empty($formData["productitle"]) && strlen($formData["productitle"]) <=100) {
             $formData['productshorttitle'] = $formData["productitle"];
+        } else {
+            $errors['productshorttitle'] = "Product short title is required and must be lower than 100 char.";
         }
     }
 
@@ -35,6 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($formData["productpictureurl"])) {
         $errors['productpictureurl'] = "Product picture url is required.";
+    } elseif ($errors['productpictureurl'] > 255) {
+        $errors['productpictureurl'] = "Product picture url must be lower than 255 charac.";
     }
 
 
@@ -48,6 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($formData["prodsubcategory"])) {
         $errors['prodsubcategory'] = "Product subcategory is required.";
+    }if ($errors['prodsubcategory'] > 100) {
+        $errors['prodsubcategory'] = "Product subcategory url must be lower than 255 charac.";
     }
 
     if (empty($formData["productsize"])) {
