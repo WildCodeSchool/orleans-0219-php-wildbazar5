@@ -8,7 +8,17 @@
 
 require 'connec.php';
 
-$pictureBasePath ='../assets/img/goodies/';
+
+function getPicLocalOrURL($pathPicture)
+{
+    $pictureBasePath="";
+    if (!preg_match("/^http/", $pathPicture)) {
+        $pictureBasePath ='../assets/img/goodies/';
+    }
+    return $pictureBasePath . $pathPicture;
+}
+
+
 
 $pdo = new PDO(DSN, USER, PASS);
 $query = "SELECT * FROM goodies_product";
@@ -21,7 +31,7 @@ foreach ($goodiesproducts as $goodieproduct) :?>
         <article id="<?=  htmlentities($goodieproduct['id']) ?>">
             <div class="card border-dark my-4 dr_card" data-toggle="modal" data-target=<?= "#prod" . htmlentities($goodieproduct['id'])?>>
             <div class="dr_wrapper text-center ">
-                <img src="<?= $pictureBasePath. htmlentities($goodieproduct['picture']) ?>"
+                <img src="<?= htmlentities(getPicLocalOrURL($goodieproduct['picture'])) ?>"
                      class="card-img-top img-fluid art-image"  alt="<?= htmlentities($goodieproduct['title']) ?>"
             </div>
             <div class="card-img-overlay">
@@ -49,7 +59,7 @@ foreach ($goodiesproducts as $goodieproduct) :?>
                 <div class="modal-body">
                     <div class="row no-gutters">
                         <div class="col-xs-6 col-md-4 art-img-content">
-                            <img class="card-img art-img" src="<?= $pictureBasePath. htmlentities($goodieproduct['picture'])  ?>"
+                            <img class="card-img art-img" src="<?= htmlentities(getPicLocalOrURL($goodieproduct['picture']))  ?>"
                             alt="<?= htmlentities($goodieproduct['title']) ?>" />
                         </div>
                         <div class=" col-xs-6 col-md-8">
