@@ -1,16 +1,3 @@
-<?php
-require 'connec.php';
-
-$pdo = new PDO(DSN, USER, PASS);
-
-$query = "SELECT * FROM clothes";
-$statement = $pdo->query( $query);
-
-$articles = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-var_dump($articles);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +25,7 @@ var_dump($articles);
     $titleJumbo = "clothes";
     //Sous-Titre pour le jumbo
     $subTitleJumbo = "T-shirt, Sweat and more.";
-    //Besoin d'un bouton Add neww ? mettre true
+    //Besoin d'un bouton Add new ? mettre true
     $addNewProductButton = true;
     // Si bouton add new indiquer la page php contenant le formulaire d'ajout
     $namePageNewProductForm = "formClothes.php";
@@ -53,12 +40,7 @@ var_dump($articles);
     <div class="row p-2">
 
         <?php
-        include 'assets/dataClothes.php';
-        ?>
-
-
-        <?php
-        include 'assets/cards.php';
+        include 'cardsClothes.php';
         ?>
 
     </div>
