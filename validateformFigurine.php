@@ -1,30 +1,56 @@
 <?php
+
+require 'connec.php';
+
+$pdo = new PDO(DSN, USER, PASS);
+$query = "SELECT * FROM figurines_product";
+$statement = $pdo->query($query);
+$articles = $statement ->fetchAll(PDO::FETCH_ASSOC);
+
 if (isset($_POST) && !empty($_POST)) {
     $errors = [];
-    if (empty($_POST['title']) OR strlen($_POST['title']) < 2) {
-        $errors['title'] = "The name must be greater than 1 character!";
+    if (empty($_POST['prodTitle']) OR strlen($_POST['prodTitle']) < 2) {
+        $errors['prodTitle'] = "The name must be greater than 1 character!";
     }
-    if (empty($_POST['description']) OR strlen($_POST['description']) < 10) {
-        $errors['description'] = "The description must be greater than 9 character!";
+    if (empty($_POST['prodShortTitle']) OR strlen($_POST['prodShortTitle']) < 2) {
+        $errors['prodShortTitle'] = "The name must be greater than 1 character!";
     }
-    if (empty($_POST['price']) OR !is_numeric($_POST['price'])) {
-        $errors['price'] = "Only numeric allowed for price!";
+    if (empty($_POST['prodDescr']) OR strlen($_POST['prodDescr']) < 10) {
+        $errors['prodDescr'] = "The description must be greater than 9 character!";
     }
-    if (empty($_POST['hauteur']) OR !is_numeric($_POST['hauteur'])) {
-        $errors['hauteur'] = "Only numeric allowed for height!";
+    if (empty($_POST['prodPrice']) OR !is_numeric($_POST['prodPrice'])) {
+        $errors['prodPrice'] = "Only numeric allowed for price!";
     }
-    if (empty($_POST['poids']) OR !is_numeric($_POST['poids'])) {
-        $errors['poids'] = "Only numeric allowed for weight!";
+    if (empty($_POST['Height']) OR !is_numeric($_POST['Height'])) {
+        $errors['Height'] = "Only numeric allowed for height!";
     }
-    if (empty($_POST['images']) OR strlen($_POST['images']) < 5) {
+    if (empty($_POST['Weight']) OR !is_numeric($_POST['Weight'])) {
+        $errors['Weight'] = "Only numeric allowed for weight!";
+    }
+    if (empty($_POST['prodPicture']) OR strlen($_POST['prodPicture']) < 5) {
         $errors['images'] = "The URL must be greater than 5 character!";
     }
-    if (empty($_POST['reference'])) {
-        $errors['reference'] = "No empty reference allowed!";
+    if (empty($_POST['Ref'])) {
+        $errors['Ref'] = "No empty reference allowed!";
+    }
+    if (empty($_POST['Color'])) {
+        $errors['Color'] = "No empty Color allowed!";
     }
 
     if (!$errors) {
-        header("location: ../Figurines.php");
+        $query = "INSERT INTO figurines_product(prodTitle, shortTitle, Ref, prodPrice, Weight, prodPicture, Height, prodDescr) VALUES (:prodTitle, :shortTitle, :Ref, :prodPrice, :Weight, :prodPicture, :Height, :prodDescr)";
+        $statement = $pdo -> prepare($query);
+        $statement -> bindValue(':title', $_POST['prodTitle'], PDO::PARAM_STR);
+        $statement -> bindValue(':prodShortTitle', $_POST['prodShortTitle'], PDO::PARAM_STR);
+        $statement -> bindValue(':Ref', $_POST['Ref'], PDO::PARAM_STR);
+        $statement -> bindValue(':prodPrice', $_POST['prodPrice'], PDO::PARAM_INT);
+        $statement -> bindValue(':Weight', $_POST['Weight'], PDO::PARAM_INT);
+        $statement -> bindValue(':prodPicture', $_POST['prodPicture'], PDO::PARAM_STR);
+        $statement -> bindValue(':Height', $_POST['Height'], PDO::PARAM_INT);
+        $statement -> bindValue(':Color', $_POST['Color'], PDO::PARAM_STR);
+        $statement -> bindValue(':prodDescr', $_POST['prodDescr'], PDO::PARAM_STR);
+        $statement->execute();
+        header("location: figurines.php");
         exit();
     }
 }
@@ -61,47 +87,59 @@ if (isset($_POST) && !empty($_POST)) {
 
     <form method="POST" action="validateformFigurine.php" >
         <div class="form-group">
-            <label for="lastName">Title Product</label>
-            <input type="text" class="form-control" id="lastName" name="title"
-                   value="<?= $_POST['title'] ?? "" ?>">
-            <small class="text-danger font-weight-bold"><?= $errors['title'] ?? "" ?></small>
+            <label for="Title">Title Product</label>
+            <input type="text" class="form-control" id="title" name="prodTitle"
+                   value="<?= $_POST['prodTitle'] ?? "" ?>">
+            <small class="text-danger font-weight-bold"><?= $errors['prodTitle'] ?? "" ?></small>
+        </div>
+        <div class="form-group">
+            <label for="ShortTitle">Short Title Product</label>
+            <input type="text" class="form-control" id="shortitle" name="shortTitle"
+                   value="<?= $_POST['prodShortTitle'] ?? "" ?>">
+            <small class="text-danger font-weight-bold"><?= $errors['prodShortTitle'] ?? "" ?></small>
         </div>
 
         <div class="form-group">
-            <label for="firstName">Reference</label>
-            <input type="text" class="form-control" id="firstName" name="reference"
-                   value="<?= $_POST['reference'] ?? "" ?>">
-            <small class="text-danger font-weight-bold"><?= $errors['reference'] ?? "" ?></small>
+            <label for="Reference">Reference</label>
+            <input type="text" class="form-control" id="ref" name="Ref"
+                   value="<?= $_POST['Ref'] ?? "" ?>">
+            <small class="text-danger font-weight-bold"><?= $errors['Ref'] ?? "" ?></small>
         </div>
         <div class="form-group">
-            <label for="phoneNumber">Price</label>
-            <input type="tel" class="form-control" id="phoneNumber" name="price"
-                   value="<?= $_POST['price'] ?? "" ?>">
-            <small class="text-danger font-weight-bold"><?= $errors['price'] ?? "" ?></small>
+            <label for="Color">Color</label>
+            <input type="text" class="form-control" id="Color" name="Color"
+                   value="<?= $_POST['Color'] ?? "" ?>">
+            <small class="text-danger font-weight-bold"><?= $errors['Color'] ?? "" ?></small>
         </div>
         <div class="form-group">
-            <label for="phoneNumber">Poids</label>
-            <input type="tel" class="form-control" id="phoneNumber" name="poids"
-                   value="<?= $_POST['poids'] ?? "" ?>">
-            <small class="text-danger font-weight-bold"><?= $errors['poids'] ?? "" ?></small>
+            <label for="Price">Price</label>
+            <input type="tel" class="form-control" id="price" name="prodPrice"
+                   value="<?= $_POST['prodPrice'] ?? "" ?>">
+            <small class="text-danger font-weight-bold"><?= $errors['prodPrice'] ?? "" ?></small>
         </div>
         <div class="form-group">
-            <label for="phoneNumber">Image</label>
-            <input type="tel" class="form-control" id="phoneNumber" name="image"
-                   value="<?= $_POST['image'] ?? "" ?>">
-            <small class="text-danger font-weight-bold"><?= $errors['image'] ?? "" ?></small>
+            <label for="Poids">Poids</label>
+            <input type="tel" class="form-control" id="weight" name="Weight"
+                   value="<?= $_POST['Weight'] ?? "" ?>">
+            <small class="text-danger font-weight-bold"><?= $errors['Weight'] ?? "" ?></small>
         </div>
         <div class="form-group">
-            <label for="phoneNumber">Hauteur</label>
-            <input type="tel" class="form-control" id="phoneNumber" name="hauteur"
-                   value="<?= $_POST['hauteur'] ?? "" ?>">
-            <small class="text-danger font-weight-bold"><?= $errors['hauteur'] ?? "" ?></small>
+            <label for="Image">Image</label>
+            <input type="tel" class="form-control" id="image" name="prodPicture"
+                   value="<?= $_POST['prodPicture'] ?? "" ?>">
+            <small class="text-danger font-weight-bold"><?= $errors['prodPicture'] ?? "" ?></small>
+        </div>
+        <div class="form-group">
+            <label for="Hauteur">Hauteur</label>
+            <input type="tel" class="form-control" id="height" name="Height"
+                   value="<?= $_POST['Height'] ?? "" ?>">
+            <small class="text-danger font-weight-bold"><?= $errors['Height'] ?? "" ?></small>
         </div>
 
        <div class="form-group">
             <label for="exampleFormControlTextarea1">Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message" ></textarea>
-            <small class="text-danger font-weight-bold"><?= $errors['description'] ?? "" ?></small>
+            <textarea class="form-control" id="description" rows="3" name="prodDescr" ></textarea>
+            <small class="text-danger font-weight-bold"><?= $errors['prodDescr'] ?? "" ?></small>
 
         </div>
 
