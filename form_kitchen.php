@@ -1,6 +1,6 @@
 <?php
 
-require 'connec.php';
+require 'src/connec.php';
 $pdo = new PDO(DSN,USER, PASS);
 $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 $query = "SELECT * FROM reference_kitchen";
