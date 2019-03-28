@@ -69,8 +69,7 @@
                         </div>
                         <div class="form-group">
                             <label  for="idproductdescr">Product description :</label>
-                            <textarea  id="idproductdescr"  class="form-control" name="productdescr"  placeholder="Fill a product description ..." title="Fill a product description" ><?= $formData["productdescr"] ?? ''; ?>
-                    </textarea>
+                            <textarea  id="idproductdescr"  class="form-control" name="productdescr"  placeholder="Fill a product description ..." title="Fill a product description" ><?= $formData["productdescr"] ?? ''; ?></textarea>
                             <span class="bg-danger text-white"><?= $errors['productdescr']?? ''; ?></span>
                         </div>
 

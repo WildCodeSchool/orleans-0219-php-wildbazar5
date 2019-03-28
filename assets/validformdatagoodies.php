@@ -79,20 +79,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    require 'connec.php';
-    $pdo = new PDO(DSN, USER, PASS);
-
-
-    $query = 'SELECT * FROM student WHERE lastname=:lastname LIMIT :limit;';
-    $prep = $pdo->prepare($query);
-
-    $prep->bindValue(':limit', 10, PDO::PARAM_INT);
-    $prep->bindValue(':lastname','Pendragon', PDO::PARAM_STR);
-    $prep->execute();
-
     if (count($errors) == 0) {
 
-        require '../src/connec.php';
+        require 'src/connec.php';
         $pdo = new PDO(DSN, USER, PASS);
 
 
