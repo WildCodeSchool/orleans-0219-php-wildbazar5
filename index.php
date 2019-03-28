@@ -205,7 +205,7 @@
                         <img src="assets/img/slippers/kingJulian.jpg" class="card-img-top img-fluid"
                              alt="Deer Slippers"/>
                     </div>
-                    <a class="card-img-overlay" href="slippers.php#prod0010">
+                    <a class="card-img-overlay" href="slippers.php#13">
                         <div class="card-body text-right p-1">
                             <h3>
                                 <span class="card-text badge badge-info dr_badge">29.99$</span>
