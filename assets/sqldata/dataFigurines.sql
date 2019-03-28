@@ -10,7 +10,7 @@ VALUES
  40,
  'Pink',
  'S74589'
- ),
+),
 ('Pink Deer',
  'Pink Deer',
  29.99,
@@ -26,7 +26,7 @@ VALUES
  32.00,
  'Red deer official plushtoy of the WCS',
  'https://i.imgur.com/kWIbRsq.jpg',
-1.0,
+ 1.0,
  30,
  'Red',
  'K7763'

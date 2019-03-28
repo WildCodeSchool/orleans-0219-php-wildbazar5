@@ -5,7 +5,7 @@
  * Date: 14/03/19
  * Time: 17:46
  */
-require 'connec.php';
+require 'src/connec.php';
 
 $pdo = new PDO(DSN, USER, PASS);
 $query = "SELECT * FROM figurines_product";

@@ -36,8 +36,7 @@
 
             <div class="row p-2">
                     <!-- PRODUIT -->
-                    
-                    <?php include 'dataFigurines.php'; ?>
+
             <?php include 'assets/cards_figurines.php' ; ?>
             </div>
         </section>

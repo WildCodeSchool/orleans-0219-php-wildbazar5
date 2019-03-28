@@ -22,7 +22,7 @@ $categoryProducts = ['prod0001'=>
                         'prodShortTitle' => 'Hobbit Slippers',
                         'prodPrice' => 19.99,
                         'prodDescr' => 'Bring back the precious with these amazing Hobbit slippers, Peregrin Took !',
-                        'prodPicture' => 'assets/img/slippers/téléchargement.jpeg',
+                        'prodPicture' => 'assets/img/slippers/hobbit.jpeg',
                         'prodCharacteristics' => ['prodSize'=> '3-15',
                                            'prodMaterial' => 'cotton',
                                            'prodColor' => 'camel/brown',

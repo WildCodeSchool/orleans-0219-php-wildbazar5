@@ -1,7 +1,7 @@
 /*CREATE DATABASE `wildbazar`;
-USE `wildbazar`;
+USE `wildbazar`;*/
 
-DROP TABLE IF EXISTS `wildbazar`.`goodies_product`;*/
+DROP TABLE IF EXISTS `wildbazar`.`goodies_product`;
 
 CREATE TABLE `wildbazar`.`goodies_product`
 (
@@ -20,6 +20,7 @@ CREATE TABLE `wildbazar`.`goodies_product`
   PRIMARY KEY (`id`)
 );
 
+DROP TABLE IF EXISTS `wildbazar`.`slipper`;
 CREATE TABLE `slipper`
 (
   `id`             int(11)      NOT NULL AUTO_INCREMENT,
@@ -33,4 +34,19 @@ CREATE TABLE `slipper`
   `char_color`     varchar(100) NOT NULL,
   `char_reference` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
+);
+
+DROP TABLE IF EXISTS `wildbazar`.`figurines_product`;
+CREATE TABLE `wildbazar`.`figurines_product` (
+                                               `id` INT NOT NULL AUTO_INCREMENT,
+                                               `title` VARCHAR(255) NOT NULL,
+                                               `short_title` VARCHAR(100) NOT NULL,
+                                               `price` FLOAT NOT NULL,
+                                               `summary` TEXT NOT NULL,
+                                               `picture` VARCHAR(255) NULL,
+                                               `weight` FLOAT NOT NULL,
+                                               `char_size` FLOAT NOT NULL,
+                                               `char_color` VARCHAR(100) NOT NULL,
+                                               `char_reference` VARCHAR(100) NOT NULL,
+                                               PRIMARY KEY (`id`)
 );

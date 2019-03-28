@@ -34,7 +34,7 @@ if (isset($_POST) && !empty($_POST)) {
     }
 
     if (!$errors) {
-        require 'connec.php';
+        require 'src/connec.php';
 
         $pdo = new PDO(DSN, USER, PASS);
 
