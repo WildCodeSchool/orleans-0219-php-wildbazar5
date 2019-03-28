@@ -1,3 +1,59 @@
+<?php
+
+require 'connec.php';
+$pdo = new PDO(DSN, USER, PASS);
+$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $errors = [];
+    if (isset($_POST) && !empty($_POST)) {
+        $errors = [];
+        if (empty(trim($_POST['prodTitle']))) {
+            $errors['prodTitle'] = "The product title must be greater than 1 character !";
+        }
+        if (empty(trim($_POST['prodPrice'])) OR strlen(trim($_POST['prodPrice'])) > 6) {
+            $errors['prodPrice'] = "The price must be between 1 and 6 character !";
+        }
+        if (empty(trim($_POST['prodDescr'])) OR strlen(trim($_POST['prodDescr'])) > 249) {
+            $errors['prodDescr'] = "The price must be between 1 and 6 character !";
+        }
+        if (empty(trim($_POST['prodCharacSize']))) {
+            $errors['prodCharacSize'] = "The size is required";
+        }
+        if (empty(trim($_POST['prodShortTitle']))) {
+            $errors['prodShortTitle'] = "The short title is required";
+        }
+        if (strlen(trim($_POST['prodCharacReference'])) < 7 OR strlen(trim($_POST['prodCharacReference'])) > 7) {
+            $errors['prodCharacReference'] = "The reference need 7 character !";
+        }
+        if (empty(trim($_POST['prodPicture'])) OR strlen(trim($_POST['prodPicture'])) > 255) {
+            $errors['prodPicture'] = "Your url is not correct !";
+        }
+
+
+// "nettoyage du $_POST" (trim)
+// verification des erreurs (not empty, longueurs, type...)
+        if (empty($errors)) {
+
+            $query = "INSERT INTO clothes (prodTitle, prodShortTitle, prodPrice, prodDescr, prodCharacSize, prodCharacColor, prodCharacReference, prodPicture) VALUES (:prodTitle, :prodShortTitle, :prodPrice, :prodDescr, :prodCharacSize, :prodCharacColor, :prodCharacReference, :prodPicture)";
+            $statement = $pdo->prepare($query);
+            $statement->bindValue(':prodShortTitle', $_POST['prodShortTitle'], PDO::PARAM_STR);
+            $statement->bindValue(':prodTitle', $_POST['prodTitle'], PDO::PARAM_STR);
+            $statement->bindValue(':prodPrice', $_POST['prodPrice']);
+            $statement->bindValue(':prodDescr', $_POST['prodDescr'], PDO::PARAM_STR);
+            $statement->bindValue(':prodCharacSize', $_POST['prodCharacSize'], PDO::PARAM_STR);
+            $statement->bindValue(':prodCharacColor', $_POST['prodCharacColor'], PDO::PARAM_STR);
+            $statement->bindValue(':prodCharacReference', $_POST['prodCharacReference'], PDO::PARAM_STR);
+            $statement->bindValue(':prodPicture', $_POST['prodPicture'], PDO::PARAM_STR);
+            $statement->execute();
+            header('Location: clothes.php');
+            exit();
+        }
+
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,12 +73,12 @@
 
 <body>
 
-<!----Navbar--->
+<!--Navbar-->
 
 <div class="container-fluid p-0">
     <?php
     //Titre pour le jumbo
-    $titleJumbo = "Create a product";
+    $titleJumbo = "Add new Clothes";
     //Sous-Titre pour le jumbo
     $subTitleJumbo = "";
     //Besoin d'un bouton Add neww ? mettre true
@@ -33,36 +89,19 @@
     ?>
 </div>
 
-<?php
 
-if (isset($_POST) && !empty($_POST)) {
-    $errors = [];
-    if (empty($_POST['prodTitle'])) {
-        $errors['prodTitle'] = "The product title must be greater than 1 character !";
-    }
-    if (empty($_POST['prodPrice']) OR strlen($_POST['prodPrice']) > 6) {
-        $errors['prodPrice'] = "The price must be between 1 and 6 character !";
-    }
-    if (empty($_POST['prodDescription']) OR strlen($_POST['prodDescription']) > 249) {
-        $errors['prodDescription'] = "The price must be between 1 and 6 character !";
-    }
-    if (strlen($_POST['prodReference']) < 7 OR strlen($_POST['prodReference']) > 7) {
-        $errors['prodReference'] = "The reference need 7 character !";
-    }
-    if (empty($_POST['prodPicture']) OR strlen($_POST['prodPicture']) > 255) {
-        $errors['prodPicture'] = "Your url is not correct !";
-    }
-
-    if (!$errors) {
-        header("location: clothes.php");
-        exit();
-    }
-}
-?>
 
     <!-- Formulaire -->
 <div class="container mt-5">
-    <form action="" method="post" class="pb-2">
+    <form action="formClothes.php" method="post" class="pb-2">
+        <div class="form-group">
+            <label class="col-sm col-form-label" for="prodTitle">Short Title :</label>
+            <div class="col-sm">
+                <input class="form-control" type="text" id="prodShortTitle" placeholder="My product" name="prodShortTitle" value="<?= $_POST['prodShortTitle'] ?? "" ?>" required>
+                <small class="text-danger font-weight-bold"><?= $errors['prodShortTitle'] ?? "" ?></small>
+            </div>
+        </div>
+
         <div class="form-group">
             <label class="col-sm col-form-label" for="prodTitle">Title :</label>
             <div class="col-sm">
@@ -70,6 +109,7 @@ if (isset($_POST) && !empty($_POST)) {
                 <small class="text-danger font-weight-bold"><?= $errors['prodTitle'] ?? "" ?></small>
             </div>
         </div>
+
         <div class="form-group">
             <label for="prodPrice" class="col-sm col-form-label">Price :</label>
             <div class="col-sm">
@@ -77,43 +117,35 @@ if (isset($_POST) && !empty($_POST)) {
                 <small class="text-danger font-weight-bold"><?= $errors['prodPrice'] ?? "" ?></small>
             </div>
         </div>
-        <div class="form-group">
-            <label for="prodDescription" class="col-sm col-form-label">Description :</label>
-            <div class="col-sm">
-                <input type="text" class="form-control" id="prodDescription" placeholder="My product description" name="prodDescription" value="<?= $_POST['prodDescription'] ?? "" ?>" required>
-                <small class="text-danger font-weight-bold"><?= $errors['prodDescription'] ?? "" ?></small>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="prodSize" class="col-sm col-form-label">Size :</label>
-            <div class="col-sm">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="prodSize" value="<?= $_POST['prodSize'] ?? "" ?>">
-                    <label class="form-check-label" for="inlineCheckbox1" >XS</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="prodSize" value="<?= $_POST['prodSize'] ?? "" ?>">
-                    <label class="form-check-label" for="inlineCheckbox2">S</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="prodSize" value="<?= $_POST['prodSize'] ?? "" ?>">
-                    <label class="form-check-label" for="inlineCheckbox1">M</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="prodSize" value="<?= $_POST['prodSize'] ?? "" ?>">
-                    <label class="form-check-label" for="inlineCheckbox2">L</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="prodSize" value="<?= $_POST['prodSize'] ?? "" ?>">
-                    <label class="form-check-label" for="inlineCheckbox2">XL</label>
-                </div>
-            </div>
 
-        </div>
         <div class="form-group">
-            <label for="prodColor" class="col-sm col-form-label">Color :</label>
+            <label for="prodDescr" class="col-sm col-form-label">Description :</label>
             <div class="col-sm">
-                <select id="prodColor" name="prodColor">
+                <input type="text" class="form-control" id="prodDescription" placeholder="My product description" name="prodDescr" value="<?= $_POST['prodDescr'] ?? "" ?>" required>
+                <small class="text-danger font-weight-bold"><?= $errors['prodDescr'] ?? "" ?></small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="prodCharacSize" class="col-sm col-form-label">Size :</label>
+            <div class="col-sm">
+                <?php $sizes = ['XS', 'S', 'M', 'L', 'XL']; ?>
+                <?php foreach ($sizes as $key=> $size) : ?>
+
+                    <div class="custom-control custom-checkbox custom-control-inline py-3 pr-3">
+                        <input type="checkbox" class="custom-control-input" id="prodCharacSize<?=$key ?>" name="prodCharacSize" value="<?= $size ?>">
+                        <label class="custom-control-label" for="prodCharacSize<?=$key ?>"><?= $size ?></label>
+                    </div>
+
+                <?php endforeach; ?>
+                <p><?= $errors['prodCharacSize'] ?? '' ?></p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="prodCharacColor" class="col-sm col-form-label">Color :</label>
+            <div class="col-sm">
+                <select id="prodCharacColor" name="prodCharacColor">
                     <?php $color = ['White', 'Black', 'Grey', 'Blue', 'Red', 'Green', 'Orange', 'Yellow', 'Purple', 'Pink', 'Brown']; ?>
                     <option selected>Choose a color</option>
                     <?php foreach ($color as $colors) { ?>
@@ -124,11 +156,12 @@ if (isset($_POST) && !empty($_POST)) {
                 </select>
             </div>
         </div>
+
         <div class="form-group">
-            <label for="prodReference" class="col-sm col-form-label">Reference :</label>
+            <label for="prodCharacReference" class="col-sm col-form-label">Reference :</label>
             <div class="col-sm">
-                <input type="text" class="form-control" id="prodReference" placeholder="A123456" name="prodReference" maxlength="7" value="<?= $_POST['prodReference'] ?? "" ?>" required>
-                <small class="text-danger font-weight-bold"><?= $errors['prodReference'] ?? "" ?></small>
+                <input type="text" class="form-control" id="prodCharacReference" placeholder="A123456" name="prodCharacReference" maxlength="7" value="<?= $_POST['prodCharacReference'] ?? "" ?>" required>
+                <small class="text-danger font-weight-bold"><?= $errors['prodCharacReference'] ?? "" ?></small>
             </div>
 
         </div>
@@ -139,6 +172,7 @@ if (isset($_POST) && !empty($_POST)) {
                 <small class="text-danger font-weight-bold"><?= $errors['prodPicture'] ?? "" ?></small>
             </div>
         </div>
+
         <div class="d-flex justify-content-center pb-3">
             <button type="submit" class="btn btn-secondary px-5">Create Product</button>
         </div>
