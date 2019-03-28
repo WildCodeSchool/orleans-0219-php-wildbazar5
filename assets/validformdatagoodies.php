@@ -19,8 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($formData["productshorttitle"])) {
-        if (!empty($formData["productitle"])) {
+        if (!empty($formData["productitle"]) && strlen($formData["productitle"]) <=100) {
             $formData['productshorttitle'] = $formData["productitle"];
+        } else {
+            $errors['productshorttitle'] = "Product short title is required and must be lower than 100 char.";
         }
     }
 
@@ -35,11 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($formData["productpictureurl"])) {
         $errors['productpictureurl'] = "Product picture url is required.";
+    } elseif ($errors['productpictureurl'] > 255) {
+        $errors['productpictureurl'] = "Product picture url must be lower than 255 charac.";
     }
 
-    if (empty($formData["productpictureurl"])) {
-        $errors['productpictureurl'] = "Product picture url is required.";
-    }
 
     if (empty($formData["prodfeature"])) {
         $errors['prodfeature'] = "Product feature is required.";
@@ -50,7 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($formData["prodsubcategory"])) {
-        $errors['prodcategory'] = "Product subcategory is required.";
+        $errors['prodsubcategory'] = "Product subcategory is required.";
+    }if ($errors['prodsubcategory'] > 100) {
+        $errors['prodsubcategory'] = "Product subcategory url must be lower than 255 charac.";
     }
 
     if (empty($formData["productsize"])) {
@@ -76,8 +79,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-
     if (count($errors) == 0) {
+
+        require 'src/connec.php';
+        $pdo = new PDO(DSN, USER, PASS);
+
+
+        $query = "INSERT INTO goodies_product  VALUES ( NULL, :title,:short_title, :price, :summary, :picture, :char_feature, :char_category, :char_subcategory, :char_size, :char_color, :char_reference )";
+        $prepquery = $pdo->prepare($query);
+
+        $prepquery->bindValue(':title', $formData["productitle"], PDO::PARAM_STR);
+        $prepquery->bindValue(':short_title', $formData["productshorttitle"], PDO::PARAM_STR);
+        $prepquery->bindValue(':price', $formData["productprice"], PDO::PARAM_STR);
+        $prepquery->bindValue(':summary',$formData["productdescr"], PDO::PARAM_STR);
+        $prepquery->bindValue(':picture',$formData["productpictureurl"], PDO::PARAM_STR);
+        $prepquery->bindValue(':char_feature',$formData["prodfeature"], PDO::PARAM_STR);
+        $prepquery->bindValue(':char_category',$formData["prodcategory"], PDO::PARAM_STR);
+        $prepquery->bindValue(':char_subcategory',$formData["prodsubcategory"], PDO::PARAM_STR);
+        $prepquery->bindValue(':char_size',$formData["productsize"], PDO::PARAM_STR);
+        $prepquery->bindValue(':char_color',$formData["productcolor"], PDO::PARAM_STR);
+        $prepquery->bindValue(':char_reference',$formData["prodreference"], PDO::PARAM_STR);
+        $prepquery->execute();
+
 
         header("Location: adddatagoodies_confirm.php");
         exit();
