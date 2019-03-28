@@ -43,7 +43,7 @@
 
 
         <?php
-        include 'assets/cards.php';
+        include 'assets/cards_slippers.php';
         ?>
 
     </div>
