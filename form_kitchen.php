@@ -11,8 +11,12 @@ $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
 if ($_SERVER['REQUEST_METHOD'] ==='POST') {
     $errors = [];
 
+    if(empty($_POST['prod_short_title'])) {
+        $errors['prod_short_title'] = "The prod_short_title can't be empty.";
+    }
+
     if(empty($_POST['prod_title'])) {
-        $errors['prod_title'] = "The prodTtile can't be empty.";
+        $errors['prod_title'] = "The prod_title can't be empty.";
     }
 
     if(empty($_POST['prod_price'])) {
@@ -49,15 +53,15 @@ if ($_SERVER['REQUEST_METHOD'] ==='POST') {
         :prod_characteristic_reference)";
 
         $statement = $pdo->prepare($query);
-        $statement->bindvalue(':prod_short_title', $_POST['prod_short_title'], PDO ::PARAM_STR);
-        $statement->bindValue(':prod_title', $_POST['prod_title'], PDO ::PARAM_STR);
-        $statement->bindValue(':prod_price', $_POST['prod_price'], PDO :: PARAM_STR);
-        $statement->bindValue(':prod_descr', $_POST['prod_descr'], PDO ::PARAM_STR);
-        $statement->bindValue(':prod_picture', $_POST['prod_pricture'], PDO :: PARAM_STR);
-        $statement->bindValue(':prod_characteristic_weight', $_POST['prod_characteristic_weight'], PDO :: PARAM_STR);
-        $statement->bindValue(':prod_characteristic_size', $_POST['prod_characteristic_size'], PDO :: PARAM_STR);
-        $statement->bindValue(':prod_characteristic_material', $_POST['prod_characteristic_material'], PDO :: PARAM_STR);
-        $statement->bindValue(':prod_characteristic_reference', $_POST['prod_characteristic_reference'], PDO :: PARAM_STR);
+        $statement->bindvalue(':prod_short_title', $_POST['prod_short_title'], PDO::PARAM_STR);
+        $statement->bindValue(':prod_title', $_POST['prod_title'], PDO::PARAM_STR);
+        $statement->bindValue(':prod_price', $_POST['prod_price'], PDO::PARAM_INT);
+        $statement->bindValue(':prod_descr', $_POST['prod_descr'], PDO::PARAM_STR);
+        $statement->bindValue(':prod_picture', $_POST['prod_picture'], PDO::PARAM_STR);
+        $statement->bindValue(':prod_characteristic_weight', $_POST['prod_characteristic_weight'], PDO::PARAM_INT);
+        $statement->bindValue(':prod_characteristic_size', $_POST['prod_characteristic_size'], PDO::PARAM_INT);
+        $statement->bindValue(':prod_characteristic_material', $_POST['prod_characteristic_material'], PDO::PARAM_STR);
+        $statement->bindValue(':prod_characteristic_reference', $_POST['prod_characteristic_reference'], PDO::PARAM_STR);
         $statement->execute();
         header("form_kitchen.php") ;
         exit();
@@ -107,7 +111,13 @@ if ($_SERVER['REQUEST_METHOD'] ==='POST') {
         <form action="form_kitchen.php" method="POST">
 
             <div class="form-group">
-                <label for="prodd_title">Product name</label>
+                <label for="prod_short_title">Short product name</label>
+                <input type="text" class="form-control" id="prod_short_title" name="prod_short_title" value="<?= $_POST['prod_short_title'] ?? "" ?>" aria-describedby="textHelp" placeholder="Product name" required>
+                <p><?= $errors['prod_short_title'] ?? "" ?></p>
+            </div>
+
+            <div class="form-group">
+                <label for="prod_title">Product name</label>
                 <input type="text" class="form-control" id="prod_title" name="prod_title" value="<?= $_POST['prod_title'] ?? "" ?>" aria-describedby="textHelp" placeholder="Product name" required>
                 <p><?= $errors['prod_title'] ?? "" ?></p>
             </div>
