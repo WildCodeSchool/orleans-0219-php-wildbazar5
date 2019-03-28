@@ -41,7 +41,7 @@ function cleanInput(array $input): array
 }
 
 /** CALL THE DATABASE */
-require 'assets/sqldata/connec.php';
+require 'src/connec.php';
 $pdo = new PDO(DSN, USER, PASS);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

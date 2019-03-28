@@ -8,7 +8,7 @@
 
 /** CONNECTION WITH THE DATABASE */
 
-require 'sqldata/connec.php';
+require 'src/connec.php';
 $pdo = new PDO(DSN, USER, PASS);
 
 /** DATA RETRIEVAL */
