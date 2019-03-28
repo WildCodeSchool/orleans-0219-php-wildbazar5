@@ -6,9 +6,12 @@
  * Time: 16:40
  */
 
+/** CONNECTION WITH THE DATABASE */
+
 require 'sqldata/connec.php';
 $pdo = new PDO(DSN, USER, PASS);
 
+/** DATA RETRIEVAL */
 
 $query = "SELECT * FROM slipper";
 
