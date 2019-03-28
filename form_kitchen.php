@@ -1,68 +1,71 @@
 <?php
 
-require '../connec.php';
+require 'connec.php';
 $pdo = new PDO(DSN,USER, PASS);
-
-
-$query = "SELECT * FROM article";
+$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+$query = "SELECT * FROM reference_kitchen";
 $statement = $pdo->query($query);
 $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-//var_dump($articles);
 
+if ($_SERVER['REQUEST_METHOD'] ==='POST') {
+    $errors = [];
 
-if($_POST)
-{
-
-    $errors = array() ;
-    if(empty($_POST['prodTitle'])) {
-        $errors['prodTitle1'] = "The prodTtile can't be empty.";
-    }
-    if(strlen($_POST['prodTitle']) < 2 ) {
-        $errors['prodTitle2'] = "The prodTitle must be at least 2 characters long.";
-    }
-    if(empty($_POST['prodPrice'])) {
-        $errors['prodPrice1'] = "The price can't be empty.";
-    }
-    if(strlen($_POST['prodPrice']) < 2 ) {
-        $errors['prodPrice2'] = "The price must be at least 2 characters long.";
-    }
-    if(empty($_POST['prodDescr'])) {
-        $errors['prodDescr1'] = "The prodDescr can't be empty.";
-    }
-    if(strlen($_POST['prodDescr']) < 6 ) {
-        $errors['prodDescr2'] = "The prodDescr must be at least 6 characters long" ;
-    }
-    if(empty($_POST['prodSize'])) {
-        $errors['prodSize'] = "The prodSize can't be empty.";
+    if(empty($_POST['prod_title'])) {
+        $errors['prod_title'] = "The prodTtile can't be empty.";
     }
 
-    if(empty($_POST['prodWeight'])) {
-    $errors['prodSize'] = "The prodWeight can't be empty.";
+    if(empty($_POST['prod_price'])) {
+        $errors['prod_price'] = "The price can't be empty.";
     }
-    if(empty($_POST['prodReference'])) {
-    $errors['prodReference1'] = "The reference can't be empty.";
-    }
-    if(strlen($_POST['prodReference']) < 6 ) {
-        $errors['prodReference2'] = "The reference must be 6 characters long.";
 
+    if(empty($_POST['prod_descr'])) {
+        $errors['prod_descr'] = "The prodDescr can't be empty.";
     }
-    if(empty($_POST['prodMaterial'])) {
-        $errors['prodMaterial1'] = "Composition can't be empty.";
+
+    if(empty($_POST['prod_characteristic_size'])) {
+        $errors['prod_characteristic_size'] = "The size can't be empty.";
     }
-    if(strlen($_POST['prodMaterial']) < 2) {
-        $errors['prodMaterial2'] = "Material can't at least 2 characters long" ;
+
+    if(empty($_POST['prod_characteristic_weight'])) {
+        $errors['prod_characteristic_weight'] = "The weight can't be empty.";
     }
-    if(empty($_POST['prodPicture'])) {
-        $errors['prodPicture1'] = "URL can't be empty.";
+    if(empty($_POST['prod_characteristic_reference'])) {
+        $errors['prod_characteristic_reference'] = "The reference can't be empty.";
     }
-    if(count($errors) == 0) {
+
+    if(empty($_POST['prod_characteristic_material'])) {
+        $errors['prod_characteristic_aterial'] = "Composition can't be empty.";
+    }
+
+    if(empty($_POST['prod_picture'])) {
+        $errors['prod_picture'] = "URL can't be empty.";
+    }
+    if(empty($errors)) {
+        $query = "INSERT INTO reference_kitchen (id, prod_short_title, prod_title, prod_price, prod_descr, prod_picture, 
+        prod_characteristic_weight, prod_characteristic_size, prod_characteristic_material, 
+        prod_characteristic_reference) VALUES (:id, :prod_short_title, :prod_title, :prod_price, :prod_descr, 
+        :prod_picture, :prod_characteristic_weight, :prod_characteristic_size, :prod_characteristic_material,
+        :prod_characteristic_reference)";
+
+        $statement = $pdo->prepare($query);
+        $statement->bindvalue(':prod_short_title', $_POST['prod_short_title'], PDO ::PARAM_STR);
+        $statement->bindValue(':prod_title', $_POST['prod_title'], PDO ::PARAM_STR);
+        $statement->bindValue(':prod_price', $_POST['prod_price'], PDO :: PARAM_STR);
+        $statement->bindValue(':prod_descr', $_POST['prod_descr'], PDO ::PARAM_STR);
+        $statement->bindValue(':prod_picture', $_POST['prod_pricture'], PDO :: PARAM_STR);
+        $statement->bindValue(':prod_characteristic_weight', $_POST['prod_characteristic_weight'], PDO :: PARAM_STR);
+        $statement->bindValue(':prod_characteristic_size', $_POST['prod_characteristic_size'], PDO :: PARAM_STR);
+        $statement->bindValue(':prod_characteristic_material', $_POST['prod_characteristic_material'], PDO :: PARAM_STR);
+        $statement->bindValue(':prod_characteristic_reference', $_POST['prod_characteristic_reference'], PDO :: PARAM_STR);
+        $statement->execute();
         header("form_kitchen.php") ;
         exit();
     }
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -98,75 +101,63 @@ if($_POST)
 
 <div class="container p-0">
 
-<!--formulaire-->
+    <!--formulaire-->
 
-<div class="container-fluid p-0">
-    <form action="form_kitchen.php" method="POST">
+    <div class="container-fluid p-0">
+        <form action="form_kitchen.php" method="POST">
 
-        <select name="kitchen_product">
-            <option value="mug">Mugs</option>
-            <option value="ecocup">Ecocups</option>
-            <option value="bowl">Bowls</option>
-
-        </select>
-
-        <div class="form-group">
-            <label for="prodTitle">Product name</label>
-            <input type="text" class="form-control" id="prodTitle" name="prodTitle" aria-describedby="textHelp" placeholder="Product name" required>
-            <p><?php if(isset($errors['prodTitle1'])) echo $errors['prodTitle1']; ?></p>
-            <p><?php if(isset($errors['prodTitle2'])) echo $errors['prodTitle2']; ?></p>
-        </div>
-
-        <div class="form-group">
-            <label for="prodPrice">Price in $</label>
-            <input type="number" class="form-control" id="prodPrice" name="prodPrice"  aria-describedby="textHelp" placeholder="Product price" required>
-            <p><?php if(isset($errors['prodPrice1'])) echo $errors['prodPrice1']; ?></p>
-            <p><?php if(isset($errors['prodPrice2'])) echo $errors['prodPrice2']; ?></p>
-        </div>
-
-        <div class="form-group">
-            <label for="prodDescr">Product description</label>
-            <input type="text" class="form-control" id="prodDescr" name="prodDescr" aria-describedby="textHelp" placeholder="Product description" required>
-            <p><?php if(isset($errors['prodDescr1'])) echo $errors['prodDescr1']; ?></p>
-            <p><?php if(isset($errors['prodDescr2'])) echo $errors['prodDescr2']; ?></p>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <label for="prodSize">Product size</label>
-                <input type="number" class="form-control" id="prodSize" name="prodSize" placeholder="size in inches" required>
-                <p><?php if(isset($errors['prodSize1'])) echo $errors['prodSize1']; ?></p>
+            <div class="form-group">
+                <label for="prodd_title">Product name</label>
+                <input type="text" class="form-control" id="prod_title" name="prod_title" value="<?= $_POST['prod_title'] ?? "" ?>" aria-describedby="textHelp" placeholder="Product name" required>
+                <p><?= $errors['prod_title'] ?? "" ?></p>
             </div>
-            <div class="col">
-                <label for="prodWeight">Product weight</label>
-                <input type="number" class="form-control" id="prodWeight" name="ProdWeight" placeholder="weight in lbs" required>
-                <p><?php if(isset($errors['prodWeight1'])) echo $errors['prodWeight1']; ?></p>
+
+            <div class="form-group">
+                <label for="prod_price">Price in $</label>
+                <input type="number" class="form-control" id="prod_price" name="prod_price"  value="<?= $_POST['prod_price'] ?? "" ?>"  aria-describedby="textHelp" placeholder="Product price" required>
+                <p><?= $errors['prod_price'] ?? "" ?></p>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="prodReference">Reference</label>
-            <input type="text" class="form-control" id="prodReference" name="prodReference" aria-describedby="textHelp" placeholder="Product reference" required>
-            <p><?php if(isset($errors['prodReference1'])) echo $errors['prodReference1']; ?></p>
-            <p><?php if(isset($errors['prodReference2'])) echo $errors['prodReference2']; ?></p>
-        </div>
+            <div class="form-group">
+                <label for="prod_descr">Product description</label>
+                <input type="text" class="form-control" id="prod_descr" name="prod_descr" value="<?= $POST_['prod_descr'] ?? "" ?>" aria-describedby="textHelp" placeholder="Product description" required>
+                <p><?= $errors['prod_descr'] ?? "" ?></p>
+            </div>
 
-        <div class="form-group">
-            <label for="prodMaterial">Product composition</label>
-            <input type="text" class="form-control" id="prodMaterial" name="prodMaterial" aria-describedby="textHelp" placeholder="Product composition" required>
-            <p><?php if(isset($errors['prodMaterial1'])) echo $errors['prodMaterial1']; ?></p>
-            <p><?php if(isset($errors['prodMaterial2'])) echo $errors['prodMaterial2']; ?></p>
-        </div>
+            <div class="row">
+                <div class="col">
+                    <label for="prod_characteristic_size">Product size</label>
+                    <input type="number" class="form-control" id="prod_characteristic_size" name="prod_characteristic_size" value="<?= $_POST['prod_characteristic_size'] ?? "" ?>"  placeholder="size in inches" required>
+                    <p><?= $errors['prod_characteristic_size'] ?? "" ?></p>
+                </div>
+                <div class="col">
+                    <label for="prod_characteristic_weight">Product weight</label>
+                    <input type="number" class="form-control" id="prod_characteristic_weight" name="prod_characteristic_weight" value="<?= $_POST['prod_characteristic_weight'] ?? "" ?>"  placeholder="weight in lbs" required>
+                    <p><?= $errors['prod_characteristic_weight'] ?? "" ?></p>
+                </div>
+            </div>
 
-        <div class="form-group">
-            <label for="prodpicture">Product image</label>
-            <input type="text" class="form-control" id="prodpicture" name="prodPicture" aria-describedby="textHelp" placeholder="Product image" required>
-            <p><?php if(isset($errors['prodPicture1'])) echo $errors['prodPicture1']; ?></p>
-        </div>
+            <div class="form-group">
+                <label for="prod_characteristic_reference">Reference</label>
+                <input type="text" class="form-control" id="prod_characteristic_reference" name="prod_characteristic_reference" value="<?= $_POST['prod_characteristic_reference'] ?? "" ?>"  aria-describedby="textHelp" placeholder="Product reference" required>
+                <p><?= $errors['prod_characteristic_reference'] ?? "" ?></p>
+            </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+            <div class="form-group">
+                <label for="prod_characteristic_material">Product composition</label>
+                <input type="text" class="form-control" id="prod_characteristic_material" name="prod_characteristic_material" value="<?= $_POST['prod_characteristic_material'] ?? "" ?>"  aria-describedby="textHelp" placeholder="Product composition" required>
+                <p><?= $errors['prod_characteristic_material'] ?? "" ?></p>
+            </div>
+
+            <div class="form-group">
+                <label for="prod_picture">Product image</label>
+                <input type="text" class="form-control" id="prod_picture" name="prod_picture" value="<?=$_POST['prod_picture'] ?? "" ?>"  aria-describedby="textHelp" placeholder="Product image" required>
+                <p><?= $errors['prod_picture'] ?? "" ?></p>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 </div>
 
 

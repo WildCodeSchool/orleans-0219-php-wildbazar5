@@ -8,7 +8,8 @@
 .idea/**/tasks.xml
 .idea/**/dictionaries
 .idea/**/shelf
-
+.idea/
+connec.php
 # Sensitive or high-churn files
 .idea/**/dataSources/
 .idea/**/dataSources.ids
