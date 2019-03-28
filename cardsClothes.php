@@ -14,7 +14,7 @@ $articles = $statement->fetchAll(PDO::FETCH_ASSOC);
 <?php foreach ($articles as $clothes) :?>
     <!-- PRODUIT -->
     <div class="col-md-6 col-lg-4 col-xl-3">
-        <article id="<?= $clothes['id'] ?>">
+        <article id="<?= htmlentities($clothes['id']) ?>">
             <div class="card border-dark my-4 dr_card" data-toggle="modal" data-target=<?= "#" . 'a' . $clothes['id'] . 'modal'?>>
                 <div class="dr_wrapper text-center ">
                     <img src="<?= $clothes['prodPicture'] ?>"
