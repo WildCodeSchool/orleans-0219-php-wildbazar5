@@ -37,18 +37,18 @@
         <section class="dr_section m-5" id="formGoodies">
             <div class="card rounded formadd">
                 <div class="card-body text-white">
-                    <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post" novalidate>
+                    <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post">
 
                         <div class="form-group">
                             <label for="idproducttitle" class="requiredinput">Product name : </label>
-                            <input type="text" class="form-control" id="idproducttitle" name="productitle" placeholder="Product name" title="Fill a product name" max="255" required
+                            <input type="text" class="form-control" id="idproducttitle" name="productitle" placeholder="Product name" title="Fill a product name" maxlength="255" required
                                    value=<?= $formData["productitle"] ?? ''; ?> >
                             <span class="bg-danger text-white"><?= $errors['productitle'] ?? ''; ?></span>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="idproductshorttitle">Card product name :</label>
-                                <input type="text" class="form-control" id="idproductshorttitle" name="productshorttitle" placeholder="Product Card title"  max="100" title="Fill a card display product name"
+                                <input type="text" class="form-control" id="idproductshorttitle" name="productshorttitle" placeholder="Product Card title"  maxlength="100" title="Fill a card display product name"
                                        value=<?= $formData["productshorttitle"] ?? ''; ?> >
                                 <span class="bg-danger text-white"><?= $errors['productshorttitle'] ?? ''; ?></span>
                             </div>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="form-group">
                             <label for="idproductpictureurl"  class="requiredinput">Product picture URL :</label>
-                            <input type="text" class="form-control" id="idproductpictureurl" name="productpictureurl" placeholder="Product picture" title="Specify an url to product picture" max="255"  required
+                            <input type="text" class="form-control" id="idproductpictureurl" name="productpictureurl" placeholder="Product picture" title="Specify an url to product picture" maxlength="255"  required
                                    value=<?= $formData["productpictureurl"] ?? ''; ?> >
                             <span class="bg-danger text-white"><?= $errors['productpictureurl'] ?? ''; ?></span>
                         </div>
@@ -75,7 +75,7 @@
 
                         <div class="form-group">
                             <label  for="idprodfeature"  class="requiredinput">Feature type :</label>
-                            <select id="idprodfeature" name="prodfeature" class="form-control"     placeholder="Select one feature type ..." title="Select a feature type" required>
+                            <select id="idprodfeature" name="prodfeature" class="form-control"    title="Select a feature type" required>
                                 <option value="">Select one ...</option>
                                 <?php foreach ($goodiesfeaturetypes as $goodiesfeaturetype ) : ?>
                                     <option value="<?= $goodiesfeaturetype; ?>"
@@ -89,7 +89,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label  for="idprodcategory"  class="requiredinput">Category :</label>
-                                <select id="idprodcategory" name="prodcategory" class="form-control"  placeholder="Select one category ..."  title="Select a category" required>
+                                <select id="idprodcategory" name="prodcategory" class="form-control"   title="Select a category" required>
                                     <option value="">Select one ...</option>
                                     <?php foreach ($goodiescategories as $goodiescategorie ) : ?>
                                         <option value="<?= $goodiescategorie; ?>"
@@ -103,7 +103,7 @@
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="idprodsubcategory"  class="requiredinput">Subcategory :</label>
-                                <input type="text" class="form-control" id="idprodsubcategory" name="prodsubcategory"  max="100" placeholder="Product subcategory" title="Fill a subcategory" required
+                                <input type="text" class="form-control" id="idprodsubcategory" name="prodsubcategory"  maxlength="100" title="Fill a subcategory" required
                                        value=<?= $formData["prodsubcategory"] ?? ''; ?> >
                                 <span class="bg-danger text-white"><?= $errors['prodsubcategory']?? ''; ?></span>
                             </div>
@@ -117,7 +117,7 @@
                             </div>
                             <div class="form-group col-md-2">
                                 <label  for="idproductcolor"  class="requiredinput">Color :</label>
-                                <select id="idproductcolor" name="productcolor" class="form-control"  placeholder="Select one product color ..." title="Select a product color" required>
+                                <select id="idproductcolor" name="productcolor" class="form-control"   title="Select a product color" required>
                                     <option value="">Select one ...</option>
                                     <?php foreach ($goodiescolors as $goodiescolor ) : ?>
                                         <option value="<?= $goodiescolor; ?>"

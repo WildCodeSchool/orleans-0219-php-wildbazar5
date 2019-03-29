@@ -186,7 +186,21 @@
                     <div class="dr_wrapper text-center ">
                         <img src="assets/img/kitchen/mugprog.jpg" class="card-img-top img-fluid" alt="Mug prog"/>
                     </div>
-                    <a class="card-img-overlay" href="kitchen.php#prod0010">
+                    <a class="card-img-over
+
+Introduction
+
+Get started with Bootstrap, the world’s most popular framework for building responsive, mobile-first sites, with BootstrapCDN and a template starter page.
+Go serverless. Write JavaScript. Register your workers.dev domain.
+ads via Carbon
+Quick start
+
+Looking to quickly add Bootstrap to your project? Use BootstrapCDN, provided for free by the folks at StackPath. Using a package manager or need to download the source files? Head to the downloads page.
+CSS
+
+Copy-paste the stylesheet <link> into your <head> before all other stylesheets to load our CSS.
+
+lay" href="kitchen.php#prod0010">
                         <div class="card-body text-right p-1">
                             <h3>
                                 <span class="card-text badge badge-info dr_badge">19.99$</span>
