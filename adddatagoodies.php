@@ -37,7 +37,7 @@
         <section class="dr_section m-5" id="formGoodies">
             <div class="card rounded formadd">
                 <div class="card-body text-white">
-                    <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post" novalidate>
+                    <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post">
 
                         <div class="form-group">
                             <label for="idproducttitle" class="requiredinput">Product name : </label>
