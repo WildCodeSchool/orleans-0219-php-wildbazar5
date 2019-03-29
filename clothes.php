@@ -25,7 +25,7 @@
     $titleJumbo = "clothes";
     //Sous-Titre pour le jumbo
     $subTitleJumbo = "T-shirt, Sweat and more.";
-    //Besoin d'un bouton Add neww ? mettre true
+    //Besoin d'un bouton Add new ? mettre true
     $addNewProductButton = true;
     // Si bouton add new indiquer la page php contenant le formulaire d'ajout
     $namePageNewProductForm = "formClothes.php";
@@ -40,12 +40,7 @@
     <div class="row p-2">
 
         <?php
-        include 'assets/dataClothes.php';
-        ?>
-
-
-        <?php
-        include 'assets/cards.php';
+        include 'cardsClothes.php';
         ?>
 
     </div>
