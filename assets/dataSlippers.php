@@ -22,7 +22,7 @@ $categoryProducts = ['prod0001'=>
                         'prodShortTitle' => 'Hobbit Slippers',
                         'prodPrice' => 19.99,
                         'prodDescr' => 'Bring back the precious with these amazing Hobbit slippers, Peregrin Took !',
-                        'prodPicture' => 'assets/img/slippers/téléchargement.jpeg',
+                        'prodPicture' => 'assets/img/slippers/hobbit.jpeg',
                         'prodCharacteristics' => ['prodSize'=> '3-15',
                                            'prodMaterial' => 'cotton',
                                            'prodColor' => 'camel/brown',
@@ -30,7 +30,7 @@ $categoryProducts = ['prod0001'=>
                         ],
                      'prod0003'=>
                         ['prodTitle' => 'Homer Simpson Slippers',
-                        'prodShortTitle' => 'Pokemon Slippers',
+                        'prodShortTitle' => 'Simpson Slippers',
                         'prodPrice' => 19.99,
                         'prodDescr' => 'Perfect slippers to enjoy your daytime on the sofa',
                         'prodPicture' => 'assets/img/slippers/homer.jpeg',
@@ -74,7 +74,7 @@ $categoryProducts = ['prod0001'=>
                         ],
                      'prod0007'=>
                         ['prodTitle' => 'Deathly Hallows Harry Potter Slippers',
-                        'prodShortTitle' => 'Pokemon Slippers',
+                        'prodShortTitle' => 'Harry Potter Slippers',
                         'prodPrice' => 14.99,
                         'prodDescr' => 'You can\'t become invisible, immortal or invicible whit these slippers.. but they\'re super cool !',
                         'prodPicture' => 'assets/img/slippers/hp3.jpg',

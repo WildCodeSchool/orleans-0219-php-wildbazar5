@@ -88,22 +88,23 @@ p {
     padding: 1px 0;
 }
 
-.jumbotron{
-    background-color:white;
+.jumbotron {
+    background-color: white;
     color: white;
     display: flex;
     align-items: center;
 }
 
-.lead{
-    font-weight:bold;
-}
-.jumbotron .btn-outline-light{
-    background-color:rgb(51, 81, 97,.4);
+.lead {
+    font-weight: bold;
 }
 
-.jumbotron .btn-outline-light:hover{
-    background-color:rgb(255, 255, 255, 0.6);
+.jumbotron .btn-outline-light {
+    background-color: rgb(51, 81, 97, .4);
+}
+
+.jumbotron .btn-outline-light:hover {
+    background-color: rgb(255, 255, 255, 0.6);
 }
 
 
@@ -231,17 +232,17 @@ section::after {
 .cat-card {
     width: 100%;
     max-width: 500px;
-    height:250px;
+    height: 250px;
     overflow: hidden;
-    border-color:black ;
+    border-color: black;
     border-radius: 10px;
-  /*  box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);*/
+    /*  box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);*/
     cursor: pointer;
     text-align: center;
     transition: .5s ease
 }
 
-.cat-card:hover{
+.cat-card:hover {
     box-shadow: 0 1rem 3rem rgba(83, 83, 83, 0.7);
     transition: .5s ease;
     -webkit-transition: padding .5s;
@@ -271,35 +272,37 @@ section::after {
     background-color: rgba(0, 93, 142, 0.8);
 }
 
-.cat-card:hover>.card-img-overlay>.cat-intro {
+.cat-card:hover > .card-img-overlay > .cat-intro {
     color: white;
     opacity: 1;
     transition: .5s ease
 }
 
-.cat-card:hover>.card-info {
+.cat-card:hover > .card-info {
     opacity: 1;
     bottom: 120px;
 }
 
-.cat-card>.title-content {
+.cat-card > .title-content {
     text-align: center;
     margin: 50px 0 0 0;
     z-index: 20;
     width: 100%;
     transition: .5s ease
 }
-.cat-card>.card-img-overlay>.cat-hr {
+
+.cat-card > .card-img-overlay > .cat-hr {
     border-top: 3px solid rgba(51, 81, 97, 0.8);
     opacity: .8;
     transition: .5s ease
 }
-.cat-card> .categories img{
+
+.cat-card > .categories img {
     opacity: .6;
 }
 
 
-.cat-card >.card-img-overlay>.cat-title {
+.cat-card > .card-img-overlay > .cat-title {
     font-size: 1.6rem;
     font-weight: 500;
     letter-spacing: .1rem;
@@ -308,17 +311,19 @@ section::after {
     opacity: 1;
     transition: .5s ease
 }
-.cat-card:hover >.card-img-overlay>.cat-title {
+
+.cat-card:hover > .card-img-overlay > .cat-title {
     margin: 50px 0 0 0;
     z-index: 20;
     width: 100%;
 }
-.cat-card:hover >.card-img-overlay>.cat-title h3 {
+
+.cat-card:hover > .card-img-overlay > .cat-title h3 {
     font-size: 1.6rem;
     transition: .5s ease;
 }
 
-.cat-card:hover>.categories {
+.cat-card:hover > .categories {
     -webkit-filter: blur(2px);
     /* Safari 6.0 - 9.0 */
     filter: blur(2px);
@@ -499,75 +504,141 @@ footer ul {
 footer li {
     margin-top: -0.25rem;
 }
-footer li
-{
+
+footer li {
     margin-top: -0.25rem;
 }
 
-.art-img-content{
-        display: flex;
-        align-items: center;
+.art-img-content {
+    display: flex;
+    align-items: center;
 
 }
+
 h2.background-color:before {
-        border-top: 3px solid #335161;
-        content:"";
-        margin: 0 auto; /* this centers the line to the full width specified */
-        position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
-        top: 50%; left: 0; right: 0; bottom: 0;
-        width: 95%;
-        z-index: -1;
-    }
+    border-top: 3px solid #335161;
+    content: "";
+    margin: 0 auto; /* this centers the line to the full width specified */
+    position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1;
+}
+
 .background-color span {
-        /* to hide the lines from behind the text, you have to set the background color the same as the container */
-        color:#335161;
-        background: #fff;
-        padding: 0 15px;
-    }
+    /* to hide the lines from behind the text, you have to set the background color the same as the container */
+    color: #335161;
+    background: #fff;
+    padding: 0 15px;
+}
 
 /* //WHITE */
 h2.background-white {
     position: relative;
     z-index: 1;
 }
+
 h2.background-white:before {
-        border-top: 3px solid white;
-        content:"";
-        margin: 0 auto; /* this centers the line to the full width specified */
-        position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
-        top: 50%; left: 0; right: 0; bottom: 0;
-        width: 95%;
-        z-index: -1;
-    }
+    border-top: 3px solid white;
+    content: "";
+    margin: 0 auto; /* this centers the line to the full width specified */
+    position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1;
+}
+
 .background-white span {
-        color:white;
-        /* to hide the lines from behind the text, you have to set the background color the same as the container */
-        background: #335161;
-        padding: 0 15px;
-    }
+    color: white;
+    /* to hide the lines from behind the text, you have to set the background color the same as the container */
+    background: #335161;
+    padding: 0 15px;
+}
+
 /* Header Parallax Element Style*/
 .paral {
     min-height: 600px;
     background-size: cover;
     background-position: 50% 50%;
-    }
+}
 
-.wildbazar-titlemodal h2{
+.wildbazar-titlemodal h2 {
     font-family: azonix;
     color: #335161;
-    }
+}
 
-    .wildbazar-titlemodal h3{
+.wildbazar-titlemodal h3 {
     font-size: 0.8rem;
     color: rgb(129, 129, 129);
-    }
+}
 
-    .art-img-content{
+.art-img-content {
     display: flex;
     align-items: center;
-    }
+}
+
+.mb-n2 {
+    font-size: 1.8rem;
+    font-family: azonix;
+}
+
+#formGoodies .requiredinput::before {
+    font-size: 1.4rem;
+    color: red;
+    content: '*';
+    pointer-events: none;
+}
+
+#formGoodies .error {
+    font-size: 1rem;
+    color: red;
+}
+
+#formGoodies .formadd {
+    background-color: #335161;
+    font-weight:bold;
+}
+
+
+
+#secretgift {
+    width: 200px;
+    height: 200px;
+}
 
     .mb-n2{
         font-size: 1.8rem;
         font-family:azonix;
     }
+
+    /*----------------FORM------------------*/
+
+#nawalForm p{
+    color: #ec6d6a;
+    font-weight: bold;
+}
+#nawalForm label{
+    font-weight: bold;
+}
+#nawalForm .form-group > label::after{
+    content: '*';
+    color: #ec6d6a;
+}
+#nawalForm .card-header::after{
+    content: '*';
+    color: #ec6d6a;
+    font-weight: bold;
+}
+#nawalForm .card{
+    border: 0.5px solid lightgrey;
+}
+#nawalForm .formadd {
+    background-color: #335161;
+    font-weight:bold;
+}

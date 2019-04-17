@@ -16,12 +16,19 @@
 </head>
 
 <body>
+<div class="container-fluid p-0">
+    <?php
+    //Titre pour le jumbo
+    $titleJumbo = "Figurines";
+    //Sous-Titre pour le jumbo
+    $subTitleJumbo = "Figurines and plushtoys";
 
-    <div class="container-fluid p-0">
-        <?php
-        include 'header.php'
-        ?>
-    </div>
+    $addNewProductButton = true;
+    // Si bouton add new indiquer la page php contenant le formulaire d'ajout
+    $namePageNewProductForm = "validateformFigurine.php";
+    include 'header.php';
+    ?>
+</div>
 
     <div class="container p-0">
         <!-- Section Top Selling -->
@@ -29,9 +36,8 @@
 
             <div class="row p-2">
                     <!-- PRODUIT -->
-                    
-                    <?php include 'dataFigurines.php'; ?>
-            <?php include 'assets/cards.php' ; ?>
+
+            <?php include 'assets/cards_figurines.php' ; ?>
             </div>
         </section>
     </div>

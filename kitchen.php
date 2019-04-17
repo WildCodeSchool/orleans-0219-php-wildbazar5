@@ -1,4 +1,4 @@
-php<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,6 +19,14 @@ php<!DOCTYPE html>
 
     <div class="container-fluid p-0">
        <?php
+       //Titre pour le jumbo
+       $titleJumbo = "Kitchen";
+       //Sous-Titre pour le jumbo
+       $subTitleJumbo = "Mugs, Ecocups, Bowls ....";
+       //Besoin d'un bouton Add neww ? mettre true
+       $addNewProductButton = true;
+       // Si bouton add new indiquer la page php contenant le formulaire d'ajout
+       $namePageNewProductForm = "form_kitchen.php";
        include "header.php" ;
        ?>
     </div>
